@@ -12,8 +12,9 @@ public class Pokemon {
 	
 	public Pokemon() {
 		// TODO Auto-generated constructor stub
+		
 	}	
-	
+
 	public Pokemon(String nomPoke, String criPoke, String ownerPoke) {
 		super();
 		this.nomPoke = nomPoke;
