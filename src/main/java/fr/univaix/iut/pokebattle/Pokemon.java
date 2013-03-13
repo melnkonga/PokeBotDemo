@@ -37,12 +37,7 @@ public class Pokemon {
 	public String getOwnerPoke() {
 		return ownerPoke;
 	}
-	public Pokemon(String nomPoke, String criPoke, String ownerPoke) {
-		super();
-		this.nomPoke = nomPoke;
-		this.criPoke = criPoke;
-		this.ownerPoke = ownerPoke;
-	}
+
 
 	public void setNomPoke(String nomPoke) {
 		this.nomPoke = nomPoke;
