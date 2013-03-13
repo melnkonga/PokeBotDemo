@@ -1,14 +1,27 @@
 package fr.univaix.iut.pokebattle;
 
 public class Pokemon {
+	public Pokemon(String nomPoke, String criPoke) {
+		super();
+		this.nomPoke = nomPoke;
+		this.criPoke = criPoke;
+	}
 	String nomPoke;
 	String criPoke;
 	String ownerPoke;
 	
 	public Pokemon() {
 		// TODO Auto-generated constructor stub
+		
 	}	
-	
+
+	public Pokemon(String nomPoke, String criPoke, String ownerPoke) {
+		super();
+		this.nomPoke = nomPoke;
+		this.criPoke = criPoke;
+		this.ownerPoke = ownerPoke;
+	}
+
 	@Override
 	public String toString() {
 		return "Pokemon [nomPoke=" + nomPoke + ", criPoke=" + criPoke
