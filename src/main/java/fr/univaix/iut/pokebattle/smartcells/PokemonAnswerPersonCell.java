@@ -5,7 +5,7 @@ import fr.univaix.iut.pokebattle.SmartCell;
 import fr.univaix.iut.pokebattle.Tweet;
 
 public class PokemonAnswerPersonCell implements SmartCell{
-	Pokemon carapuce = new Pokemon("Carapuce_bot", "Skwalop skwalop");
+	Pokemon carapuce = new Pokemon("carapuce_bot", "Skwalop skwalop");
 	
 	public String ask(Tweet Question){
 		String Resultat = null;
