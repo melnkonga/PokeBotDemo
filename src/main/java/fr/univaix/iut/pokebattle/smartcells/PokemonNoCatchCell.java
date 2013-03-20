@@ -8,7 +8,7 @@ public class PokemonNoCatchCell implements SmartCell {
 	
 	public String ask(Tweet question) {
 		
-		Pokemon cara = new Pokemon("carapuce","Skwalop Skwalop","@J_Apple_Junior");
+		Pokemon cara = new Pokemon("carapuce","Skwalop Skwalop","@J_Apple_Junior", "null");
 		
 		if (question.getText().contains("@carapuce Pokeball"))
 		{
