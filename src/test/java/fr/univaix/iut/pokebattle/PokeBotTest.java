@@ -15,8 +15,8 @@ public class PokeBotTest {
 
     @Test
     public void testSalut() {
-        assertEquals("Skwalop Skwalop", pokeBot.ask(new Tweet("Salut")));
-        assertEquals("Skwalop Skwalop", pokeBot.ask(new Tweet("This is not a question.")));
+        assertEquals("@J_apple_junior Skwalop skwalop", pokeBot.ask(new Tweet("J_apple_junior", "Salut")));
+        assertEquals(null, pokeBot.ask(new Tweet("J_apple_junior","This is not a question.")));
     }
     
 
