@@ -1,13 +1,10 @@
 package fr.univaix.iut.pokebattle;
 
-import fr.univaix.iut.pokebattle.smartcells.PokemonCriesCell;
-
 import fr.univaix.iut.pokebattle.smartcells.PokemonAnswerPersonCell;
-import fr.univaix.iut.pokebattle.smartcells.PokemonAttackCell;
 import fr.univaix.iut.pokebattle.smartcells.PokemonCatchCell;
+import fr.univaix.iut.pokebattle.smartcells.PokemonFusionAttackCell;
 import fr.univaix.iut.pokebattle.smartcells.PokemonNoCatchCell;
 import fr.univaix.iut.pokebattle.smartcells.PokemonOwnerCell;
-import fr.univaix.iut.pokebattle.smartcells.PokemonOwnerMentionBio;
 
 
 
@@ -19,7 +16,7 @@ public class PokeBot implements Bot {
     final SmartCell[] smartCells = new SmartCell[]{
             new PokemonAnswerPersonCell(),
             new PokemonNoCatchCell(),
-            new PokemonOwnerCell(), new PokemonAttackCell(),
+            new PokemonOwnerCell(), new PokemonFusionAttackCell(),
 
     };
 
