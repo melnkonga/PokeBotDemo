@@ -1,14 +1,10 @@
 package fr.univaix.iut.pokebattle.smartcells;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 import fr.univaix.iut.pokebattle.Pokemon;
 import fr.univaix.iut.pokebattle.Tweet;
 
 public class PokemonAttackCell {
-	Pokemon carapuce = new Pokemon("Carapuce_bot", "Skwalop skwalop",
-			"youvann");
+	Pokemon carapuce = new Pokemon("Carapuce_bot", "Skwalop skwalop", "youvann");
 
 	public String ask(Tweet Question) {
 		String Resultat = null;
@@ -24,8 +20,10 @@ public class PokemonAttackCell {
 			}
 
 			for (int i = texteTweet.length - 1; i > 0; --i) {
-				if (texteTweet[i].contains("@"))
+				if (texteTweet[i].contains("@")) {
 					nomPokemonAdvsaire = texteTweet[i];
+					break;
+				}
 			}
 
 			Resultat = nomPokemonAdvsaire + " #attack " + nomAttaque + " //cc "
