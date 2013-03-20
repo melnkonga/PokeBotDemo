@@ -17,7 +17,10 @@ public class PokemonCatchCellTestCase {
     {
     	
     	PokemonCatchCell pokeBot=new PokemonCatchCell();
+
 		assertEquals("@raph @raph is my owner", pokeBot.ask(new Tweet("raph","@carapuce Pokeball")));
+
+
     }
 
 }

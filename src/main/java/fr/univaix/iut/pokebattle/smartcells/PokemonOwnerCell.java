@@ -12,7 +12,7 @@ public class PokemonOwnerCell implements SmartCell {
 		Pokemon carapuce = new Pokemon("Carapuce","Skwalop Skwalop","@J_Apple_Junior");
 		String owner=carapuce.getOwnerPoke();
 		
-		if (question.getText().contains("owner"))
+		if (question.getText().contains("owner")|question.getText().contains("Owner"))
 		{
 			if (owner != null)
 			{
