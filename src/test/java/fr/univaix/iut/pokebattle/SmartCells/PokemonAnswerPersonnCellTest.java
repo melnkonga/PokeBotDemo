@@ -12,6 +12,6 @@ public class PokemonAnswerPersonnCellTest {
 	
 	@Test
 	public void TestSalut(){
-        assertEquals("@youvannn Skwalop skwalop", pk.ask(new Tweet("@youvannn", "@carapuce Salut!")));
+        assertEquals("@youvannn Skwalop skwalop", pk.ask(new Tweet("youvannn", "@carapuce Salut!")));
 	}
 }
