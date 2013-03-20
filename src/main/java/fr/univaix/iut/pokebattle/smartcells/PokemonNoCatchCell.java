@@ -12,7 +12,7 @@ public class PokemonNoCatchCell implements SmartCell {
 		
 		if (question.getText().contains("Pokeball"))
 		{
-			String S = question.getScreenName()+' '+cara.getOwnerPoke()+" is my owner";
+			String S = question.getScreenName()+' ' + cara.getOwnerPoke() + " is my owner";
 			return S;
 		}
 		
