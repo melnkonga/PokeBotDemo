@@ -8,10 +8,12 @@ public class PokemonCatchCell implements SmartCell {
 
 	public String ask(Tweet question) {
 		
+
 		Pokemon cara=new Pokemon("carapuce","skwalop", "J_Apple_Junior");
-		if (question.getText().contains("Pokeball"))
+		if (question.getText().contains("Pokeball")|question.getText().contains("pokeball"))
 		{			
 			String S="@" + question.getScreenName() + " @" + cara.getOwnerPoke() + " is my owner";
+
 			return S;
 		}
 		

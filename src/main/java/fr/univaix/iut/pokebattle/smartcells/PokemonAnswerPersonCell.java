@@ -9,7 +9,7 @@ public class PokemonAnswerPersonCell implements SmartCell{
 	
 	public String ask(Tweet Question){
 		String Resultat = null;
-		if(Question.getText().contains("Salut")){
+		if(Question.getText().contains("Salut")|Question.getText().contains("salut")){
 			Resultat = "@" + Question.getScreenName() + " " + carapuce.getCriPoke();
 			return Resultat;
 		}
