@@ -10,27 +10,17 @@ public class Pokemon {
 	String nomPoke;
 	String criPoke;
 	String ownerPoke;
-	String attaque1Poke;
-
-	public String getAttaque1Poke() {
-		return attaque1Poke;
-	}
-
-	public void setAttaque1Poke(String attaque1Poke) {
-		this.attaque1Poke = attaque1Poke;
-	}
 
 	public Pokemon() {
 		// TODO Auto-generated constructor stub
 
 	}
 
-	public Pokemon(String nomPoke, String criPoke, String ownerPoke, String attaque1Poke) {
+	public Pokemon(String nomPoke, String criPoke, String ownerPoke) {
 		super();
 		this.nomPoke = nomPoke;
 		this.criPoke = criPoke;
 		this.ownerPoke = ownerPoke;
-		this.attaque1Poke = attaque1Poke;
 	}
 
 	@Override

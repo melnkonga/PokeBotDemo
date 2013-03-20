@@ -8,7 +8,7 @@ import fr.univaix.iut.pokebattle.Tweet;
 
 public class PokemonAttackCell {
 	Pokemon carapuce = new Pokemon("Carapuce_bot", "Skwalop skwalop",
-			"youvann", "foudre");
+			"youvann");
 
 	public String ask(Tweet Question) {
 		String Resultat = null;
