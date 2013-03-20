@@ -17,7 +17,7 @@ public class PokeBot implements Bot {
      * find an answer.
      */
     final SmartCell[] smartCells = new SmartCell[]{
-            new PokemonAnswerPersonCell(), new PokemonCatchCell(),
+            new PokemonAnswerPersonCell(),
             new PokemonNoCatchCell(),
             new PokemonOwnerCell(), new PokemonAttackCell(),
 
