@@ -6,14 +6,15 @@ public class Pokemon {
 		this.nomPoke = nomPoke;
 		this.criPoke = criPoke;
 	}
+
 	String nomPoke;
 	String criPoke;
 	String ownerPoke;
-	
+
 	public Pokemon() {
 		// TODO Auto-generated constructor stub
-		
-	}	
+
+	}
 
 	public Pokemon(String nomPoke, String criPoke, String ownerPoke) {
 		super();
@@ -31,20 +32,23 @@ public class Pokemon {
 	public String getNomPoke() {
 		return nomPoke;
 	}
+
 	public String getCriPoke() {
 		return criPoke;
 	}
+
 	public String getOwnerPoke() {
 		return ownerPoke;
 	}
 
-
 	public void setNomPoke(String nomPoke) {
 		this.nomPoke = nomPoke;
 	}
+
 	public void setCriPoke(String criPoke) {
 		this.criPoke = criPoke;
 	}
+
 	public void setOwnerPoke(String ownerPoke) {
 		this.ownerPoke = ownerPoke;
 	}

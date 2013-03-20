@@ -70,6 +70,8 @@ public class TwitterBot {
         try {
             TwitterBot twitterBot = new TwitterBot(new PokeBot());
             twitterBot.startBot();
+            
+            
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ControlStreamException e) {
