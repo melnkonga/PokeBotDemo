@@ -4,7 +4,6 @@ import fr.univaix.iut.pokebattle.smartcells.PokemonAnswerPersonCell;
 import fr.univaix.iut.pokebattle.smartcells.PokemonCatchCell;
 import fr.univaix.iut.pokebattle.smartcells.PokemonCriesCell;
 import fr.univaix.iut.pokebattle.smartcells.PokemonOwnerCell;
-import fr.univaix.iut.pokebattle.smartcells.PokemonOwnerMentionBio;
 
 
 public class PokeBot implements Bot {
@@ -13,8 +12,7 @@ public class PokeBot implements Bot {
      * find an answer.
      */
     final SmartCell[] smartCells = new SmartCell[]{
-            new PokemonCriesCell(), new PokemonAnswerPersonCell(), new PokemonCatchCell(),
-            new PokemonOwnerCell()
+            new PokemonAnswerPersonCell(),
     };
 
     /**
