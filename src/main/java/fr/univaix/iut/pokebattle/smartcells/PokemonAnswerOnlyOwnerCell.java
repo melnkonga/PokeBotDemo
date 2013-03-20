@@ -10,11 +10,11 @@ public class PokemonAnswerOnlyOwnerCell {
 		Pokemon carapuce = new Pokemon("Carapuce","Skwalop Skwalop","J_Apple_Junior");
 		String owner=carapuce.getOwnerPoke();
 		
-		if (question.getText().contains("@Carapuce #attack #ecume @bulbizare1"))
+		if (question.getText().contains("#attack"))
 		{
 			if (owner != question.getScreenName())
 			{
-				return ( question.getScreenName() + " @" + carapuce.getOwnerPoke() + " is my owner");
+				return ("@" + question.getScreenName() + " @" + carapuce.getOwnerPoke() + " is my owner");
 			}
 		}
 		return null;

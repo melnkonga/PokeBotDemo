@@ -1,0 +1,23 @@
+<? xml version = " 1.0 " encoding = " UTF -8 " ? >
+< persistence xmlns:xsi = " http: // www . w3 . org /2001/ XMLSchema - instance "
+   xs i: sc hemaLocation = " http: // java . sun . com / xml / ns / persistence / persistence_2_0 . xsd
+        "
+   version = " 2.0 " xmlns = " http: // java . sun . com / xml / ns / persistence " >
+   < persistence - unit name = " BDPokemon " transaction - type = " RESOURCE_LOCAL " >
+      < provider > org . eclipse . persistence . jpa . PersistenceProvider </ provider >
+      < class > fr . univaix . iut . progbd . beans . PokemonJPA </ class >
+      < class > fr . univaix . iut . progbd . beans . DresseurJPA </ class >
+      < class > fr . univaix . iut . progbd . beans . JugeJPA </ class >
+      < properties >
+         < property name = " javax . persistence . jdbc . url " value = " jdbc:mysql: //
+              localhost:3306 / BDPokemon " / >
+         < property name = " javax . persistence . jdbc . driver " value = " com . mysql . jdbc .
+              Driver " / >
+         < property name = " javax . persistence . jdbc . user " value = " root " / >
+         < property name = " javax . persistence . jdbc . password " value = " mysql " / >
+         < property name = " eclipselink . logging . level " value = " ALL " / >
+<! - - < property name =" eclipselink . ddl - generation " value =" create - tables "/ > -->
+      </ properties >
+   </ persistence - unit >
+</ persistence >
+

@@ -11,7 +11,9 @@ public class PokemonAttackCellTest {
 	PokemonAttackCell pok = new PokemonAttackCell();
 	@Test
 	public void testAttack() {
-		 assertEquals("@bulbizare #attack #foudre //cc @youvann @viviane", pok.ask(new Tweet("@youvann", "@pikachu #attack #foudre @bulbizare @viviane")));
+		 assertEquals("@bulbizare #attack #foudre //cc @youvann @viviane", pok.ask(new Tweet("youvann", "@pikachu #attack #foudre @bulbizare @viviane")));
+
+		 assertEquals("@bulbizare #attack #foudre //cc @youvann", pok.ask(new Tweet("youvann", "@pikachu #attack #foudre @bulbizare")));
 	}
 
 }

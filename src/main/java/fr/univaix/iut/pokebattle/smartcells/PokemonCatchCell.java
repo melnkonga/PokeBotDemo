@@ -7,7 +7,7 @@ import fr.univaix.iut.pokebattle.Tweet;
 public class PokemonCatchCell implements SmartCell {	
 
 	public String ask(Tweet question) {
-		
+		/*vielle classe */
 
 		Pokemon cara=new Pokemon("carapuce","skwalop");
 		if (question.getText().contains("Pokeball"))
