@@ -53,8 +53,9 @@ public class TwitterBot {
         twitterUserStreamEasy = new TwitterUserStreamEasy(listener);
     }
 
-    public void startBot() throws InterruptedException, ControlStreamException, IOException {
-        twitterUserStreamEasy.oauth();
+    public void startBot(String consumerKey,String consumerSecret, String accessToken,String accessTokenSecret ) throws InterruptedException, ControlStreamException, IOException {
+    	
+        twitterUserStreamEasy.oauth(consumerKey,consumerSecret,accessToken,accessTokenSecret);
     }
 
     private boolean isTweetForMe(Status status) throws TwitterException {
@@ -69,7 +70,10 @@ public class TwitterBot {
 
         try {
             TwitterBot twitterBot = new TwitterBot(new PokeBot());
-            twitterBot.startBot();
+            twitterBot.startBot("FyQjh06BX2fzqNR6RfIbfg", "ALA9fRkWItQfxync6QP6158ePQkKQ48c8t2LXxeu8o", "1264492944-xGIEeKVGkKR0onTOou5Z6SuGQGKFGNDal5TnfHn", "Bua9gDR8pNTFSgglGcdO0RzRpBLfVsDjBDJpT1iNn4");
+            
+            TwitterBot twitterJBot = new TwitterBot(new JudgeBot());
+            twitterJBot.startBot("nRwnSi2QO2IigR0R7Z6A","zfAxZgHqKan1JTLJNLuR4qIeXIDwWjxg2kksq5JmIo","1283285756-qjGyuijgJ3meBYlmwIlvNsE4Lo4Z0zsEP71StSw" ,"QsSRuqFZfAEktMLLqlHpEZVVwxb3nxba7e5clM34" );
             
             
         } catch (InterruptedException e) {
