@@ -69,4 +69,12 @@ public class DataObjectPokemon {
                 ", attaques=" + (attaques == null ? null : Arrays.asList(attaques)) +
                 '}';
     }
+
+	public String getNom() {
+		return nom;
+	}
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
 }
