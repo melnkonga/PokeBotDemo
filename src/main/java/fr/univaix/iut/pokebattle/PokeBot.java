@@ -1,7 +1,6 @@
 package fr.univaix.iut.pokebattle;
 
 import fr.univaix.iut.pokebattle.smartcells.PokemonAnswerPersonCell;
-import fr.univaix.iut.pokebattle.smartcells.PokemonCatchCell;
 import fr.univaix.iut.pokebattle.smartcells.PokemonFusionAttackCell;
 import fr.univaix.iut.pokebattle.smartcells.PokemonNoCatchCell;
 import fr.univaix.iut.pokebattle.smartcells.PokemonOwnerCell;
