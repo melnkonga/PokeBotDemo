@@ -38,9 +38,12 @@ public class TwitterBot {
                     }
 
                     String response = bot.ask(new Tweet(status.getUser().getScreenName(), status.getText()));
+                    System.out.println(response);
                     if (response != null)
-                        twitter.updateStatus(response);
-
+                    {
+                     
+                    	twitter.updateStatus(response);
+                    }
                 } catch (TwitterException e) {
                     e.printStackTrace();
                 }
