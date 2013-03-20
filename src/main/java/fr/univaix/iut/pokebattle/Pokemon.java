@@ -5,12 +5,21 @@ public class Pokemon {
 		super();
 		this.nomPoke = nomPoke;
 		this.criPoke = criPoke;
+		PV=100;
+	}
+
+	public int getPV() {
+		return PV;
+	}
+
+	public void setPV(int pV) {
+		PV = pV;
 	}
 
 	String nomPoke;
 	String criPoke;
 	String ownerPoke;
-
+	int PV;
 	public Pokemon() {
 		// TODO Auto-generated constructor stub
 

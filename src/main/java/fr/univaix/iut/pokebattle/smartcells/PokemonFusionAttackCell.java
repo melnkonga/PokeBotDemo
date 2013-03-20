@@ -11,50 +11,47 @@ public class PokemonFusionAttackCell implements SmartCell {
 		String Resultat = null;
 		String nomAttaque = null;
 		String nomPokemonAdvsaire = null;
-		String nomJuge = null;
 		String nomDressAdv = null;
 		Pokemon carapuce = new Pokemon("Carapuce", "Skwalop Skwalop",
-				"youvannn");
+				"1nsanesuperstar");
 		String owner = carapuce.getOwnerPoke();
 
 		if (question.getText().contains("#attack")) {
 
-			if (owner == question.getScreenName()) {
+			if (owner.equals(question.getScreenName()) ) {
 				String delimiter = " ";
 				String[] texteTweet = question.getText().split(delimiter);
 
 				int Cpt = 0;
-				int Cpt2 = 0;
+				
 				for (int i = 0; i < texteTweet.length; ++i) {
 					
 					if (texteTweet[i].contains("#attack"))
 						nomAttaque = texteTweet[i + 1];
 					
-					if (texteTweet[i].contains("@JugeViviane")) {
-						nomJuge = texteTweet[i];
-						break;
-					}
+					
 					if (texteTweet[i].contains("@")) {
 						++Cpt;
 						if (Cpt == 2)
 							nomPokemonAdvsaire = texteTweet[i];
+						if (Cpt == 3)
+							nomDressAdv=texteTweet[i];
 					}
-					if (texteTweet[i].contains("@")) {
-						++Cpt2;
-						if (Cpt2 == 3)
-							nomDressAdv = texteTweet[i];
-					}
+					
 				}
 				Resultat = nomPokemonAdvsaire + " #attack " + nomAttaque
 						+ " /cc " + nomDressAdv + " @"
 						+ question.getScreenName() + " @JugeViviane";
 
-				return Resultat;
+					return Resultat;
 
-			} else
+			} 
+			else{
 				return ("@" + question.getScreenName() + " @"
 						+ carapuce.getOwnerPoke() + " is my owner");
+			}
+				
 		}
-		return Resultat;
+		return null;
 	}
 }

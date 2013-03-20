@@ -12,8 +12,7 @@ public class VivianeAttackCells implements SmartCell {
 			String Resultat = null;
 			String nomProprio = null;
 			String nomPokemonAdvsaire = null;
-			Pokemon carapuce = new Pokemon("Carapuce", "Skwalop Skwalop",
-					"youvannn");
+			
 			
 
 			if (question.getText().contains("#attack")) {			
