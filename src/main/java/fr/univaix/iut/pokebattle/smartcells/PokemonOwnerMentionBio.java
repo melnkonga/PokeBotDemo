@@ -4,6 +4,8 @@ import twitter4j.Twitter;
 import twitter4j.TwitterException;
 import twitter4j.TwitterFactory;
 import fr.univaix.iut.pokebattle.Pokemon;
+import fr.univaix.iut.pokebattle.SmartCell;
+import fr.univaix.iut.pokebattle.Tweet;
 
 public class PokemonOwnerMentionBio
 {
@@ -13,4 +15,8 @@ public class PokemonOwnerMentionBio
 		Twitter twitter = TwitterFactory.getSingleton();
 		twitter.updateProfile(null,null,null,description);
 	}
+
 }
+
+
+
