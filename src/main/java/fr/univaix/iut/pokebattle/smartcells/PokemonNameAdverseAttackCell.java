@@ -1,9 +1,10 @@
 package fr.univaix.iut.pokebattle.smartcells;
 
 import fr.univaix.iut.pokebattle.Pokemon;
+import fr.univaix.iut.pokebattle.SmartCell;
 import fr.univaix.iut.pokebattle.Tweet;
 
-public class PokemonNameAdverseAttackCell {
+public class PokemonNameAdverseAttackCell implements SmartCell {
 	
 	Pokemon carapuce = new Pokemon("Carapuce_bot","Skwalop skwalop","youvann");
 

@@ -1,14 +1,15 @@
 package fr.univaix.iut.pokebattle.smartcells;
 
 import fr.univaix.iut.pokebattle.Pokemon;
+import fr.univaix.iut.pokebattle.SmartCell;
 import fr.univaix.iut.pokebattle.Tweet;
 
-public class PokemonAttackCell {
+public class PokemonAttackCell implements SmartCell{
 	Pokemon carapuce = new Pokemon("Carapuce_bot", "Skwalop skwalop", "youvann");
 
 	public String ask(Tweet Question) {
 		String Resultat = null;
-		if (Question.getText().contains("attack")) {
+		if (Question.getText().contains("#attack")) {
 			String delemiter = " ";
 			String[] texteTweet = Question.getText().split(delemiter);
 			String nomAttaque = null;
@@ -27,7 +28,7 @@ public class PokemonAttackCell {
 			}
 
 			Resultat = nomPokemonAdvsaire + " #attack " + nomAttaque + " //cc "
-					+ Question.getScreenName();
+					+ "@"+Question.getScreenName();
 			return Resultat;
 		}
 		return Resultat;
