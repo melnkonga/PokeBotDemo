@@ -8,6 +8,7 @@ import fr.univaix.iut.pokebattle.smartcells.PokemonCatchCell;
 import fr.univaix.iut.pokebattle.smartcells.PokemonNoCatchCell;
 import fr.univaix.iut.pokebattle.smartcells.PokemonOwnerCell;
 import fr.univaix.iut.pokebattle.smartcells.PokemonOwnerMentionBio;
+import fr.univaix.iut.pokebattle.smartcells.VivianeAttackCells;
 
 
 
@@ -16,7 +17,7 @@ public class JudgeBot implements Bot {
      * List of SmartCells the questions go through to
      * find an answer.
      */
-    final SmartCell[] smartCells = new SmartCell[]{
+    final SmartCell[] smartCells = new SmartCell[]{ new VivianeAttackCells()
            ,
 
     };
