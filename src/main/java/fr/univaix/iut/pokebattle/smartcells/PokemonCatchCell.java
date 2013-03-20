@@ -14,7 +14,7 @@ public class PokemonCatchCell implements SmartCell {
 		if (question.getText().contains("Pokeball"))
 		{
 			
-			String S= question.getScreenName()+" is my owner";
+			String S="@"+question.getScreenName()+" is my owner";
 			cara.setOwnerPoke(question.getScreenName());
 			return S;
 		}
