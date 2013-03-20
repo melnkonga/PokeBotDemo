@@ -14,7 +14,7 @@ public class PokemonAnswerOnlyOwnerCell {
 		{
 			if (owner != question.getScreenName())
 			{
-				return ( question.getScreenName() + " @" + carapuce.getOwnerPoke() + " is my owner");
+				return ("@" + question.getScreenName() + " @" + carapuce.getOwnerPoke() + " is my owner");
 			}
 		}
 		return null;
