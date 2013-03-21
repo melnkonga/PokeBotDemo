@@ -13,7 +13,7 @@ public class VivianeAttackCellTest {
 	
 	@Test
 	public void testviv() {
-		assertEquals("@salameche -10 pv /cc @pcreux", ce.ask(new Tweet("carapuce_bot", "@salameche #attack #charge /cc @nedseb @pcreux @JugeViviane")));
+		assertEquals("@salameche_bot -10 pv /cc @1nsanesuperstar", ce.ask(new Tweet("1nsanesuperstar", "@carapuce_bot #attack #charge @salameche_bot /cc @nedseb  @JugeViviane")));
 	}
 
 }
