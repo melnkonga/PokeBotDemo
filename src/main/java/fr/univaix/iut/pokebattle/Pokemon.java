@@ -5,7 +5,7 @@ public class Pokemon {
 		super();
 		this.nomPoke = nomPoke;
 		this.criPoke = criPoke;
-		PV=100;
+		PV = 100;
 	}
 
 	public int getPV() {
@@ -20,6 +20,7 @@ public class Pokemon {
 	String criPoke;
 	String ownerPoke;
 	int PV;
+
 	public Pokemon() {
 		// TODO Auto-generated constructor stub
 

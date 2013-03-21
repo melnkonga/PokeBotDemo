@@ -5,8 +5,8 @@ import fr.univaix.iut.pokebattle.SmartCell;
 import fr.univaix.iut.pokebattle.Tweet;
 
 public class PokemonNameAdverseAttackCell implements SmartCell {
-	
-	Pokemon carapuce = new Pokemon("Carapuce_bot","Skwalop skwalop","youvann");
+
+	Pokemon carapuce = new Pokemon("Carapuce_bot", "Skwalop skwalop", "youvann");
 
 	public String ask(Tweet Question) {
 		String Resultat = null;
@@ -28,7 +28,7 @@ public class PokemonNameAdverseAttackCell implements SmartCell {
 					break;
 				}
 			}
-			
+
 			int cpt = 0;
 			for (int i = 0; i < texteTweet.length; ++i) {
 				if (texteTweet[i].contains("@")) {
@@ -37,12 +37,9 @@ public class PokemonNameAdverseAttackCell implements SmartCell {
 						nomPokemonAdvsaire = texteTweet[i];
 				}
 			}
-			
-			
-			
 
-			Resultat = nomPokemonAdvsaire + " #attack " + nomAttaque + " /cc " + nomOwnerAdvsaire
-					+ ' ' + Question.getScreenName();
+			Resultat = nomPokemonAdvsaire + " #attack " + nomAttaque + " /cc "
+					+ nomOwnerAdvsaire + ' ' + Question.getScreenName();
 			return Resultat;
 		}
 		return Resultat;

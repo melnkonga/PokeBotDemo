@@ -8,8 +8,8 @@ import fr.univaix.iut.pokebattle.Tweet;
  */
 public class PokemonCriesCell implements SmartCell {
 
-    public String ask(Tweet question) {
-        return "Skwalop Skwalop";
-    }
+	public String ask(Tweet question) {
+		return "Skwalop Skwalop";
+	}
 
 }

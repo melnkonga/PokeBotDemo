@@ -4,16 +4,18 @@ import fr.univaix.iut.pokebattle.Pokemon;
 import fr.univaix.iut.pokebattle.SmartCell;
 import fr.univaix.iut.pokebattle.Tweet;
 
-public class PokemonAnswerPersonCell implements SmartCell{
+public class PokemonAnswerPersonCell implements SmartCell {
 	Pokemon carapuce = new Pokemon("carapuce_bot", "Skwalop skwalop");
-	
-	public String ask(Tweet Question){
+
+	public String ask(Tweet Question) {
 		String Resultat = null;
-		if(Question.getText().contains("Salut")|Question.getText().contains("salut")){
-			Resultat = "@" + Question.getScreenName() + " " + carapuce.getCriPoke();
+		if (Question.getText().contains("Salut")
+				| Question.getText().contains("salut")) {
+			Resultat = "@" + Question.getScreenName() + " "
+					+ carapuce.getCriPoke();
 			return Resultat;
 		}
 		return Resultat;
-		
+
 	}
 }
