@@ -13,7 +13,7 @@ public class PokemonNoCatchCellTest {
 	public void test()
 	{
 		PokemonNoCatchCell pokeBot = new PokemonNoCatchCell();
-		assertEquals("@raph @J_Apple_Junior is my owner", pokeBot.ask(new Tweet("@raph","@carapuce Pokeball")));
+		assertEquals("@raph @J_Apple_Junior is my owner", pokeBot.ask(new Tweet("raph","@carapuce Pokeball")));
 	}
 
 }

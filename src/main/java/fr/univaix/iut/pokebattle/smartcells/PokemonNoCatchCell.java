@@ -16,7 +16,7 @@ public class PokemonNoCatchCell implements SmartCell {
 			if (cara.getOwnerPoke() == null) {
 				cara.setOwnerPoke(question.getScreenName());
 			}
-			String S = question.getScreenName() + " @" + cara.getOwnerPoke()
+			String S = "@" + question.getScreenName() + " @" + cara.getOwnerPoke()
 					+ " is my owner";
 			return S;
 		}
