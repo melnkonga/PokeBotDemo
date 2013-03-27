@@ -67,9 +67,8 @@ public class PokemonFusionAttackCell implements SmartCell {
 							
 						}
 						
-						if(!bonneattaque)
-								return null;
 						
+										
 					}
 
 					if (texteTweet[i].contains("@")) {
@@ -81,9 +80,21 @@ public class PokemonFusionAttackCell implements SmartCell {
 					}
 
 				}
+				
+				if(bonneattaque)
+				{
 				Resultat = nomPokemonAdvsaire + " #attack " + nomAttaque
 						+ " /cc " + nomDressAdv + " @"
 						+ question.getScreenName() + " @JugeViviane";
+				
+				}
+				else
+				{
+					Resultat ="@"+ question.getScreenName() + " o_O ?" 
+							+ " /cc " + nomDressAdv 
+							+ " @JugeViviane "+nomPokemonAdvsaire ;
+				}
+				
 
 				return Resultat;
 
