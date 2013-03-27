@@ -4,8 +4,8 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import fr.univaix.iut.pokebattle.Tweet;
 import fr.univaix.iut.pokebattle.smartcells.PokemonAnswerPersonCell;
+import fr.univaix.iut.pokebattle.twitter.Tweet;
 
 public class PokemonAnswerPersonnCellTest {
 	PokemonAnswerPersonCell pk = new PokemonAnswerPersonCell();

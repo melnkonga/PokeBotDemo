@@ -13,10 +13,12 @@ import twitter4j.UserStreamListener;
 
 import com.twitter.hbc.httpclient.ControlStreamException;
 
-import fr.univaix.iut.pokebattle.Bot;
-import fr.univaix.iut.pokebattle.PokeBot;
+import fr.univaix.iut.pokebattle.bot.Bot;
+import fr.univaix.iut.pokebattle.bot.JudgeBot;
+import fr.univaix.iut.pokebattle.bot.PokeBot;
 import fr.univaix.iut.pokebattle.tuse.TwitterUserStreamEasy;
 import fr.univaix.iut.pokebattle.tuse.UserStreamAdapter;
+import fr.univaix.iut.pokebattle.twitter.Tweet;
 
 public class TwitterBot {
 	private final static Logger logger = LoggerFactory

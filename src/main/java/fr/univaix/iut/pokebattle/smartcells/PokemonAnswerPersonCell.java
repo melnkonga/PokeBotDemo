@@ -1,10 +1,9 @@
 package fr.univaix.iut.pokebattle.smartcells;
 
 import fr.univaix.iut.pokebattle.Pokemon;
-import fr.univaix.iut.pokebattle.SmartCell;
-import fr.univaix.iut.pokebattle.Tweet;
+import fr.univaix.iut.pokebattle.twitter.Tweet;
 
-public class PokemonAnswerPersonCell implements SmartCell {
+public class PokemonAnswerPersonCell implements fr.univaix.iut.pokebattle.smartcell.SmartCell {
 	Pokemon carapuce = new Pokemon("carapuce_bot", "Skwalop skwalop");
 
 	public String ask(Tweet Question) {
@@ -18,4 +17,6 @@ public class PokemonAnswerPersonCell implements SmartCell {
 		return Resultat;
 
 	}
+
+
 }
