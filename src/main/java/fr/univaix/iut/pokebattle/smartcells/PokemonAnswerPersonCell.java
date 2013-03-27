@@ -1,5 +1,7 @@
 package fr.univaix.iut.pokebattle.smartcells;
 
+import java.util.GregorianCalendar;
+
 import fr.univaix.iut.pokebattle.Pokemon;
 import fr.univaix.iut.pokebattle.twitter.Tweet;
 
@@ -10,8 +12,14 @@ public class PokemonAnswerPersonCell implements fr.univaix.iut.pokebattle.smartc
 		String Resultat = null;
 		if (Question.getText().contains("Salut")
 				| Question.getText().contains("salut")) {
+			
+			
+			
+			String date= new GregorianCalendar().getTime().toString();
 			Resultat = "@" + Question.getScreenName() + " "
-					+ carapuce.getCriPoke();
+					+ carapuce.getCriPoke()+" "+date;
+			
+		
 			return Resultat;
 		}
 		return Resultat;
