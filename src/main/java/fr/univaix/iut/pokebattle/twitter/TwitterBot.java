@@ -1,11 +1,13 @@
 package fr.univaix.iut.pokebattle.twitter;
 
-import com.twitter.hbc.httpclient.ControlStreamException;
-import fr.univaix.iut.pokebattle.bot.Bot;
-import fr.univaix.iut.pokebattle.tuse.TwitterUserStreamEasy;
+import java.io.IOException;
+
 import twitter4j.Twitter;
 
-import java.io.IOException;
+import com.twitter.hbc.httpclient.ControlStreamException;
+
+import fr.univaix.iut.pokebattle.bot.Bot;
+import fr.univaix.iut.pokebattle.tuse.TwitterUserStreamEasy;
 
 public class TwitterBot {
     TwitterUserStreamEasy twitterUserStreamEasy;
