@@ -5,7 +5,6 @@ public class Pokemon {
 		super();
 		this.nomPoke = nomPoke;
 		this.criPoke = criPoke;
-		PV = 100;
 	}
 
 	public int getPV() {
@@ -19,11 +18,38 @@ public class Pokemon {
 	String nomPoke;
 	String criPoke;
 	String ownerPoke;
-	int PV;
+	int PV = 100; // pv max
+	int level = 1;
+	int exp = 0;
+	int PVCourant = 0;
 
 	public Pokemon() {
 		// TODO Auto-generated constructor stub
 
+	}
+
+	public int getLevel() {
+		return level;
+	}
+
+	public int getExp() {
+		return exp;
+	}
+
+	public int getPVCourant() {
+		return PVCourant;
+	}
+
+	public void setLevel(int level) {
+		this.level = level;
+	}
+
+	public void setExp(int exp) {
+		this.exp = exp;
+	}
+
+	public void setPVCourant(int pVCourant) {
+		PVCourant = pVCourant;
 	}
 
 	public Pokemon(String nomPoke, String criPoke, String ownerPoke) {
