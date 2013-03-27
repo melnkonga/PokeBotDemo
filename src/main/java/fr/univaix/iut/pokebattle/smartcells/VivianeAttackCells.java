@@ -18,29 +18,29 @@ public class VivianeAttackCells implements SmartCell {
 		
 		
 		if (question.getText().contains("#attack")) {
-			if (!question.getScreenName().equals(carapuce.getOwnerPoke()))// rajouter
-																	// liste
-																	// pokemon
+			if (!question.getScreenName().equals("carapuce_bot"))
+				//test avec carapuce
 				return null;
 
-			String delimiter = " ";
+			
+			String delimiter=" ";
 			String[] texteTweet = question.getText().split(delimiter);
 
 			int cpt = 0;
 			for (int i = 0; i < texteTweet.length; ++i) {
 				if (texteTweet[i].contains("@")) {
 					++cpt;
-					if (cpt == 2)
+					if (cpt == 1)
 						nomPokemonAdvsaire = texteTweet[i];
-					/*
+					
 					if (cpt == 3)
 						nomProprio = texteTweet[i];
-					*/
+				
 				}
 
 			}
 
-			Resultat = nomPokemonAdvsaire + " -10 pv /cc " + "@"+question.getScreenName();
+			Resultat = nomPokemonAdvsaire + " -10 pv /cc " + nomProprio;
 			return Resultat;
 
 		}

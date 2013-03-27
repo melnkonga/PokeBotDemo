@@ -11,7 +11,11 @@ public class PokemonFusionAttackCellTest {
 	PokemonFusionAttackCell poke = new PokemonFusionAttackCell();
 	@Test
 	public void TestAttack(){
-		assertEquals("@bulbizare #attack #foudre /cc @nedseb @1nsanesuperstar @JugeViviane", poke.ask(new Tweet("1nsanesuperstar", "@pikachu #attack #foudre @bulbizare /cc @nedseb @JugeViviane")));
+		assertEquals("@bulbizare #attack #Morsure /cc @nedseb @1nsanesuperstar @JugeViviane", poke.ask(new Tweet("1nsanesuperstar", "@Carapuce #attack #Morsure @bulbizare /cc @nedseb @JugeViviane")));
+	}
+	@Test
+	public void TestAttack2(){
+		assertEquals("@1nsanesuperstar o_O ? /cc @nedseb @JugeViviane @bulbizare", poke.ask(new Tweet("1nsanesuperstar", "@Carapuce #attack #Islande @bulbizare /cc @nedseb @JugeViviane")));
 	}
 	
 	@Test
