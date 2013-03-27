@@ -2,6 +2,7 @@ package fr.univaix.iut.pokebattle.smartcells;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.GregorianCalendar;
 
 import GSON.BDGSONLoading;
 import GSON.DataObjectAttack;
@@ -85,14 +86,14 @@ public class PokemonFusionAttackCell implements SmartCell {
 				{
 				Resultat = nomPokemonAdvsaire + " #attack " + nomAttaque
 						+ " /cc " + nomDressAdv + " @"
-						+ question.getScreenName() + " @JugeViviane";
+						+ question.getScreenName() + " @JugeViviane"+" "+new GregorianCalendar().getTime().toString();
 				
 				}
 				else
 				{
 					Resultat ="@"+ question.getScreenName() + " o_O ?" 
 							+ " /cc " + nomDressAdv 
-							+ " @JugeViviane "+nomPokemonAdvsaire ;
+							+ " @JugeViviane "+nomPokemonAdvsaire +" "+new GregorianCalendar().getTime().toString();
 				}
 				
 
@@ -100,7 +101,7 @@ public class PokemonFusionAttackCell implements SmartCell {
 
 			} else {
 				return ("@" + question.getScreenName() + " @"
-						+ carapuce.getOwnerPoke() + " is my owner");
+						+ carapuce.getOwnerPoke() + " is my owner"+" "+new GregorianCalendar().getTime().toString());
 			}
 
 		}

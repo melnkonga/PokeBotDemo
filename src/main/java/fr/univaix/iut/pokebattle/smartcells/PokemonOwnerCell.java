@@ -1,5 +1,7 @@
 package fr.univaix.iut.pokebattle.smartcells;
 
+import java.util.GregorianCalendar;
+
 import fr.univaix.iut.pokebattle.Pokemon;
 import fr.univaix.iut.pokebattle.smartcell.SmartCell;
 import fr.univaix.iut.pokebattle.twitter.Tweet;
@@ -16,7 +18,7 @@ public class PokemonOwnerCell implements SmartCell {
 				| question.getText().contains("Owner")) {
 			if (owner != null) {
 				return ('@' + question.getScreenName() + " @"
-						+ carapuce.getOwnerPoke() + " is my owner");
+						+ carapuce.getOwnerPoke() + " is my owner"+" "+new GregorianCalendar().getTime().toString());
 			} else {
 				return "no owner";
 			}
