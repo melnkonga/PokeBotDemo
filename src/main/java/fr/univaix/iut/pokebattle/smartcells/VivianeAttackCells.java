@@ -1,5 +1,7 @@
 package fr.univaix.iut.pokebattle.smartcells;
 
+import java.util.GregorianCalendar;
+
 import fr.univaix.iut.pokebattle.Pokemon;
 import fr.univaix.iut.pokebattle.smartcell.SmartCell;
 import fr.univaix.iut.pokebattle.twitter.Tweet;
@@ -40,7 +42,7 @@ public class VivianeAttackCells implements SmartCell {
 
 			}
 
-			Resultat = nomPokemonAdvsaire + " -10 pv /cc " + nomProprio;
+			Resultat = nomPokemonAdvsaire + " -10 pv /cc " + nomProprio+" "+new GregorianCalendar().getTime().toString();
 			return Resultat;
 
 		}
