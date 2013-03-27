@@ -2,6 +2,8 @@ package fr.univaix.iut.pokebattle.SmartCells;
 
 import static org.junit.Assert.*;
 
+import java.util.GregorianCalendar;
+
 import org.junit.Test;
 
 import fr.univaix.iut.pokebattle.smartcells.PokemonCaracCell;
@@ -12,16 +14,16 @@ public class PokemonCaracCellTest {
 	
 	@Test
 	public void askLevel() {
-		assertEquals("@youvannn #level=1", poke.ask(new Tweet("youvannn", "@carapuce_bot #stat #level ?")));
+		assertEquals("@youvannn #level=1 " + new GregorianCalendar().getTime().toString(), poke.ask(new Tweet("youvannn", "@carapuce_bot #stat #level ?")));
 	}
 	@Test
 	public void askXp() {
-		assertEquals("@youvannn #XP=0", poke.ask(new Tweet("youvannn", "@carapuce_bot #stat #XP ?")));
+		assertEquals("@youvannn #XP=0 " + new GregorianCalendar().getTime().toString(), poke.ask(new Tweet("youvannn", "@carapuce_bot #stat #XP ?")));
 	}
 	
 	@Test
 	public void askPv() {
-		assertEquals("@youvannn #PV=0/100", poke.ask(new Tweet("youvannn", "@carapuce_bot #stat #PV ?")));
+		assertEquals("@youvannn #PV=0/100 " + new GregorianCalendar().getTime().toString(), poke.ask(new Tweet("youvannn", "@carapuce_bot #stat #PV ?")));
 	}
 
 }

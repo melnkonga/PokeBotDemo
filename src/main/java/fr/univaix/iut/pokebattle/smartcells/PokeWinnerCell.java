@@ -1,5 +1,7 @@
 package fr.univaix.iut.pokebattle.smartcells;
 
+import java.util.GregorianCalendar;
+
 import fr.univaix.iut.pokebattle.Pokemon;
 import fr.univaix.iut.pokebattle.smartcell.SmartCell;
 import fr.univaix.iut.pokebattle.twitter.Tweet;
@@ -32,8 +34,9 @@ public class PokeWinnerCell implements SmartCell {
 			nom = "@" + salameche.getOwnerPoke();
 			if(nom.equals(nomWinnerOwner))
 				nomWinnerPoke = salameche.getNomPoke();
+			return "@" + nomWinnerPoke + " #win" +" "+new GregorianCalendar().getTime().toString();
 		}		
-		return "@" + nomWinnerPoke + " #win";
+		return null;
 	
 	} // ask ()
 }

@@ -1,5 +1,7 @@
 package fr.univaix.iut.pokebattle.smartcells;
 
+import java.util.GregorianCalendar;
+
 import fr.univaix.iut.pokebattle.Pokemon;
 import fr.univaix.iut.pokebattle.smartcell.SmartCell;
 import fr.univaix.iut.pokebattle.twitter.Tweet;
@@ -14,16 +16,16 @@ public class PokemonCaracCell implements SmartCell {
 		if (Question.getText().contains("#stat")) {
 			if (Question.getText().contains("#level")) {
 				level = carapuce.getLevel();
-				return "@" + carapuce.getOwnerPoke() + " #level=" + level;
+				return "@" + carapuce.getOwnerPoke() + " #level=" + level  + " " + new GregorianCalendar().getTime().toString();
 			}
 			if (Question.getText().contains("#XP")) {
 				XP = carapuce.getExp();
-				return "@" + carapuce.getOwnerPoke() + " #XP=" + XP;
+				return "@" + carapuce.getOwnerPoke() + " #XP=" + XP + " " + new GregorianCalendar().getTime().toString();
 			}
 			if (Question.getText().contains("#PV")) {
 				PVCourant = carapuce.getPVCourant();
 				return "@" + carapuce.getOwnerPoke() + " #PV=" + PVCourant + "/"
-						+ carapuce.getPV();
+						+ carapuce.getPV() + " " + new GregorianCalendar().getTime().toString();
 			}
 		}
 		return null;

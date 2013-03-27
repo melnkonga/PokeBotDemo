@@ -14,18 +14,16 @@ public class VivianeAttackCells implements SmartCell {
 		String Resultat = null;
 		String nomProprio = null;
 		String nomPokemonAdvsaire = null;
-		
+
 		Pokemon carapuce = new Pokemon("Carapuce", "Skwalop Skwalop",
 				"1nsanesuperstar");
-		
-		
+
 		if (question.getText().contains("#attack")) {
 			if (!question.getScreenName().equals("carapuce_bot"))
-				//test avec carapuce
+				// test avec carapuce
 				return null;
 
-			
-			String delimiter=" ";
+			String delimiter = " ";
 			String[] texteTweet = question.getText().split(delimiter);
 
 			int cpt = 0;
@@ -34,15 +32,16 @@ public class VivianeAttackCells implements SmartCell {
 					++cpt;
 					if (cpt == 1)
 						nomPokemonAdvsaire = texteTweet[i];
-					
+
 					if (cpt == 3)
 						nomProprio = texteTweet[i];
-				
+
 				}
 
 			}
 
-			Resultat = nomPokemonAdvsaire + " -10 pv /cc " + nomProprio+" "+new GregorianCalendar().getTime().toString();
+			Resultat = nomPokemonAdvsaire + " -10 pv /cc " + nomProprio + " "
+					+ new GregorianCalendar().getTime().toString();
 			return Resultat;
 
 		}
