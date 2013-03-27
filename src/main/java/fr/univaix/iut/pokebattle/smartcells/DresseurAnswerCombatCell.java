@@ -4,10 +4,10 @@ import fr.univaix.iut.pokebattle.Pokemon;
 import fr.univaix.iut.pokebattle.twitter.Tweet;
 
 public class DresseurAnswerCombatCell {
+	
 	public String ask(Tweet question) {
 
-		Pokemon salameche = new Pokemon("Salameche","Blabla","neyo33");
-		
+		Pokemon salameche = new Pokemon("salameche","Blabla","neyo33");	
 		String result="";
 
 		if (question.getText().contains("#fight")) {

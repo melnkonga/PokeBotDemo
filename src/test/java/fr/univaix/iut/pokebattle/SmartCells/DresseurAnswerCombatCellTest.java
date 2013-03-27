@@ -1,4 +1,4 @@
-package fr.univaix.iut.pokebattle.smartCells;
+package fr.univaix.iut.pokebattle.SmartCells;
 
 import static org.junit.Assert.assertEquals;
 
