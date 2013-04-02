@@ -30,7 +30,6 @@ public class Pokemon {
 	private int forme;
 	@Id
 	private String nom;	 	
-	private String owner;
  	private float poids;
 	private float taille;
 	private String type1;
@@ -164,9 +163,7 @@ public class Pokemon {
 	public String getNom() {
 		return nom;
 	}
-	public String getOwner() {
-		return owner;
-	}
+
 	public float getPoids() {
 		return poids;
 	}
@@ -234,9 +231,7 @@ public class Pokemon {
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
-	public void setOwner(String owner) {
-		this.owner = owner;
-	}
+
 	public void setPoids(float poids) {
 		this.poids = poids;
 	}
@@ -249,15 +244,16 @@ public class Pokemon {
 	public void setType2(String type2) {
 		this.type2 = type2;
 	}
+
 	@Override
 	public String toString() {
-		return "Pokemon [nom=" + nom + ", espece=" + espece + ", taille="
-				+ taille + ", poids=" + poids + ", fmratio=" + fmratio
-				+ ", effortval=" + effortval + ", type1=" + type1 + ", type2="
-				+ type2 + ", expval=" + expval + ", expmax=" + expmax
-				+ ", captureval=" + captureval + ", capspe1=" + capspe1
-				+ ", capspe2=" + capspe2 + ", couleur=" + couleur + ", forme="
-				+ forme + ", owner=" + owner + "]";
+		return "Pokemon [capspe1=" + capspe1 + ", capspe2=" + capspe2
+				+ ", captureval=" + captureval + ", couleur=" + couleur
+				+ ", effortval=" + effortval + ", espece=" + espece
+				+ ", expmax=" + expmax + ", expval=" + expval + ", fmratio="
+				+ fmratio + ", forme=" + forme + ", nom=" + nom + ", poids="
+				+ poids + ", taille=" + taille + ", type1=" + type1
+				+ ", type2=" + type2 + "]";
 	}
 	public static Pokemon createPokemon(String name, String owner) 
 	{
@@ -282,7 +278,6 @@ public class Pokemon {
 		pokemon.setTaille((Float) pokemonC[11]);
 		pokemon.setType1((String) pokemonC[12]);
 		pokemon.setType2((String) pokemonC[13]);
-		pokemon.setOwner(owner);
 		Pokemon.setPv(pv);
 		return pokemon;
 	}
