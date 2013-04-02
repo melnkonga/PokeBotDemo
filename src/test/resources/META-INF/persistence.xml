@@ -4,6 +4,7 @@
   <persistence-unit name="pokebattlePU" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
 
+
     <properties>
         <property name="eclipselink.target-database" value="Derby" />
         <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.EmbeddedDriver" />

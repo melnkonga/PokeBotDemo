@@ -1,158 +1,297 @@
 package fr.univaix.iut.progbd;
 
+
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.Id;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
+
+import GSON.BDGSONLoading;
+import GSON.DataObjectPokemon;
+
+import com.google.gson.Gson;
 
 @Entity
-@NamedQueries({
-        @NamedQuery(name = Pokemon.FIND_ALL, query = "SELECT p FROM Pokemon p"),
-        @NamedQuery(name = Pokemon.FIND_BY_TYPE, query = "SELECT p FROM Pokemon p WHERE p.type1 = :ftype")
-})
 public class Pokemon {
-    public static final String FIND_BY_TYPE = "findPokemonByType";
-    public static final String FIND_ALL = "findAllPokemon";
-    @Id
-    private String name;
+	
+	static int pv = 100;
+	
+	private String capspe1;
+	private String capspe2;
+	private int captureval;
+	private String couleur;
+	private String effortval;
+	private String espece;
+	private int expmax;
+	private int expval;
+	private float fmratio;
+	private int forme;
+	@Id
+	private String nom;	 	
+	private String owner;
+ 	private float poids;
+	private float taille;
+	private String type1;
+	private String type2;
+	
+	public Pokemon() {
+		super();
+	}
+	public Pokemon(String nom) {
+		super();
+		this.nom = nom;
+	}
+	
+	public Pokemon(String nom, String espece, float taille, float poids,
+			float fmratio, String effortval, String type1, String type2,
+			int expval, int expmax, int captureval, String capspe1,
+			String capspe2, String couleur, int forme) {
+		super();
+		this.nom = nom;
+		this.espece = espece;
+		this.taille = taille;
+		this.poids = poids;
+		this.fmratio = fmratio;
+		this.effortval = effortval;
+		this.type1 = type1;
+		this.type2 = type2;
+		this.expval = expval;
+		this.expmax = expmax;
+		this.captureval = captureval;
+		this.capspe1 = capspe1;
+		this.capspe2 = capspe2;
+		this.couleur = couleur;
+		this.forme = forme;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Pokemon other = (Pokemon) obj;
+		if (capspe1 == null) {
+			if (other.capspe1 != null)
+				return false;
+		} else if (!capspe1.equals(other.capspe1))
+			return false;
+		if (capspe2 == null) {
+			if (other.capspe2 != null)
+				return false;
+		} else if (!capspe2.equals(other.capspe2))
+			return false;
+		if (captureval != other.captureval)
+			return false;
+		if (couleur == null) {
+			if (other.couleur != null)
+				return false;
+		} else if (!couleur.equals(other.couleur))
+			return false;
+		if (effortval == null) {
+			if (other.effortval != null)
+				return false;
+		} else if (!effortval.equals(other.effortval))
+			return false;
+		if (espece == null) {
+			if (other.espece != null)
+				return false;
+		} else if (!espece.equals(other.espece))
+			return false;
+		if (expmax != other.expmax)
+			return false;
+		if (expval != other.expval)
+			return false;
+		if (Float.floatToIntBits(fmratio) != Float
+				.floatToIntBits(other.fmratio))
+			return false;
+		if (forme != other.forme)
+			return false;
+		if (nom == null) {
+			if (this.nom != null)
+				return false;
+		} else if (!nom.equals(this.nom))
+			return false;
+		if (Float.floatToIntBits(poids) != Float.floatToIntBits(other.poids))
+			return false;
+		if (Float.floatToIntBits(taille) != Float.floatToIntBits(other.taille))
+			return false;
+		if (type1 == null) {
+			if (other.type1 != null)
+				return false;
+		} else if (!type1.equals(other.type1))
+			return false;
+		if (type2 == null) {
+			if (other.type2 != null)
+				return false;
+		} else if (!type2.equals(other.type2))
+			return false;
+		return true;
+	}
+	public String getCapspe1() {
+		return capspe1;
+	}
+	public String getCapspe2() {
+		return capspe2;
+	}
+	public int getCaptureval() {
+		return captureval;
+	}
+	public String getCouleur() {
+		return couleur;
+	}
+	public String getEffortval() {
+		return effortval;
+	}
+	public String getEspece() {
+		return espece;
+	}
+	public int getExpmax() {
+		return expmax;
+	}
+	public int getExpval() {
+		return expval;
+	}
+	public float getFmratio() {
+		return fmratio;
+	}
+	public int getForme() {
+		return forme;
+	}
+	public String getNom() {
+		return nom;
+	}
+	public String getOwner() {
+		return owner;
+	}
+	public float getPoids() {
+		return poids;
+	}
+	public float getTaille() {
+		return taille;
+	}
+	public String getType1() {
+		return type1;
+	}
+	public String getType2() {
+		return type2;
+	}
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((capspe1 == null) ? 0 : capspe1.hashCode());
+		result = prime * result + ((capspe2 == null) ? 0 : capspe2.hashCode());
+		result = prime * result + captureval;
+		result = prime * result + ((couleur == null) ? 0 : couleur.hashCode());
+		result = prime * result
+				+ ((effortval == null) ? 0 : effortval.hashCode());
+		result = prime * result + ((espece == null) ? 0 : espece.hashCode());
+		result = prime * result + expmax;
+		result = prime * result + expval;
+		result = prime * result + Float.floatToIntBits(fmratio);
+		result = prime * result + forme;
+		result = prime * result + ((nom == null) ? 0 : nom.hashCode());
+		result = prime * result + Float.floatToIntBits(poids);
+		result = prime * result + Float.floatToIntBits(taille);
+		result = prime * result + ((type1 == null) ? 0 : type1.hashCode());
+		result = prime * result + ((type2 == null) ? 0 : type2.hashCode());
+		return result;
+	}
+	public void setCapspe1(String capspe1) {
+		this.capspe1 = capspe1;
+	}
+	public void setCapspe2(String capspe2) {
+		this.capspe2 = capspe2;
+	}
+	public void setCaptureval(int captureval) {
+		this.captureval = captureval;
+	}
+	public void setCouleur(String couleur) {
+		this.couleur = couleur;
+	}
+	public void setEffortval(String effortval) {
+		this.effortval = effortval;
+	}
+	public void setEspece(String espece) {
+		this.espece = espece;
+	}
+	public void setExpmax(int expmax) {
+		this.expmax = expmax;
+	}
+	public void setExpval(int expval) {
+		this.expval = expval;
+	}
+	public void setFmratio(float fmratio) {
+		this.fmratio = fmratio;
+	}
+	public void setForme(int forme) {
+		this.forme = forme;
+	}
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+	public void setOwner(String owner) {
+		this.owner = owner;
+	}
+	public void setPoids(float poids) {
+		this.poids = poids;
+	}
+	public void setTaille(float taille) {
+		this.taille = taille;
+	}
+	public void setType1(String type1) {
+		this.type1 = type1;
+	}
+	public void setType2(String type2) {
+		this.type2 = type2;
+	}
+	@Override
+	public String toString() {
+		return "Pokemon [nom=" + nom + ", espece=" + espece + ", taille="
+				+ taille + ", poids=" + poids + ", fmratio=" + fmratio
+				+ ", effortval=" + effortval + ", type1=" + type1 + ", type2="
+				+ type2 + ", expval=" + expval + ", expmax=" + expmax
+				+ ", captureval=" + captureval + ", capspe1=" + capspe1
+				+ ", capspe2=" + capspe2 + ", couleur=" + couleur + ", forme="
+				+ forme + ", owner=" + owner + "]";
+	}
+	public static Pokemon createPokemon(String name, String owner) 
+	{
+		Gson gson = new Gson();
 
-    @Enumerated(EnumType.STRING)
-    private Type type1;
-
-    @Enumerated(EnumType.STRING)
-    private Type type2;
-
-    private int baseHP;
-    private int attack;
-    private int defense;
-    private int attackSpecial;
-    private int defenseSpecial;
-    private int speed;
-
-    protected Pokemon() {
-
-    }
-
-    public Pokemon(String name) {
-        this.name = name;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public Type getType1() {
-        return type1;
-    }
-
-    public void setType1(Type types1) {
-        this.type1 = types1;
-    }
-
-    public Type getType2() {
-        return type2;
-    }
-
-    public void setType2(Type types2) {
-        this.type2 = types2;
-    }
-
-    public int getBaseHP() {
-        return baseHP;
-    }
-
-    public void setBaseHP(int baseHP) {
-        this.baseHP = baseHP;
-    }
-
-    public int getAttack() {
-        return attack;
-    }
-
-    public void setAttack(int attack) {
-        this.attack = attack;
-    }
-
-    public int getDefense() {
-        return defense;
-    }
-
-    public void setDefense(int defense) {
-        this.defense = defense;
-    }
-
-    public int getAttackSpecial() {
-        return attackSpecial;
-    }
-
-    public void setAttackSpecial(int attackSpecial) {
-        this.attackSpecial = attackSpecial;
-    }
-
-    public int getDefenseSpecial() {
-        return defenseSpecial;
-    }
-
-    public void setDefenseSpecial(int defenseSpecial) {
-        this.defenseSpecial = defenseSpecial;
-    }
-
-    public int getSpeed() {
-        return speed;
-    }
-
-    public void setSpeed(int speed) {
-        this.speed = speed;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Pokemon)) return false;
-
-        Pokemon pokemon = (Pokemon) o;
-
-        if (attack != pokemon.attack) return false;
-        if (attackSpecial != pokemon.attackSpecial) return false;
-        if (baseHP != pokemon.baseHP) return false;
-        if (defense != pokemon.defense) return false;
-        if (defenseSpecial != pokemon.defenseSpecial) return false;
-        if (speed != pokemon.speed) return false;
-        if (name != null ? !name.equals(pokemon.name) : pokemon.name != null) return false;
-        if (type1 != pokemon.type1) return false;
-        if (type2 != pokemon.type2) return false;
-
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        int result = name != null ? name.hashCode() : 0;
-        result = 31 * result + (type1 != null ? type1.hashCode() : 0);
-        result = 31 * result + (type2 != null ? type2.hashCode() : 0);
-        result = 31 * result + baseHP;
-        result = 31 * result + attack;
-        result = 31 * result + defense;
-        result = 31 * result + attackSpecial;
-        result = 31 * result + defenseSpecial;
-        result = 31 * result + speed;
-        return result;
-    }
-
-    @Override
-    public String toString() {
-        return "Pokemon{" +
-                "name='" + name + '\'' +
-                ", types1=" + type1 +
-                ", types2=" + type2 +
-                ", baseHP=" + baseHP +
-                ", attack=" + attack +
-                ", defense=" + defense +
-                ", attackSpecial=" + attackSpecial +
-                ", defenseSpecial=" + defenseSpecial +
-                ", speed=" + speed +
-                '}';
-    }
+        BufferedReader br = new BufferedReader(new InputStreamReader(BDGSONLoading.class.getClassLoader().getResourceAsStream("pokedex.json")));
+		DataObjectPokemon[] obj = gson.fromJson(br, DataObjectPokemon[].class);
+		Object[] pokemonC = GSON.BDGSONLoading.FindCaracPokemon(name,obj);
+		Pokemon pokemon = new Pokemon(name);
+		pokemon.setNom(name);
+		pokemon.setCapspe1((String) pokemonC[0]);
+		pokemon.setCapspe2((String) pokemonC[1]);
+		pokemon.setCaptureval((Integer) pokemonC[2]);
+		pokemon.setCouleur((String) pokemonC[3]);
+		pokemon.setEffortval((String) pokemonC[4]);
+		pokemon.setEspece((String) pokemonC[5]);
+		pokemon.setExpmax((Integer) pokemonC[6]);
+		pokemon.setExpval((Integer) pokemonC[7]);
+		pokemon.setFmratio((Float) pokemonC[8]);
+		pokemon.setForme((Integer) pokemonC[9]);
+		pokemon.setPoids((Float) pokemonC[10]);
+		pokemon.setTaille((Float) pokemonC[11]);
+		pokemon.setType1((String) pokemonC[12]);
+		pokemon.setType2((String) pokemonC[13]);
+		pokemon.setOwner(owner);
+		Pokemon.setPv(pv);
+		return pokemon;
+	}
+	public static int getPv() {
+		return pv;
+	}
+	
+	public static void setPv(int pv) {
+		Pokemon.pv = pv;
+	}
+	
 }
