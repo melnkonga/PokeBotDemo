@@ -12,7 +12,7 @@ public class Main {
      	   EntityManagerFactory emf = Persistence.createEntityManagerFactory("pokebattlePU");
             EntityManager em = emf.createEntityManager();
             EntityTransaction tx = em.getTransaction();
-            Pokemon carapuce = Pokemon.createPokemon("Carapuce","J_Apple_Junior");
+            Pokemon carapuce = Pokemon.createPokemon("Pikachu","J_Apple_Junior");
             tx.begin();
             em.persist(carapuce);
             tx.commit();
