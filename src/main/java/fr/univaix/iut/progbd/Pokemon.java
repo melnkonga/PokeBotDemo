@@ -1,7 +1,5 @@
 package fr.univaix.iut.progbd;
 
-
-
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
@@ -16,53 +14,50 @@ import com.google.gson.Gson;
 @Entity
 public class Pokemon {
 	
-	static int pv = 100;
-	
-	private String capspe1;
-	private String capspe2;
-	private int captureval;
-	private String couleur;
-	private String effortval;
-	private String espece;
-	private int expmax;
-	private int expval;
-	private float fmratio;
-	private int forme;
 	@Id
-	private String nom;	 	
- 	private float poids;
+	private String nom;
+	
+	static int pv = 100;
+	private String espece;
 	private float taille;
+	private float poids;
+	private float fmratio;
+	private String effortval;
 	private String type1;
 	private String type2;
+	private int expval;
+	private int expmax;
+	private int captureval;	 	
+	private String capspe1;
+ 	private String capspe2;
+	private String couleur;
+	private int forme;
+	private String owner;
+	private static String cri;
 	
-	public Pokemon() {
-		super();
-	}
-	public Pokemon(String nom) {
-		super();
-		this.nom = nom;
-	}
-	
-	public Pokemon(String nom, String espece, float taille, float poids,
-			float fmratio, String effortval, String type1, String type2,
-			int expval, int expmax, int captureval, String capspe1,
-			String capspe2, String couleur, int forme) {
-		super();
-		this.nom = nom;
-		this.espece = espece;
-		this.taille = taille;
-		this.poids = poids;
-		this.fmratio = fmratio;
-		this.effortval = effortval;
-		this.type1 = type1;
-		this.type2 = type2;
-		this.expval = expval;
-		this.expmax = expmax;
-		this.captureval = captureval;
-		this.capspe1 = capspe1;
-		this.capspe2 = capspe2;
-		this.couleur = couleur;
-		this.forme = forme;
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((capspe1 == null) ? 0 : capspe1.hashCode());
+		result = prime * result + ((capspe2 == null) ? 0 : capspe2.hashCode());
+		result = prime * result + captureval;
+		result = prime * result + ((couleur == null) ? 0 : couleur.hashCode());
+		result = prime * result + ((cri == null) ? 0 : cri.hashCode());
+		result = prime * result
+				+ ((effortval == null) ? 0 : effortval.hashCode());
+		result = prime * result + ((espece == null) ? 0 : espece.hashCode());
+		result = prime * result + expmax;
+		result = prime * result + expval;
+		result = prime * result + Float.floatToIntBits(fmratio);
+		result = prime * result + forme;
+		result = prime * result + ((nom == null) ? 0 : nom.hashCode());
+		result = prime * result + ((owner == null) ? 0 : owner.hashCode());
+		result = prime * result + Float.floatToIntBits(poids);
+		result = prime * result + Float.floatToIntBits(taille);
+		result = prime * result + ((type1 == null) ? 0 : type1.hashCode());
+		result = prime * result + ((type2 == null) ? 0 : type2.hashCode());
+		return result;
 	}
 	@Override
 	public boolean equals(Object obj) {
@@ -90,6 +85,11 @@ public class Pokemon {
 				return false;
 		} else if (!couleur.equals(other.couleur))
 			return false;
+		if (cri == null) {
+			if (other.cri != null)
+				return false;
+		} else if (!cri.equals(other.cri))
+			return false;
 		if (effortval == null) {
 			if (other.effortval != null)
 				return false;
@@ -110,9 +110,14 @@ public class Pokemon {
 		if (forme != other.forme)
 			return false;
 		if (nom == null) {
-			if (this.nom != null)
+			if (other.nom != null)
 				return false;
-		} else if (!nom.equals(this.nom))
+		} else if (!nom.equals(other.nom))
+			return false;
+		if (owner == null) {
+			if (other.owner != null)
+				return false;
+		} else if (!owner.equals(other.owner))
 			return false;
 		if (Float.floatToIntBits(poids) != Float.floatToIntBits(other.poids))
 			return false;
@@ -130,131 +135,150 @@ public class Pokemon {
 			return false;
 		return true;
 	}
-	public String getCapspe1() {
-		return capspe1;
-	}
-	public String getCapspe2() {
-		return capspe2;
-	}
-	public int getCaptureval() {
-		return captureval;
-	}
-	public String getCouleur() {
-		return couleur;
-	}
-	public String getEffortval() {
-		return effortval;
-	}
-	public String getEspece() {
-		return espece;
-	}
-	public int getExpmax() {
-		return expmax;
-	}
-	public int getExpval() {
-		return expval;
-	}
-	public float getFmratio() {
-		return fmratio;
-	}
-	public int getForme() {
-		return forme;
+	@Override
+	public String toString() {
+		return "Pokemon [nom=" + nom + ", espece=" + espece + ", taille="
+				+ taille + ", poids=" + poids + ", fmratio=" + fmratio
+				+ ", effortval=" + effortval + ", type1=" + type1 + ", type2="
+				+ type2 + ", expval=" + expval + ", expmax=" + expmax
+				+ ", captureval=" + captureval + ", capspe1=" + capspe1
+				+ ", capspe2=" + capspe2 + ", couleur=" + couleur + ", forme="
+				+ forme + ", owner=" + owner + ", cri=" + cri + "]";
 	}
 	public String getNom() {
 		return nom;
 	}
-
-	public float getPoids() {
-		return poids;
+	public void setNom(String nom) {
+		this.nom = nom;
 	}
-	public float getTaille() {
-		return taille;
+	public static int getPv() {
+		return pv;
 	}
-	public String getType1() {
-		return type1;
+	public static void setPv(int pv) {
+		Pokemon.pv = pv;
 	}
-	public String getType2() {
-		return type2;
-	}
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((capspe1 == null) ? 0 : capspe1.hashCode());
-		result = prime * result + ((capspe2 == null) ? 0 : capspe2.hashCode());
-		result = prime * result + captureval;
-		result = prime * result + ((couleur == null) ? 0 : couleur.hashCode());
-		result = prime * result
-				+ ((effortval == null) ? 0 : effortval.hashCode());
-		result = prime * result + ((espece == null) ? 0 : espece.hashCode());
-		result = prime * result + expmax;
-		result = prime * result + expval;
-		result = prime * result + Float.floatToIntBits(fmratio);
-		result = prime * result + forme;
-		result = prime * result + ((nom == null) ? 0 : nom.hashCode());
-		result = prime * result + Float.floatToIntBits(poids);
-		result = prime * result + Float.floatToIntBits(taille);
-		result = prime * result + ((type1 == null) ? 0 : type1.hashCode());
-		result = prime * result + ((type2 == null) ? 0 : type2.hashCode());
-		return result;
-	}
-	public void setCapspe1(String capspe1) {
-		this.capspe1 = capspe1;
-	}
-	public void setCapspe2(String capspe2) {
-		this.capspe2 = capspe2;
-	}
-	public void setCaptureval(int captureval) {
-		this.captureval = captureval;
-	}
-	public void setCouleur(String couleur) {
-		this.couleur = couleur;
-	}
-	public void setEffortval(String effortval) {
-		this.effortval = effortval;
+	public String getEspece() {
+		return espece;
 	}
 	public void setEspece(String espece) {
 		this.espece = espece;
 	}
-	public void setExpmax(int expmax) {
-		this.expmax = expmax;
-	}
-	public void setExpval(int expval) {
-		this.expval = expval;
-	}
-	public void setFmratio(float fmratio) {
-		this.fmratio = fmratio;
-	}
-	public void setForme(int forme) {
-		this.forme = forme;
-	}
-	public void setNom(String nom) {
-		this.nom = nom;
-	}
-
-	public void setPoids(float poids) {
-		this.poids = poids;
+	public float getTaille() {
+		return taille;
 	}
 	public void setTaille(float taille) {
 		this.taille = taille;
 	}
+	public float getPoids() {
+		return poids;
+	}
+	public void setPoids(float poids) {
+		this.poids = poids;
+	}
+	public float getFmratio() {
+		return fmratio;
+	}
+	public void setFmratio(float fmratio) {
+		this.fmratio = fmratio;
+	}
+	public String getEffortval() {
+		return effortval;
+	}
+	public void setEffortval(String effortval) {
+		this.effortval = effortval;
+	}
+	public String getType1() {
+		return type1;
+	}
 	public void setType1(String type1) {
 		this.type1 = type1;
+	}
+	public String getType2() {
+		return type2;
 	}
 	public void setType2(String type2) {
 		this.type2 = type2;
 	}
-
-	@Override
-	public String toString() {
-		return "Pokemon [capspe1=" + capspe1 + ", capspe2=" + capspe2
-				+ ", captureval=" + captureval + ", couleur=" + couleur
-				+ ", effortval=" + effortval + ", espece=" + espece
-				+ ", expmax=" + expmax + ", expval=" + expval + ", fmratio="
-				+ fmratio + ", forme=" + forme + ", nom=" + nom + ", poids="
-				+ poids + ", taille=" + taille + ", type1=" + type1
-				+ ", type2=" + type2 + "]";
+	public int getExpval() {
+		return expval;
 	}
+	public void setExpval(int expval) {
+		this.expval = expval;
+	}
+	public int getExpmax() {
+		return expmax;
+	}
+	public void setExpmax(int expmax) {
+		this.expmax = expmax;
+	}
+	public int getCaptureval() {
+		return captureval;
+	}
+	public void setCaptureval(int captureval) {
+		this.captureval = captureval;
+	}
+	public String getCapspe1() {
+		return capspe1;
+	}
+	public void setCapspe1(String capspe1) {
+		this.capspe1 = capspe1;
+	}
+	public String getCapspe2() {
+		return capspe2;
+	}
+	public void setCapspe2(String capspe2) {
+		this.capspe2 = capspe2;
+	}
+	public String getCouleur() {
+		return couleur;
+	}
+	public void setCouleur(String couleur) {
+		this.couleur = couleur;
+	}
+	public int getForme() {
+		return forme;
+	}
+	public void setForme(int forme) {
+		this.forme = forme;
+	}
+	public String getCri() {
+		return cri;
+	}
+	public void setCri(String cri) {
+		this.cri = cri;
+	}
+	public String getOwner() {
+		return owner;
+	}
+	public void setOwner(String owner) {
+		this.owner = owner;
+	}
+	public Pokemon(String nom, String espece, float taille, float poids,
+			float fmratio, String effortval, String type1, String type2,
+			int expval, int expmax, int captureval, String capspe1,
+			String capspe2, String couleur, int forme) {
+		super();
+		this.nom = nom;
+		this.espece = espece;
+		this.taille = taille;
+		this.poids = poids;
+		this.fmratio = fmratio;
+		this.effortval = effortval;
+		this.type1 = type1;
+		this.type2 = type2;
+		this.expval = expval;
+		this.expmax = expmax;
+		this.captureval = captureval;
+		this.capspe1 = capspe1;
+		this.capspe2 = capspe2;
+		this.couleur = couleur;
+		this.forme = forme;
+	}
+	public Pokemon(String nom) {
+		super();
+		this.nom = nom;
+	}
+	
 	public static Pokemon createPokemon(String name, String owner) 
 	{
 		Gson gson = new Gson();
@@ -278,15 +302,12 @@ public class Pokemon {
 		pokemon.setTaille((Float) pokemonC[11]);
 		pokemon.setType1((String) pokemonC[12]);
 		pokemon.setType2((String) pokemonC[13]);
+		pokemon.setOwner(owner);
 		Pokemon.setPv(pv);
+		pokemon.setCri(cri);
 		return pokemon;
 	}
-	public static int getPv() {
-		return pv;
-	}
 	
-	public static void setPv(int pv) {
-		Pokemon.pv = pv;
-	}
 	
+
 }
