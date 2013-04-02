@@ -1,9 +1,10 @@
 package fr.univaix.iut.pokebattle.bot;
 
-import fr.univaix.iut.pokebattle.twitter.Tweet;
+import static org.fest.assertions.Assertions.assertThat;
+
 import org.junit.Test;
 
-import static org.fest.assertions.Assertions.assertThat;
+import fr.univaix.iut.pokebattle.twitter.Tweet;
 
 public class JudgeBotTest {
     JudgeBot judgeBot = new JudgeBot();

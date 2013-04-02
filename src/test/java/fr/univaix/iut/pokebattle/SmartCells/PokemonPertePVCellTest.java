@@ -1,10 +1,9 @@
 package fr.univaix.iut.pokebattle.SmartCells;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import fr.univaix.iut.pokebattle.smartcells.PokemonFusionAttackCell;
 import fr.univaix.iut.pokebattle.smartcells.PokemonPertePVCell;
 import fr.univaix.iut.pokebattle.twitter.Tweet;
 

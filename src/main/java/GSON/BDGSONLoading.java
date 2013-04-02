@@ -1,10 +1,9 @@
 package GSON;
 
-import com.google.gson.Gson;
-
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.Arrays;
+
+import com.google.gson.Gson;
 
 public class BDGSONLoading 
 {

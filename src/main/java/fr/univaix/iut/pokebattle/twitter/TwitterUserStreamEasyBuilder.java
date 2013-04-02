@@ -8,6 +8,7 @@ import twitter4j.Twitter;
 import twitter4j.TwitterException;
 import twitter4j.UserStreamListener;
 import fr.univaix.iut.pokebattle.bot.Bot;
+import fr.univaix.iut.pokebattle.tuse.Credentials;
 import fr.univaix.iut.pokebattle.tuse.TwitterUserStreamEasy;
 import fr.univaix.iut.pokebattle.tuse.UserStreamAdapter;
 
@@ -21,7 +22,7 @@ public class TwitterUserStreamEasyBuilder {
         this.bot = bot;
     }
 
-    public TwitterUserStreamEasy build() {
+	public TwitterUserStreamEasy build(Credentials credentials) {
         UserStreamListener listener = new UserStreamAdapter() {
             @Override
             public void onStatus(Status status) {
@@ -33,7 +34,7 @@ public class TwitterUserStreamEasyBuilder {
                 }
             }
         };
-        return new TwitterUserStreamEasy(listener);
+        return new TwitterUserStreamEasy(listener,credentials);
     }
 
     private void processNewQuestion(Status status, Bot bot) throws TwitterException {

@@ -2,14 +2,8 @@ package fr.univaix.iut.pokebattle.bot;
 
 import fr.univaix.iut.pokebattle.smartcell.SmartCell;
 import fr.univaix.iut.pokebattle.smartcells.PokeWinnerCell;
-import fr.univaix.iut.pokebattle.smartcells.PokemonAnswerPersonCell;
-import fr.univaix.iut.pokebattle.smartcells.PokemonFusionAttackCell;
-import fr.univaix.iut.pokebattle.smartcells.PokemonNoCatchCell;
-import fr.univaix.iut.pokebattle.smartcells.PokemonOwnerCell;
 import fr.univaix.iut.pokebattle.smartcells.VivianeAttackCells;
 import fr.univaix.iut.pokebattle.twitter.Tweet;
-
-import java.util.List;
 
 
 public class JudgeBot implements Bot {

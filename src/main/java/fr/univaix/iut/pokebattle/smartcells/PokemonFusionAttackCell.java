@@ -5,7 +5,6 @@ import java.io.InputStreamReader;
 import java.util.GregorianCalendar;
 
 import GSON.BDGSONLoading;
-import GSON.DataObjectAttack;
 import GSON.DataObjectPokemon;
 
 import com.google.gson.Gson;

@@ -1,11 +1,12 @@
 package fr.univaix.iut.pokebattle.bot;
 
+import static org.junit.Assert.assertEquals;
+
 import java.util.GregorianCalendar;
 
-import fr.univaix.iut.pokebattle.twitter.Tweet;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import fr.univaix.iut.pokebattle.twitter.Tweet;
 
 /**
  * Integration tests checking the PokeBot
