@@ -7,6 +7,8 @@ import java.io.InputStreamReader;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 
 import GSON.BDGSONLoading;
 import GSON.DataObjectPokemon;
@@ -14,8 +16,13 @@ import GSON.DataObjectPokemon;
 import com.google.gson.Gson;
 
 @Entity
+@NamedQueries({
+        @NamedQuery(name = Pokemon.FIND_ALL, query = "SELECT p FROM Pokemon p"),
+        @NamedQuery(name = Pokemon.FIND_BY_TYPE, query = "SELECT p FROM Pokemon p WHERE p.type1 = :ftype")
+})
 public class Pokemon {
-	
+    public static final String FIND_BY_TYPE = "findPokemonByType";
+    public static final String FIND_ALL = "findAllPokemon";
 	static int pv = 100;
 	
 	private String capspe1;
