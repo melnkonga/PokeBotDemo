@@ -1,25 +1,17 @@
 package fr.univaix.iut.progbd;
 
-import java.util.Collection;
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
-
 
 @Entity
-public class Dresseur 
+public class Juge_Combat 
 {
 	@Id
 	private String nom;
-	
-	@OneToMany
-	private Collection<Pokemon> pokemon;
 
-	public Dresseur(String nom, Collection<Pokemon> pokemon) {
+	public Juge_Combat(String nom) {
 		super();
 		this.nom = nom;
-		this.pokemon = pokemon;
 	}
 
 	@Override
@@ -30,16 +22,11 @@ public class Dresseur
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Dresseur other = (Dresseur) obj;
+		Juge_Combat other = (Juge_Combat) obj;
 		if (nom == null) {
 			if (other.nom != null)
 				return false;
 		} else if (!nom.equals(other.nom))
-			return false;
-		if (pokemon == null) {
-			if (other.pokemon != null)
-				return false;
-		} else if (!pokemon.equals(other.pokemon))
 			return false;
 		return true;
 	}
@@ -48,16 +35,11 @@ public class Dresseur
 		return nom;
 	}
 
-	public Collection<Pokemon> getPokemon() {
-		return pokemon;
-	}
-
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((nom == null) ? 0 : nom.hashCode());
-		result = prime * result + ((pokemon == null) ? 0 : pokemon.hashCode());
 		return result;
 	}
 
@@ -65,12 +47,10 @@ public class Dresseur
 		this.nom = nom;
 	}
 
-	public void setPokemon(Collection<Pokemon> pokemon) {
-		this.pokemon = pokemon;
-	}
-
 	@Override
 	public String toString() {
-		return "Dresseur [nom=" + nom + ", pokemon=" + pokemon + "]";
+		return "Juge_Combat [nom=" + nom + "]";
 	}
+	
+
 }
