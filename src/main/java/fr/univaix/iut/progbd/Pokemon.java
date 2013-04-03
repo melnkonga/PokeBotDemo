@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 
 import GSON.BDGSONLoading;
 import GSON.DataObjectPokemon;
@@ -21,6 +22,7 @@ import com.google.gson.Gson;
 public class Pokemon {
 	
 	@Id
+	@OneToMany(targetEntity = PokeBot.class, mappedBy = "typePokemon")
 	private String nom;
 
     public static final String FIND_BY_TYPE = "findPokemonByType";

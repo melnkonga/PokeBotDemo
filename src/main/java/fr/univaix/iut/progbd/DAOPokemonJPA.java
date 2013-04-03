@@ -6,7 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.TypedQuery;
 
-public class DAOPokemonJPA implements DAOPokemon {
+public class DAOPokemonJPA {
 
 	private EntityManager entityManager;
 
@@ -54,11 +54,5 @@ public class DAOPokemonJPA implements DAOPokemon {
 		} catch (Exception e) {
 			return false;
 		}
-	}
-
-	@Override
-	public List<Pokemon> findByType(Type type) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 }

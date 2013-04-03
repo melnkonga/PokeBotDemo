@@ -1,6 +1,7 @@
 package fr.univaix.iut.progbd;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
@@ -16,7 +17,8 @@ public class PokeBot
 	private String nom;
 	private String owner;
 	private int pv = 100;
-	@ManyToOne()
+	
+	@ManyToOne
 	private Pokemon typePokemon;	
 	
     public static final String FIND_ALL = "findAllPokeBot";

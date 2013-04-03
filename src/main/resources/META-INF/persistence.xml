@@ -4,6 +4,7 @@
   <persistence-unit name="pokebattlePU" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>fr.univaix.iut.progbd.Pokemon</class>
+    	<class>fr.univaix.iut.progbd.PokeBot</class>
     <properties>
         <property name="eclipselink.target-database" value="MySQL" />
         <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/pokebattlePU"/>

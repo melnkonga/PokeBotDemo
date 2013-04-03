@@ -19,11 +19,9 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import fr.univaix.iut.progbd.DAOPokeBot;
 import fr.univaix.iut.progbd.DAOPokeBotJPA;
 import fr.univaix.iut.progbd.PokeBot;
 import fr.univaix.iut.progbd.Pokemon;
-import fr.univaix.iut.progbd.Type;
 
 public class DAOPokeBotJPATest {
 
@@ -31,13 +29,13 @@ public class DAOPokeBotJPATest {
 	private static FlatXmlDataSet dataset;
 	private static DatabaseConnection dbUnitConnection;
 	private static EntityManagerFactory entityManagerFactory;
-	private static DAOPokeBot dao;
+	private static DAOPokeBotJPA dao;
 
 	@BeforeClass
 	public static void initTestFixture() throws Exception {
 		// Get the entity manager for the tests.
 		entityManagerFactory = Persistence
-				.createEntityManagerFactory("pokebattlePUTest");
+				.createEntityManagerFactory("pokebattlePU");
 		entityManager = entityManagerFactory.createEntityManager();
 
 		dao = new DAOPokeBotJPA(entityManager);
@@ -59,50 +57,39 @@ public class DAOPokeBotJPATest {
 		entityManagerFactory.close();
 	}
 
-	
 	@Before
 	public void setUp() throws Exception {
 		// Clean the data from previous test and insert new data test.
 		DatabaseOperation.CLEAN_INSERT.execute(dbUnitConnection, dataset);
-	}	
-
-	@Test
-	public void testGetById() throws Exception {
-		assertThat(dao.getById("carapuce_bot").getNom()).isEqualTo("carapuce_bot");
 	}
+	
 	
 	@Test
 	public void testFindAll() throws Exception {
 		List<PokeBot> pokebot = dao.findAll();
 		assertThat(pokebot.get(0).getNom()).isEqualTo("carapuce_bot");
 	}
+	
+
+	@Test
+	public void testGetById() throws Exception {
+		assertThat(dao.getById("carapuce_bot").getNom()).isEqualTo("carapuce_bot");
+	}
 
 	@Test
 	public void testDelete() throws Exception {
-		dao.delete(dao.getById("carapuce_Bot"));
-		assertThat(dao.getById("carapuce_Bot")).isNull();
+		dao.delete(dao.getById("carapuce_bot"));
+		assertThat(dao.getById("carapuce_bot")).isNull();
 	}
 
 	@Test
 	public void testInsert() throws Exception {
 		PokeBot carapuce_bot = new PokeBot("carapuce_bot");
-		Pokemon carapuce = new Pokemon("carapuce");
+		Pokemon cara = new Pokemon("Carapuce");
+		carapuce_bot.setTypePokemon(cara);
 		
-		carapuce_bot.setTypePokemon(carapuce);
-		dao.insert(carapuce_bot);
-		assertThat(dao.getById("Carapuce").getNom()).isEqualTo("Carapuce");
-		assertThat(dao.getById("Carapuce").getTypePokemon()).isEqualTo(carapuce);
-	}
-
-	@Test
-	public void testUpdate() throws Exception {
-
-		PokeBot pikachu = dao.getById("Pikachu");
-		//assertThat(pikachu.getAttack()).isGreaterThan(0);
-
-		//pikachu.setAttack(-1);
-		dao.update(pikachu);
-		//assertThat(dao.getById("Pikachu").getAttack()).isLessThan(0);
+		dao.insert(carapuce_bot);		
+		assertThat(dao.getById("carapuce_bot").getNom()).isEqualTo("carapuce_bot");
 	}
 
 }
