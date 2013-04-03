@@ -14,14 +14,24 @@ public class Pokemon {
 	public void setPV(int pV) {
 		PV = pV;
 	}
+	
+	public int getPP() {
+		return PP;
+	}
+	
+	public void setPP(int pP) {
+		PP = pP;
+	}
 
 	String nomPoke;
 	String criPoke;
 	String ownerPoke;
 	int PV = 100; // pv max
+	int PP = 35; // pp max
 	int level = 1;
 	int exp = 0;
 	int PVCourant = 0;
+	int PPCourant = 10;
 
 	public Pokemon() {
 		// TODO Auto-generated constructor stub
@@ -39,6 +49,10 @@ public class Pokemon {
 	public int getPVCourant() {
 		return PVCourant;
 	}
+	
+	public int getPPCourant() {
+		return PPCourant;
+	}
 
 	public void setLevel(int level) {
 		this.level = level;
@@ -50,6 +64,10 @@ public class Pokemon {
 
 	public void setPVCourant(int pVCourant) {
 		PVCourant = pVCourant;
+	}
+	
+	public void setPPCourant(int pPCourant) {
+		PPCourant = pPCourant;
 	}
 
 	public Pokemon(String nomPoke, String criPoke, String ownerPoke) {
