@@ -14,6 +14,8 @@ public class Juge_Combat
 		this.nom = nom;
 	}
 
+	public Juge_Combat() {}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
