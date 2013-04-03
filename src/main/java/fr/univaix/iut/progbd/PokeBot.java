@@ -3,15 +3,28 @@ package fr.univaix.iut.progbd;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 
 @Entity
+@NamedQueries({
+    @NamedQuery(name = PokeBot.FIND_ALL, query = "SELECT p FROM PokeBot p")   
+})
 public class PokeBot 
 {
 	@Id
 	private String nom;
 	private String owner;
 	private int pv = 100;
-
+	@ManyToOne()
+	private Pokemon typePokemon;	
+	
+    public static final String FIND_ALL = "findAllPokeBot";
+    
+    public PokeBot (String nom) {
+    	this.nom = nom;
+    }
+    
 	public int getPv() {
 		return pv;
 	}
@@ -19,13 +32,7 @@ public class PokeBot
 	public void setPv(int pv) {
 		this.pv = pv;
 	}
-
-	@ManyToOne
-	private Pokemon typePokemon1;
 	
-	@ManyToOne
-	private Pokemon typePokemon2;
-
 	public PokeBot() {
 		super();
 	}
@@ -38,9 +45,7 @@ public class PokeBot
 		result = prime * result + ((owner == null) ? 0 : owner.hashCode());
 		result = prime * result + pv;
 		result = prime * result
-				+ ((typePokemon1 == null) ? 0 : typePokemon1.hashCode());
-		result = prime * result
-				+ ((typePokemon2 == null) ? 0 : typePokemon2.hashCode());
+				+ ((typePokemon == null) ? 0 : typePokemon.hashCode());
 		return result;
 	}
 
@@ -65,23 +70,19 @@ public class PokeBot
 			return false;
 		if (pv != other.pv)
 			return false;
-		if (typePokemon1 == null) {
-			if (other.typePokemon1 != null)
+		if (typePokemon == null) {
+			if (other.typePokemon != null)
 				return false;
-		} else if (!typePokemon1.equals(other.typePokemon1))
+		} else if (!typePokemon.equals(other.typePokemon))
 			return false;
-		if (typePokemon2 == null) {
-			if (other.typePokemon2 != null)
-				return false;
-		} else if (!typePokemon2.equals(other.typePokemon2))
-			return false;
+		
 		return true;
 	}
 
 	@Override
 	public String toString() {
 		return "PokeBot [nom=" + nom + ", owner=" + owner + ", typePokemon1="
-				+ typePokemon1 + ", typePokemon2=" + typePokemon2 + "]";
+				+ typePokemon + "]";
 	}
 
 	public String getNom() {
@@ -100,19 +101,11 @@ public class PokeBot
 		this.owner = owner;
 	}
 
-	public Pokemon getTypePokemon1() {
-		return typePokemon1;
+	public Pokemon getTypePokemon() {
+		return typePokemon;
 	}
 
-	public void setTypePokemon1(Pokemon typePokemon1) {
-		this.typePokemon1 = typePokemon1;
-	}
-
-	public Pokemon getTypePokemon2() {
-		return typePokemon2;
-	}
-
-	public void setTypePokemon2(Pokemon typePokemon2) {
-		this.typePokemon2 = typePokemon2;
+	public void setTypePokemon(Pokemon typePokemon) {
+		this.typePokemon = typePokemon;
 	}
 }
