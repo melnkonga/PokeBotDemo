@@ -14,7 +14,7 @@ public class PokemonFusionAttackCellTest {
 
 	@Test
 	public void TestAttack() {
-		assertEquals(
+		assertEquals(  
 				"@bulbizare #attack #Morsure /cc @nedseb @1nsanesuperstar @JugeViviane"
 						+ " " + new GregorianCalendar().getTime().toString(),
 				poke.ask(new Tweet("1nsanesuperstar",
