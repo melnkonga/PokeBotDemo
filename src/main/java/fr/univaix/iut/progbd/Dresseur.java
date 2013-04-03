@@ -10,6 +10,16 @@ import javax.persistence.OneToMany;
 @Entity
 public class Dresseur 
 {
+	public Dresseur(String nom) {
+		super();
+		this.nom = nom;
+	}
+
+	public Dresseur() {
+		super();
+	}
+
+
 	@Id
 	private String nom;
 	
