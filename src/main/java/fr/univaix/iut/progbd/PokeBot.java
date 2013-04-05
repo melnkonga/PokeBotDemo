@@ -16,7 +16,7 @@ public class PokeBot
 	@Id
 	private String nom;
 	@ManyToOne
-	private String owner;
+	private Dresseur owner;
 	private int pv = 100;
 	
 	@ManyToOne
@@ -96,11 +96,11 @@ public class PokeBot
 		this.nom = nom;
 	}
 
-	public String getOwner() {
+	public Dresseur getOwner() {
 		return owner;
 	}
 
-	public void setOwner(String owner) {
+	public void setOwner(Dresseur owner) {
 		this.owner = owner;
 	}
 

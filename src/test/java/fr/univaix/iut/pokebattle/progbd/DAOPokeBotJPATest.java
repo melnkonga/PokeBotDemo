@@ -20,18 +20,19 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import fr.univaix.iut.progbd.DAOPokeBotJPA;
+import fr.univaix.iut.progbd.Dresseur;
 import fr.univaix.iut.progbd.PokeBot;
 import fr.univaix.iut.progbd.Pokemon;
 
 public class DAOPokeBotJPATest {
-
+    
 	private static EntityManager entityManager;
 	private static FlatXmlDataSet dataset;
 	private static DatabaseConnection dbUnitConnection;
 	private static EntityManagerFactory entityManagerFactory;
 	private static DAOPokeBotJPA dao;
 
-	@BeforeClass
+	@BeforeClass  
 	public static void initTestFixture() throws Exception {
 		// Get the entity manager for the tests.
 		entityManagerFactory = Persistence
@@ -56,7 +57,7 @@ public class DAOPokeBotJPATest {
 		entityManager.close();
 		entityManagerFactory.close();
 	}
-
+   
 	@Before
 	public void setUp() throws Exception {
 		// Clean the data from previous test and insert new data test.
@@ -86,6 +87,8 @@ public class DAOPokeBotJPATest {
 	public void testInsert() throws Exception {
 		PokeBot Salameche_bot = new PokeBot("pikachu_bot");
 		Pokemon cara = new Pokemon("Pikachu");
+		Dresseur dress=new Dresseur("youvannn");
+		Salameche_bot.setOwner(dress);
 		Salameche_bot.setTypePokemon(cara);
 		
 		dao.insert(Salameche_bot);		

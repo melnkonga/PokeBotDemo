@@ -10,10 +10,8 @@ import javax.persistence.OneToMany;
 @Entity
 public class Dresseur 
 {
-	public Dresseur(String nom) {
-		super();
-		this.nom = nom;
-	}
+	
+	
 
 	public Dresseur() {
 		super();
@@ -21,16 +19,47 @@ public class Dresseur
 
 
 	@Id
+	@OneToMany(targetEntity = PokeBot.class, mappedBy = "owner")
 	private String nom;
 	
-	@OneToMany(targetEntity = PokeBot.class, mappedBy = "owner")
-	private Collection<PokeBot> poke;
+	
 
-	public Dresseur(String nom, Collection<PokeBot> poke) {
+	public String getNom() {
+		return nom;
+	}
+
+
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+
+
+	public Dresseur(String nom) {
 		super();
 		this.nom = nom;
-		this.poke = poke;
+		
 	}
+
+
+
+	@Override
+	public String toString() {
+		return "Dresseur [" + (nom != null ? "nom=" + nom : "") + "]";
+	}
+
+
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((nom == null) ? 0 : nom.hashCode());
+		return result;
+	}
+
+
 
 	@Override
 	public boolean equals(Object obj) {
@@ -46,41 +75,8 @@ public class Dresseur
 				return false;
 		} else if (!nom.equals(other.nom))
 			return false;
-		if (poke == null) {
-			if (other.poke != null)
-				return false;
-		} else if (!poke.equals(other.poke))
-			return false;
 		return true;
 	}
 
-	public String getNom() {
-		return nom;
-	}
-
-	public Collection<PokeBot> getPokemon() {
-		return poke;
-	}
-
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((nom == null) ? 0 : nom.hashCode());
-		result = prime * result + ((poke == null) ? 0 : poke.hashCode());
-		return result;
-	}
-
-	public void setNom(String nom) {
-		this.nom = nom;
-	}
-
-	public void setPokemon(Collection<PokeBot> poke) {
-		this.poke = poke;
-	}
-
-	@Override
-	public String toString() {
-		return "Dresseur [nom=" + nom + ", poke=" + poke + "]";
-	}
+	
 }

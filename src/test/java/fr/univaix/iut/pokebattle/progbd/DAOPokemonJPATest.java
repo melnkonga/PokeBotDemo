@@ -22,7 +22,7 @@ import fr.univaix.iut.progbd.DAOPokemonJPA;
 import fr.univaix.iut.progbd.Pokemon;
 
 public class DAOPokemonJPATest {
-
+   
 	private static EntityManager entityManager;
 	private static FlatXmlDataSet dataset;
 	private static DatabaseConnection dbUnitConnection;
@@ -36,7 +36,7 @@ public class DAOPokemonJPATest {
 		entityManager = entityManagerFactory.createEntityManager();    
 		dao = new DAOPokemonJPA(entityManager);
 		java.sql.Connection connection = ((EntityManagerImpl) (entityManager
-				.getDelegate())).getServerSession().getAccessor()
+	 			.getDelegate())).getServerSession().getAccessor()
 				.getConnection();
 
 		dbUnitConnection = new DatabaseConnection(connection);
@@ -87,7 +87,7 @@ public class DAOPokemonJPATest {
 	  @Test public void testUpdate() throws Exception { 
 		  Pokemon pikachu =
 	  dao.getById("Pikachu"); 
-	assertThat(pikachu.getPoids()).isGreaterThan(0);
+		 assertThat(pikachu.getPoids()).isGreaterThan(0);
 	  pikachu.setPoids(-1); 
 	  dao.update(pikachu);
 	  assertThat(dao.getById("Pikachu").getPoids()).isLessThan(0); }

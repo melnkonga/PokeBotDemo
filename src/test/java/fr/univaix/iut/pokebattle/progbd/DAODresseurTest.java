@@ -20,7 +20,7 @@ import fr.univaix.iut.progbd.DAODresseur;
 import fr.univaix.iut.progbd.Dresseur;
 
 public class DAODresseurTest {
-
+  
 	private static EntityManager entityManager;
 	private static FlatXmlDataSet dataset;
 	private static DatabaseConnection dbUnitConnection;
@@ -30,7 +30,7 @@ public class DAODresseurTest {
 	@BeforeClass  
 	public static void initTestFixture() throws Exception {
 		// Get the entity manager for the tests.
-		entityManagerFactory = Persistence.createEntityManagerFactory("pokebattlePUTest");
+		entityManagerFactory = Persistence.createEntityManagerFactory("pokebattlePUTest");  
 	    	entityManager = entityManagerFactory.createEntityManager();
 		dao = new DAODresseur(entityManager);
 		java.sql.Connection connection = ((EntityManagerImpl) (entityManager

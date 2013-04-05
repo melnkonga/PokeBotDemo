@@ -27,7 +27,7 @@ public class DAOJuge_CombatTest {
 	private static EntityManagerFactory entityManagerFactory;
 	private static DAOJuge_Combat dao;
 	    
-	@BeforeClass
+	@BeforeClass  
 	public static void initTestFixture() throws Exception {
 		// Get the entity manager for the tests.
 		entityManagerFactory = Persistence.createEntityManagerFactory("pokebattlePUTest");
@@ -36,7 +36,7 @@ public class DAOJuge_CombatTest {
 		java.sql.Connection connection = ((EntityManagerImpl) (entityManager
 				.getDelegate())).getServerSession().getAccessor()
 				.getConnection();
-
+		
 		dbUnitConnection = new DatabaseConnection(connection);
 		// Loads the data set from a file
 		dataset = new FlatXmlDataSetBuilder().build(Thread.currentThread()
