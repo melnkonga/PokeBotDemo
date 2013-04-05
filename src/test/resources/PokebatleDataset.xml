@@ -4,8 +4,10 @@
     <POKEMON nom="Carapuce" espece="Machin" type1="eau" taille="0.4" 
     poids="6.0" fmratio=".500" effortval="+2Vit." expval="82" expmax="1000000" captureval="190"/>
     <JUGE_COMBAT nom="JugeViviane"/>
+    <JUGE_COMBAT nom="Jugedesiles"/>
     <DRESSEUR nom="J_Apple_Junior" />
     <DRESSEUR nom="youvannn" />
+    <POKEBOT nom="carapuce_bot2" owner_nom="youvannn" pv="100" typepokemon_nom="Carapuce"/>
     <POKEBOT nom="carapuce_bot" owner_nom="youvannn" pv="100" typepokemon_nom="Carapuce"/>
     <POKEBOT nom="pikachu_bot2" owner_nom="J_Apple_Junior" pv="100" typepokemon_nom="Pikachu"/>
     <COMBAT id_combat="1"  arene="arenedesbois" juge_nom="JugeViviane" pokemon1_nom="carapuce_bot" 

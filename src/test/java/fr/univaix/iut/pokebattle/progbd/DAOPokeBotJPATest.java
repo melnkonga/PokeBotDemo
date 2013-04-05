@@ -68,7 +68,7 @@ public class DAOPokeBotJPATest {
 	@Test
 	public void testFindAll() throws Exception {
 		List<PokeBot> pokebot = dao.findAll();
-		assertThat(pokebot.get(0).getNom()).isEqualTo("carapuce_bot");
+		assertThat(pokebot.get(0).getNom()).isEqualTo("carapuce_bot2");
 	}
 	
 
@@ -79,8 +79,8 @@ public class DAOPokeBotJPATest {
 
 	@Test
 	public void testDelete() throws Exception {
-		dao.delete(dao.getById("carapuce_bot"));
-		assertThat(dao.getById("carapuce_bot")).isNull();
+		dao.delete(dao.getById("carapuce_bot2"));
+		assertThat(dao.getById("carapuce_bot2")).isNull();
 	}
 
 	@Test

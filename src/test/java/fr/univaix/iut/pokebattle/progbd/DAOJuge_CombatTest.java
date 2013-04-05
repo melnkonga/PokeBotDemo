@@ -57,8 +57,8 @@ public class DAOJuge_CombatTest {
 
 	@Test
 	public void delete() throws Exception {
-		dao.delete(dao.getById("JugeViviane"));
-		assertThat(dao.getById("JugeViviane")).isNull();
+		 dao.delete(dao.getById("Jugedesiles"));
+	  	  assertThat(dao.getById("Jugedesiles")).isNull();
 	}
 	
 	@Test
