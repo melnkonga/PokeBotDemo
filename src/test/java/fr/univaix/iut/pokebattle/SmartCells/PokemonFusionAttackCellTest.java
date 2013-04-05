@@ -21,7 +21,7 @@ public class PokemonFusionAttackCellTest {
 						"@Carapuce #attack #Morsure @bulbizare /cc @nedseb @JugeViviane")));
 	}
 
-	@Test
+	@Test//lkok
 	public void TestAttack2() {
 		assertEquals(
 				"@1nsanesuperstar o_O ? /cc @nedseb @JugeViviane @bulbizare"

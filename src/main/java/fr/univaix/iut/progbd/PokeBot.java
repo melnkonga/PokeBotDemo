@@ -19,7 +19,7 @@ public class PokeBot
 	private int pv = 100;
 	
 	@ManyToOne
-	private Pokemon typePokemon;	
+	private Pokemon typepokemon;	
 	
     public static final String FIND_ALL = "findAllPokeBot";
     
@@ -47,7 +47,7 @@ public class PokeBot
 		result = prime * result + ((owner == null) ? 0 : owner.hashCode());
 		result = prime * result + pv;
 		result = prime * result
-				+ ((typePokemon == null) ? 0 : typePokemon.hashCode());
+				+ ((typepokemon == null) ? 0 : typepokemon.hashCode());
 		return result;
 	}
 
@@ -72,10 +72,10 @@ public class PokeBot
 			return false;
 		if (pv != other.pv)
 			return false;
-		if (typePokemon == null) {
-			if (other.typePokemon != null)
+		if (typepokemon == null) {
+			if (other.typepokemon != null)
 				return false;
-		} else if (!typePokemon.equals(other.typePokemon))
+		} else if (!typepokemon.equals(other.typepokemon))
 			return false;
 		
 		return true;
@@ -84,7 +84,7 @@ public class PokeBot
 	@Override
 	public String toString() {
 		return "PokeBot [nom=" + nom + ", owner=" + owner + ", typePokemon1="
-				+ typePokemon + "]";
+				+ typepokemon + "]";
 	}
 
 	public String getNom() {
@@ -104,10 +104,10 @@ public class PokeBot
 	}
 
 	public Pokemon getTypePokemon() {
-		return typePokemon;
+		return typepokemon;
 	}
 
 	public void setTypePokemon(Pokemon typePokemon) {
-		this.typePokemon = typePokemon;
+		this.typepokemon = typePokemon;
 	}
 }

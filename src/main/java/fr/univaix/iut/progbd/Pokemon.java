@@ -22,7 +22,7 @@ import com.google.gson.Gson;
 public class Pokemon {
 	
 	@Id
-	@OneToMany(targetEntity = PokeBot.class, mappedBy = "typePokemon")
+	@OneToMany(targetEntity = PokeBot.class, mappedBy = "typepokemon")
 	private String nom;
 
     public static final String FIND_BY_TYPE = "findPokemonByType";

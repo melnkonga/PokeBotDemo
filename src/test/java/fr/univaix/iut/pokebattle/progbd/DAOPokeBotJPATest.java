@@ -35,7 +35,7 @@ public class DAOPokeBotJPATest {
 	public static void initTestFixture() throws Exception {
 		// Get the entity manager for the tests.
 		entityManagerFactory = Persistence
-				.createEntityManagerFactory("pokebattlePU");
+				.createEntityManagerFactory("pokebattlePUTest");
 		entityManager = entityManagerFactory.createEntityManager();
 
 		dao = new DAOPokeBotJPA(entityManager);
@@ -48,7 +48,7 @@ public class DAOPokeBotJPATest {
 		// Loads the data set from a file
 		dataset = new FlatXmlDataSetBuilder().build(Thread.currentThread()
 				.getContextClassLoader()
-				.getResourceAsStream("PokeBotDataset.xml"));
+				.getResourceAsStream("PokebatleDataset.xml"));
 	}
 
 	@AfterClass
@@ -84,12 +84,21 @@ public class DAOPokeBotJPATest {
 
 	@Test
 	public void testInsert() throws Exception {
-		PokeBot carapuce_bot = new PokeBot("carapuce_bot");
-		Pokemon cara = new Pokemon("Carapuce");
-		carapuce_bot.setTypePokemon(cara);
+		PokeBot Salameche_bot = new PokeBot("pikachu_bot");
+		Pokemon cara = new Pokemon("Pikachu");
+		Salameche_bot.setTypePokemon(cara);
 		
-		dao.insert(carapuce_bot);		
-		assertThat(dao.getById("carapuce_bot").getNom()).isEqualTo("carapuce_bot");
+		dao.insert(Salameche_bot);		
+		assertThat(dao.getById("pikachu_bot").getNom()).isEqualTo("pikachu_bot");
 	}
-
+	
+	@Test public void testUpdate() throws Exception { 
+		  PokeBot bot = dao.getById("carapuce_bot");
+	  assertThat(bot.getPv()).isGreaterThan(0);
+	  bot.setPv(10); 
+	  dao.update(bot);
+	  assertThat(dao.getById("carapuce_bot").getPv()).isLessThan(50); 
+	  }
 }
+	
+
