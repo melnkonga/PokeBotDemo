@@ -6,6 +6,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 
 @Entity
 @NamedQueries({
@@ -14,6 +15,7 @@ import javax.persistence.NamedQuery;
 public class PokeBot 
 {
 	@Id
+	@OneToMany(targetEntity = Combat.class)
 	private String nom;
 	@ManyToOne
 	private Dresseur owner;

@@ -7,6 +7,8 @@
     <class>fr.univaix.iut.progbd.Pokemon</class>
     <class>fr.univaix.iut.progbd.Juge_Combat</class>
      <class>fr.univaix.iut.progbd.Dresseur</class>
+     <class>fr.univaix.iut.progbd.Combat</class>
+     
 
     	
     	<class>fr.univaix.iut.progbd.PokeBot</class>

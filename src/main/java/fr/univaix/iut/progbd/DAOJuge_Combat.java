@@ -6,7 +6,7 @@ import javax.persistence.EntityTransaction;
 public class DAOJuge_Combat 
 {
 	private EntityManager entityManager;
-
+	
 	public DAOJuge_Combat(EntityManager entityManager) 
 	{
 		this.entityManager = entityManager;
