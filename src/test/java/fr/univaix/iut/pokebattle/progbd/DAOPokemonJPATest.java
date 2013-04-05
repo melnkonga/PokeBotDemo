@@ -32,9 +32,8 @@ public class DAOPokemonJPATest {
 	@BeforeClass
 	public static void initTestFixture() throws Exception {
 		// Get the entity manager for the tests.
-		entityManagerFactory = Persistence
-				.createEntityManagerFactory("pokebattlePUTest");
-		entityManager = entityManagerFactory.createEntityManager();
+		entityManagerFactory = Persistence.createEntityManagerFactory("pokebattlePUTest");
+		entityManager = entityManagerFactory.createEntityManager();    
 		dao = new DAOPokemonJPA(entityManager);
 		java.sql.Connection connection = ((EntityManagerImpl) (entityManager
 				.getDelegate())).getServerSession().getAccessor()
@@ -44,7 +43,7 @@ public class DAOPokemonJPATest {
 		// Loads the data set from a file
 		dataset = new FlatXmlDataSetBuilder().build(Thread.currentThread()
 				.getContextClassLoader()
-				.getResourceAsStream("PokemonDataset.xml"));
+				.getResourceAsStream("PokebatleDataset.xml"));
 	}
 
 	@AfterClass
@@ -78,16 +77,18 @@ public class DAOPokemonJPATest {
 
 	@Test
 	public void testInsert() throws Exception {
-		Pokemon carapuce = new Pokemon("Carapuce");
-		carapuce.setType1("Eau");
+		Pokemon carapuce = new Pokemon("Salameche");
+		carapuce.setType1("Feu");
 		dao.insert(carapuce);
-		assertThat(dao.getById("Carapuce").getNom()).isEqualTo("Carapuce");
-		assertThat(dao.getById("Carapuce").getType1()).isEqualTo("Eau");
+		assertThat(dao.getById("Salameche").getNom()).isEqualTo("Salameche");
+		assertThat(dao.getById("Salameche").getType1()).isEqualTo("Feu");
 	}
-	/*
-	 * @Test public void testUpdate() throws Exception { Pokemon pikachu =
-	 * dao.getById("Pikachu"); assertThat(pikachu.ge()).isGreaterThan(0);
-	 * pikachu.setAttack(-1); dao.update(pikachu);
-	 * assertThat(dao.getById("Pikachu").getAttack()).isLessThan(0); }
-	 */
-}
+	
+	  @Test public void testUpdate() throws Exception { 
+		  Pokemon pikachu =
+	  dao.getById("Pikachu"); 
+	assertThat(pikachu.getPoids()).isGreaterThan(0);
+	  pikachu.setPoids(-1); 
+	  dao.update(pikachu);
+	  assertThat(dao.getById("Pikachu").getPoids()).isLessThan(0); }
+	 }

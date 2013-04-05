@@ -1,0 +1,9 @@
+<dataset>
+    <POKEMON nom="Pikachu" espece="Souris" type1="Électrique" taille="0.4" 
+    poids="6.0" fmratio=".500" effortval="+2Vit." expval="82" expmax="1000000" captureval="190"/>
+    <POKEMON nom="Carapuce" espece="Machin" type1="eau" taille="0.4" 
+    poids="6.0" fmratio=".500" effortval="+2Vit." expval="82" expmax="1000000" captureval="190"/>
+    <POKEBOT nom="carapuce_bot" owner="youvannn" pv="100" typepokemon_nom="Carapuce"/>
+    <DRESSEUR nom="J_Apple_Junior" />
+    <JUGE_COMBAT nom="JugeViviane"/>
+</dataset>

@@ -1,9 +1,10 @@
 package fr.univaix.iut.pokebattle.twitter;
 
+
+
 import twitter4j.Twitter;
 import twitter4j.TwitterFactory;
 import twitter4j.conf.ConfigurationBuilder;
-import fr.univaix.iut.pokebattle.tuse.Credentials;
 
 public class TwitterBuilder {
     private Credentials credentials;

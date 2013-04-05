@@ -2,6 +2,9 @@ package fr.univaix.iut.pokebattle.progbd;
 
 import static org.fest.assertions.Assertions.assertThat;
 
+import java.sql.Connection;
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -16,24 +19,28 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import fr.univaix.iut.progbd.DAOJuge_Combat;
-import fr.univaix.iut.progbd.Juge_Combat;
+import fr.univaix.iut.progbd.DAOPokeBotJPA;
+import fr.univaix.iut.progbd.PokeBot;
+import fr.univaix.iut.progbd.Pokemon;
 
-public class DAOJuge_CombatTest {
+public class DAOPokeBotJPATest {
 
 	private static EntityManager entityManager;
 	private static FlatXmlDataSet dataset;
 	private static DatabaseConnection dbUnitConnection;
 	private static EntityManagerFactory entityManagerFactory;
-	private static DAOJuge_Combat dao;
-	    
+	private static DAOPokeBotJPA dao;
+
 	@BeforeClass
 	public static void initTestFixture() throws Exception {
 		// Get the entity manager for the tests.
-		entityManagerFactory = Persistence.createEntityManagerFactory("pokebattlePUTest");
+		entityManagerFactory = Persistence
+				.createEntityManagerFactory("pokebattlePUTest");
 		entityManager = entityManagerFactory.createEntityManager();
-		dao = new DAOJuge_Combat(entityManager);
-		java.sql.Connection connection = ((EntityManagerImpl) (entityManager
+
+		dao = new DAOPokeBotJPA(entityManager);
+
+		Connection connection = ((EntityManagerImpl) (entityManager
 				.getDelegate())).getServerSession().getAccessor()
 				.getConnection();
 
@@ -49,27 +56,49 @@ public class DAOJuge_CombatTest {
 		entityManager.close();
 		entityManagerFactory.close();
 	}
+
 	@Before
 	public void setUp() throws Exception {
 		// Clean the data from previous test and insert new data test.
 		DatabaseOperation.CLEAN_INSERT.execute(dbUnitConnection, dataset);
 	}
+	
+	
+	@Test
+	public void testFindAll() throws Exception {
+		List<PokeBot> pokebot = dao.findAll();
+		assertThat(pokebot.get(0).getNom()).isEqualTo("carapuce_bot");
+	}
+	
 
 	@Test
-	public void delete() throws Exception {
-		dao.delete(dao.getById("JugeViviane"));
-		assertThat(dao.getById("JugeViviane")).isNull();
-	}
-	
-	@Test
 	public void testGetById() throws Exception {
-		assertThat(dao.getById("JugeViviane").getNom()).isEqualTo("JugeViviane");
+		assertThat(dao.getById("carapuce_bot").getNom()).isEqualTo("carapuce_bot");
 	}
-	
+
+	@Test
+	public void testDelete() throws Exception {
+		dao.delete(dao.getById("carapuce_bot"));
+		assertThat(dao.getById("carapuce_bot")).isNull();
+	}
+
 	@Test
 	public void testInsert() throws Exception {
-		Juge_Combat juge = new Juge_Combat("JugeRaphael");
-		dao.insert(juge);
-		assertThat(dao.getById("JugeRaphael").getNom()).isEqualTo("JugeRaphael");
+		PokeBot Salameche_bot = new PokeBot("pikachu_bot");
+		Pokemon cara = new Pokemon("Pikachu");
+		Salameche_bot.setTypePokemon(cara);
+		
+		dao.insert(Salameche_bot);		
+		assertThat(dao.getById("pikachu_bot").getNom()).isEqualTo("pikachu_bot");
 	}
+	/*
+	@Test public void testUpdate() throws Exception { 
+		  PokeBot bot = dao.getById("carapuce_bot");
+	  assertThat(bot.getPv()).isGreaterThan(0);
+	  bot.setPv(10); 
+	  dao.update(bot);
+	  assertThat(dao.getById("carapuce_bot").getPv()).isLessThan(50); 
+	  }*/
 }
+	
+

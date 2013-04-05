@@ -6,8 +6,6 @@ import java.io.InputStream;
 
 import org.junit.Test;
 
-import fr.univaix.iut.pokebattle.tuse.Credentials;
-
 public class CredentialsTest {
     @Test
     public void testLoadCredentialsGivenAValidPropertiesFileShouldReturnAValidCredentials() throws Exception {

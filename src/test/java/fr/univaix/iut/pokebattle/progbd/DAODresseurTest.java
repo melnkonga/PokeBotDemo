@@ -27,11 +27,11 @@ public class DAODresseurTest {
 	private static EntityManagerFactory entityManagerFactory;
 	private static DAODresseur dao;
 	
-	@BeforeClass
+	@BeforeClass  
 	public static void initTestFixture() throws Exception {
 		// Get the entity manager for the tests.
 		entityManagerFactory = Persistence.createEntityManagerFactory("pokebattlePUTest");
-		entityManager = entityManagerFactory.createEntityManager();
+	    	entityManager = entityManagerFactory.createEntityManager();
 		dao = new DAODresseur(entityManager);
 		java.sql.Connection connection = ((EntityManagerImpl) (entityManager
 				.getDelegate())).getServerSession().getAccessor()
@@ -41,7 +41,7 @@ public class DAODresseurTest {
 		// Loads the data set from a file
 		dataset = new FlatXmlDataSetBuilder().build(Thread.currentThread()
 				.getContextClassLoader()
-				.getResourceAsStream("DresseurDataset.xml"));
+				.getResourceAsStream("PokebatleDataset.xml"));
 	}
 
 	@AfterClass

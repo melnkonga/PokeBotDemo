@@ -23,13 +23,13 @@ public class Dresseur
 	@Id
 	private String nom;
 	
-	@OneToMany
-	private Collection<Pokemon> pokemon;
+	@OneToMany(targetEntity = PokeBot.class, mappedBy = "owner")
+	private Collection<PokeBot> poke;
 
-	public Dresseur(String nom, Collection<Pokemon> pokemon) {
+	public Dresseur(String nom, Collection<PokeBot> poke) {
 		super();
 		this.nom = nom;
-		this.pokemon = pokemon;
+		this.poke = poke;
 	}
 
 	@Override
@@ -46,10 +46,10 @@ public class Dresseur
 				return false;
 		} else if (!nom.equals(other.nom))
 			return false;
-		if (pokemon == null) {
-			if (other.pokemon != null)
+		if (poke == null) {
+			if (other.poke != null)
 				return false;
-		} else if (!pokemon.equals(other.pokemon))
+		} else if (!poke.equals(other.poke))
 			return false;
 		return true;
 	}
@@ -58,8 +58,8 @@ public class Dresseur
 		return nom;
 	}
 
-	public Collection<Pokemon> getPokemon() {
-		return pokemon;
+	public Collection<PokeBot> getPokemon() {
+		return poke;
 	}
 
 	@Override
@@ -67,7 +67,7 @@ public class Dresseur
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((nom == null) ? 0 : nom.hashCode());
-		result = prime * result + ((pokemon == null) ? 0 : pokemon.hashCode());
+		result = prime * result + ((poke == null) ? 0 : poke.hashCode());
 		return result;
 	}
 
@@ -75,12 +75,12 @@ public class Dresseur
 		this.nom = nom;
 	}
 
-	public void setPokemon(Collection<Pokemon> pokemon) {
-		this.pokemon = pokemon;
+	public void setPokemon(Collection<PokeBot> poke) {
+		this.poke = poke;
 	}
 
 	@Override
 	public String toString() {
-		return "Dresseur [nom=" + nom + ", pokemon=" + pokemon + "]";
+		return "Dresseur [nom=" + nom + ", poke=" + poke + "]";
 	}
 }

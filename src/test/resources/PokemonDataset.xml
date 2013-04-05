@@ -1,4 +1,0 @@
-<dataset>
-    <POKEMON nom="Pikachu" espece="Souris" type1="Électrique" taille="0.4" 
-    poids="6.0" fmratio=".500" effortval="+2Vit." expval="82" expmax="1000000" captureval="190"/>
-</dataset>
