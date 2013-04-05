@@ -2,11 +2,14 @@ package fr.univaix.iut.progbd;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
+
 public class Juge_Combat 
 {
 	@Id
+	@OneToMany(targetEntity = Combat.class)
 	private String nom;
 
 	public Juge_Combat(String nom) {

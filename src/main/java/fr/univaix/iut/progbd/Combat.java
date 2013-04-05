@@ -4,16 +4,30 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 
-@Entity
+@Entity	
+@NamedQueries({
+        @NamedQuery(name = Combat.FIND_ALL, query = "SELECT c FROM Combat c")
+})
 public class Combat {
 	
 	
 	
 	@Id
 	@GeneratedValue
+
 	private int id_combat;
 	
+	
+	public static final String FIND_ALL = "findAllCombat";
+	public int getId_combat() {
+		return id_combat;
+	}
+	public void setId_combat(int id_combat) {
+		this.id_combat = id_combat;
+	}
 	private String arene;
 	public Combat(int id_combat, String arene, Juge_Combat juge,
 			PokeBot pokemon1, PokeBot pokemon2) {
