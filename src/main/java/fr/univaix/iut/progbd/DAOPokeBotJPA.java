@@ -37,6 +37,7 @@ public class DAOPokeBotJPA {
 		return entityManager.find(PokeBot.class, id);
 	}
 
+	
 	public PokeBot insert(PokeBot pokebot) {
 		EntityTransaction tx = entityManager.getTransaction();
 		tx.begin();
@@ -50,7 +51,7 @@ public class DAOPokeBotJPA {
 		try {
 			EntityTransaction tx = entityManager.getTransaction();
 			tx.begin();
-			entityManager.merge(pokebot);
+			entityManager.refresh(pokebot);
 			tx.commit();
 			return true;
 		} catch (Exception e) {

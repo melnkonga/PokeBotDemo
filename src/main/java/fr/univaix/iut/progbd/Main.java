@@ -5,19 +5,34 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
+import fr.univaix.iut.pokebattle.Pokemon;
+
 public class Main {
 
     public static void main(String[] args) {
 
-     	   EntityManagerFactory emf = Persistence.createEntityManagerFactory("pokebattlePU");
+     	    EntityManagerFactory emf = Persistence.createEntityManagerFactory("pokebattlePU");
             EntityManager em = emf.createEntityManager();
-            EntityTransaction tx = em.getTransaction();
-            Pokemon carapuce = Pokemon.createPokemon("Pikachu","J_Apple_Junior");
-            tx.begin();
-            em.persist(carapuce);
-            tx.commit();
-            System.out.println(carapuce);
-            em.close();
-            emf.close();
+            DAOPokemonJPA daopok = new DAOPokemonJPA(em);
+            DAODresseur daoDresseur=new DAODresseur(em);
+            DAOPokeBotJPA daoBotJPA= new DAOPokeBotJPA(em);
+            /*
+            fr.univaix.iut.progbd.Pokemon pok = new fr.univaix.iut.progbd.Pokemon("Carapuce");
+            pok.setCri("skwalop skwalop");
+            PokeBot p = new PokeBot("carapuce_bot");
+            Dresseur d = new Dresseur("1sansuperstar");
+            p.setOwner(d);
+            p.setTypePokemon(pok);
+           /* daopok.insert(pok);
+            daoDresseur.insert(d);
+            daoBotJPA.insert(p);*/
+            
+            PokeBot bot=daoBotJPA.getById("carapuce_bot");
+            
+            bot.setPv(1);
+            
+            daoBotJPA.update(bot);
+            
+            
     }
 }

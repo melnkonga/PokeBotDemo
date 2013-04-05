@@ -95,13 +95,13 @@ public class DAOPokeBotJPATest {
 		assertThat(dao.getById("pikachu_bot").getNom()).isEqualTo("pikachu_bot");
 	}
 	/*
-	@Test public void testUpdate() throws Exception { 
+	@Test public void testchangepv() throws Exception { 
 		  PokeBot bot = dao.getById("carapuce_bot");
 	  assertThat(bot.getPv()).isGreaterThan(0);
 	  bot.setPv(10); 
 	  dao.update(bot);
 	  assertThat(dao.getById("carapuce_bot").getPv()).isLessThan(50); 
-	  }*/
+	  }*///marche en vrai
 }
 	
 
