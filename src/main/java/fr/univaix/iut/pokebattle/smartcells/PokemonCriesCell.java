@@ -43,7 +43,7 @@ public class PokemonCriesCell implements SmartCell {
 			pokemon = pokebot.getTypePokemon();
 			return "@" +interloc + " " +pokemon.getCri();
 		}
-		else return null;
+		else return null; 
 		
 	}
 
