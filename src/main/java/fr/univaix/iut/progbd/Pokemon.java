@@ -44,7 +44,7 @@ public class Pokemon {
 	private String couleur;
 	private int forme;
 	private String owner;
-	private static String cri;
+	private String cri;
 	
 	@Override
 	public int hashCode() {
@@ -319,7 +319,7 @@ public class Pokemon {
 		pokemon.setType2((String) pokemonC[13]);
 		pokemon.setOwner(owner);
 		Pokemon.setPv(pv);
-		pokemon.setCri(cri);
+		
 		return pokemon;
 	}
 	

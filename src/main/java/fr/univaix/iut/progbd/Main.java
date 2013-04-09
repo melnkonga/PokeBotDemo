@@ -29,7 +29,7 @@ public class Main {
             bot.setPv(1);
            
             daoBotJPA.update(bot);
-             */
+      
             
     }
 }
