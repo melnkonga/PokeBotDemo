@@ -20,7 +20,7 @@ public class Main {
             fr.univaix.iut.progbd.Pokemon pok = new fr.univaix.iut.progbd.Pokemon("Carapuce");
             pok.setCri("skwalop skwalop");
             PokeBot p = new PokeBot("carapuce_bot");
-            Dresseur d = new Dresseur("1sansuperstar");
+            Dresseur d = new Dresseur("J_Apple_Junior");
             p.setOwner(d);
             p.setTypePokemon(pok);
             daopok.insert(pok);
@@ -30,9 +30,9 @@ public class Main {
             PokeBot bot=daoBotJPA.getById("carapuce_bot");
             
             bot.setPv(1);
-            
+           
             daoBotJPA.update(bot);
-            
+             */
             
     }
 }
