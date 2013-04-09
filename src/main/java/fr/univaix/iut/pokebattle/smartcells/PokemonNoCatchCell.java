@@ -8,12 +8,12 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-import fr.univaix.iut.pokebattle.Pokemon;
-import fr.univaix.iut.pokebattle.bot.PokeBot;
 import fr.univaix.iut.pokebattle.smartcell.SmartCell;
 import fr.univaix.iut.pokebattle.twitter.Tweet;
+import fr.univaix.iut.progbd.DAODresseur;
 import fr.univaix.iut.progbd.DAOPokeBotJPA;
 import fr.univaix.iut.progbd.DAOPokemonJPA;
+import fr.univaix.iut.progbd.Dresseur;
 import fr.univaix.iut.progbd.PokeBot;
 
 public class PokemonNoCatchCell implements SmartCell {
@@ -21,6 +21,7 @@ public class PokemonNoCatchCell implements SmartCell {
 	private static EntityManager entityManager;
 	private static EntityManagerFactory entityManagerFactory;
 	private static DAOPokeBotJPA dao;
+	private static DAODresseur dao2;
 	
 	public String ask(Tweet question) {
 		/* bonne class */
@@ -28,26 +29,27 @@ public class PokemonNoCatchCell implements SmartCell {
 		entityManagerFactory = Persistence.createEntityManagerFactory("pokebattlePU");
 		entityManager = entityManagerFactory.createEntityManager();
 		dao = new DAOPokeBotJPA(entityManager);
+		dao2 = new DAODresseur(entityManager);
 		
 		String interloc = question.getScreenName();
+		
 		PokeBot pokebot = new PokeBot();
-		Pokemon pokemon = new Pokemon();
 		String nompokebot = "";
-		Pattern p = Pattern.compile("@(.*)");
+		Pattern p = Pattern.compile("@(.*) ");
 		Matcher m = p.matcher(question.getText());
 		
 		if(m.find())
 			nompokebot = m.group(1);
-		
-		pokebot = dao.getById(nompokebot);
-		
-		
 		if (question.getText().contains("Pokeball")
 				| question.getText().contains("pokeball")) {
-			if (dao.getOwnerPoke() == null) {
-				pokebot.setOwnerPoke(question.getScreenName());
+			pokebot = dao.getById(nompokebot);
+			if (pokebot.getOwner()== null) {
+				Dresseur dresseur = new Dresseur();
+				String nomdresseur = interloc;
+				dresseur = dao2.getById(nomdresseur);
+				pokebot.setOwner(dresseur);
 			}
-			String S = "@" + question.getScreenName() + " @" + cara.getOwnerPoke()
+			String S = "@" + question.getScreenName() + " @" + pokebot.getOwner().getNom()
 					+ " is my owner"+" "+new GregorianCalendar().getTime().toString();
 			return S;
 		}
