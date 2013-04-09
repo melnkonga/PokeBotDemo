@@ -16,8 +16,6 @@ public class PokemonOwnerTestCell {
     @Test
     public void testOwner()
 	{
-		assertEquals("@nedseb @J_Apple_Junior is my owner"+" "+new GregorianCalendar().getTime().toString(), owner.ask(new Tweet("nedseb", "owner")));
+		assertEquals("@nedseb @J_Apple_Junior is my owner"+" "+new GregorianCalendar().getTime().toString(), owner.ask(new Tweet("nedseb", "@carapuce_bot owner")));
 	}
-
-
 }

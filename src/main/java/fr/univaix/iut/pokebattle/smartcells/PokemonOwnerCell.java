@@ -6,13 +6,10 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-import fr.univaix.iut.pokebattle.Pokemon;
 import fr.univaix.iut.pokebattle.smartcell.SmartCell;
 import fr.univaix.iut.pokebattle.twitter.Tweet;
-import fr.univaix.iut.progbd.DAODresseur;
 import fr.univaix.iut.progbd.DAOPokeBotJPA;
-import fr.univaix.iut.progbd.DAOPokemonJPA;
-import fr.univaix.iut.progbd.Dresseur;
+import fr.univaix.iut.progbd.PokeBot;
 
 public class PokemonOwnerCell implements SmartCell {
 
@@ -20,9 +17,11 @@ public class PokemonOwnerCell implements SmartCell {
 
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("pokebattlePU");
         EntityManager em = emf.createEntityManager();
-        DAOPokeBotJPA daoBotJPA= new DAOPokeBotJPA(em);
-		String owner = daoBotJPA.getById("carapuce_bot").getOwner().getNom();
-
+        DAOPokeBotJPA daoPokeBotJPA= new DAOPokeBotJPA(em);
+           
+		PokeBot owner = daoPokeBotJPA.getById("carapuce_bot");
+		System.out.println(owner.getOwner().getNom());
+		
 		if (question.getText().contains("owner")
 				| question.getText().contains("Owner")) {
 			if (owner != null) {
