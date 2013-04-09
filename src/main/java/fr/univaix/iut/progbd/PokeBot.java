@@ -56,7 +56,9 @@ public class PokeBot
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
+		{
 			return true;
+		}
 		if (obj == null)
 		{
 			return false;
@@ -71,8 +73,11 @@ public class PokeBot
 			{
 				return false;
 			}
-		} else if (!nom.equals(other.nom))
+		} 
+		else if (!nom.equals(other.nom))
+		{
 			return false;
+		}
 		if (owner == null) {
 			if (other.owner != null)
 			{

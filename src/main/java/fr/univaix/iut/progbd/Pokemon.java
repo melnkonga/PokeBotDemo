@@ -357,38 +357,38 @@ public class Pokemon {
 	public static Pokemon createPokemon(String name, String owner) 
 	{
 		final int couleur = 3;
-		final int Effortval = 4;
-		final int Espece = 5;
-		final int Expmax = 6;
-		final int Expval = 7;
-		final int Fmratio = 8;
-		final int Forme = 9;
-		final int Poids = 10;
-		final int Taille = 11;
-		final int Type1 = 12;
-		final int Type2 = 13;
+		final int effortval = 4;
+		final int espece = 5;
+		final int expmax = 6;
+		final int expval = 7;
+		final int fmratio = 8;
+		final int forme = 9;
+		final int poids = 10;
+		final int taille = 11;
+		final int type1 = 12;
+		final int type2 = 13;
 		
 		Gson gson = new Gson();
 
         BufferedReader br = new BufferedReader(new InputStreamReader(BDGSONLoading.class.getClassLoader().getResourceAsStream("pokedex.json")));
 		DataObjectPokemon[] obj = gson.fromJson(br, DataObjectPokemon[].class);
-		Object[] pokemonC = GSON.BDGSONLoading.FindCaracPokemon(name,obj);
+		Object[] pokemonC = GSON.BDGSONLoading.findCaracPokemon(name,obj);
 		Pokemon pokemon = new Pokemon(name);
 		pokemon.setNom(name);
 		pokemon.setCapspe1((String) pokemonC[0]);
 		pokemon.setCapspe2((String) pokemonC[1]);
 		pokemon.setCaptureval((Integer) pokemonC[2]);
 		pokemon.setCouleur((String) pokemonC[couleur]);
-		pokemon.setEffortval((String) pokemonC[Effortval]);
-		pokemon.setEspece((String) pokemonC[Espece]);
-		pokemon.setExpmax((Integer) pokemonC[Expmax]);
-		pokemon.setExpval((Integer) pokemonC[Expval]);
-		pokemon.setFmratio((Float) pokemonC[Fmratio]);
-		pokemon.setForme((Integer) pokemonC[Forme]);
-		pokemon.setPoids((Float) pokemonC[Poids]);
-		pokemon.setTaille((Float) pokemonC[Taille]);
-		pokemon.setType1((String) pokemonC[Type1]);
-		pokemon.setType2((String) pokemonC[Type2]);
+		pokemon.setEffortval((String) pokemonC[effortval]);
+		pokemon.setEspece((String) pokemonC[espece]);
+		pokemon.setExpmax((Integer) pokemonC[expmax]);
+		pokemon.setExpval((Integer) pokemonC[expval]);
+		pokemon.setFmratio((Float) pokemonC[fmratio]);
+		pokemon.setForme((Integer) pokemonC[forme]);
+		pokemon.setPoids((Float) pokemonC[poids]);
+		pokemon.setTaille((Float) pokemonC[taille]);
+		pokemon.setType1((String) pokemonC[type1]);
+		pokemon.setType2((String) pokemonC[type2]);
 		pokemon.setOwner(owner);
 		Pokemon.setPv(pv);
 		

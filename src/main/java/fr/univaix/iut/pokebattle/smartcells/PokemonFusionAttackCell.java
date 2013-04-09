@@ -49,7 +49,7 @@ public class PokemonFusionAttackCell implements SmartCell {
 						 
 							
 						 
-							String[] tab =GSON.BDGSONLoading.FindAttPokemon(nomPoke,tabatak);
+							String[] tab =GSON.BDGSONLoading.findAttPokemon(nomPoke,tabatak);
 						for (int j = 0; j < tab.length; j++) {
 							
 							String delim1="#";

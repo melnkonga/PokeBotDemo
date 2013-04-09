@@ -12,7 +12,7 @@ public class BDGSONLoading
 {
 	
 	private static int pv =100; 
-	public static void FindPokemon (String pokemon,DataObjectPokemon[] tableau)
+	public static void findPokemon (String pokemon,DataObjectPokemon[] tableau)
 	{
 		for (int i = 0; i < tableau.length; ++i)
 		{
@@ -25,7 +25,7 @@ public class BDGSONLoading
 	}
 	
 
-	public static Object[] FindCaracPokemon (String pokemon,DataObjectPokemon[] tableau)
+	public static Object[] findCaracPokemon (String pokemon,DataObjectPokemon[] tableau)
 	{
 		ArrayList<Object> pokemonStat = new ArrayList<Object>();
 		for (int i = 0; i < tableau.length; ++i)
@@ -54,7 +54,7 @@ public class BDGSONLoading
 		return pokemonStat.toArray();
 	}
 	
-	public static String[] FindAttPokemon (String pokemon,DataObjectPokemon[] tableau)
+	public static String[] findAttPokemon (String pokemon,DataObjectPokemon[] tableau)
 	{
 		for (int i = 0; i < tableau.length; ++i)
 		{
@@ -82,7 +82,7 @@ public class BDGSONLoading
         DataObjectPokemon[] obj = gson.fromJson(br, DataObjectPokemon[].class);
 
         
-        String[] tab=FindAttPokemon("Carapuce",obj);
+        String[] tab=findAttPokemon("Carapuce",obj);
         for (int i = 0; i < tab.length; i++) {
 			System.out.println(tab[i]);
 		}

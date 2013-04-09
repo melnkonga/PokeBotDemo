@@ -56,7 +56,9 @@ public class Combat {
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
+		{
 			return true;
+		}
 		if (obj == null)
 		{
 			return false;
@@ -76,7 +78,9 @@ public class Combat {
 			return false;
 		}
 		if (encour != other.encour)
+		{
 			return false;
+		}
 		if (id_combat != other.id_combat)
 		{
 			return false;
