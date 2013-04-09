@@ -84,10 +84,12 @@ public class PokeBot
 		return true;
 	}
 
+	
+
 	@Override
-	public String toString() {
-		return "PokeBot [nom=" + nom + ", owner=" + owner + ", typePokemon1="
-				+ typepokemon + "]";
+	public String toString()
+	{
+		return "[" + nom + ", " + owner + ", " + pv + ", " + typepokemon + "]";
 	}
 
 	public String getNom() {
