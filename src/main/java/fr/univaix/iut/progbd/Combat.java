@@ -18,21 +18,21 @@ public class Combat {
 	@Id
 	@GeneratedValue
 
-	private int id_combat;
+	private int idcombat;
 	
 	
 	public static final String FIND_ALL = "findAllCombat";
-	public int getId_combat() {
-		return id_combat;
+	public int getIdcombat() {
+		return idcombat;
 	}
-	public void setId_combat(int id_combat) {
-		this.id_combat = id_combat;
+	public void setIdcombat(int idcombat) {
+		this.idcombat = idcombat;
 	}
 	private String arene;
-	public Combat(int id_combat, String arene, Juge_Combat juge,
+	public Combat(int idcombat, String arene, Juge_Combat juge,
 			PokeBot pokemon1, PokeBot pokemon2) {
 		super();
-		this.id_combat = id_combat;
+		this.idcombat = idcombat;
 		this.arene = arene;
 		this.juge = juge;
 		this.pokemon1 = pokemon1;
@@ -44,7 +44,7 @@ public class Combat {
 		int result = 1;
 		result = prime * result + ((arene == null) ? 0 : arene.hashCode());
 		result = prime * result + (encour ? 1231 : 1237);
-		result = prime * result + id_combat;
+		result = prime * result + idcombat;
 		result = prime * result + ((juge == null) ? 0 : juge.hashCode());
 		result = prime * result
 				+ ((pokemon1 == null) ? 0 : pokemon1.hashCode());
@@ -81,7 +81,7 @@ public class Combat {
 		{
 			return false;
 		}
-		if (id_combat != other.id_combat)
+		if (idcombat != other.idcombat)
 		{
 			return false;
 		}
@@ -125,7 +125,7 @@ public class Combat {
 	}
 	@Override
 	public String toString() {
-		return "Combat [id_combat=" + id_combat + ", "
+		return "Combat [idcombat=" + idcombat + ", "
 				+ (arene != null ? "arene=" + arene + ", " : "")
 				+ (juge != null ? "juge=" + juge + ", " : "")
 				+ (pokemon1 != null ? "pokemon1=" + pokemon1 + ", " : "")
