@@ -20,8 +20,6 @@ public class PokemonOwnerCell implements SmartCell {
 
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("pokebattlePU");
         EntityManager em = emf.createEntityManager();
-        DAOPokemonJPA daopok = new DAOPokemonJPA(em);
-        DAODresseur daoDresseur=new DAODresseur(em);
         DAOPokeBotJPA daoBotJPA= new DAOPokeBotJPA(em);
 		String owner = daoBotJPA.getById("carapuce_bot").getOwner().getNom();
 

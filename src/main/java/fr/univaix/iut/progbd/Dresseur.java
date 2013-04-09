@@ -1,7 +1,5 @@
 package fr.univaix.iut.progbd;
 
-import java.util.Collection;
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
