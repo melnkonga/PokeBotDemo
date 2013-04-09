@@ -8,7 +8,7 @@ public class PokemonAttackCell implements SmartCell {
 	Pokemon carapuce = new Pokemon("Carapuce_bot", "Skwalop skwalop", "youvann");
 
 	public String ask(Tweet Question) {
-		String Resultat = null;
+		String resultat = null;
 		if (Question.getText().contains("#attack")) {
 			String delemiter = " ";
 			String[] texteTweet = Question.getText().split(delemiter);
@@ -27,11 +27,11 @@ public class PokemonAttackCell implements SmartCell {
 					break;
 				}
 			}
-			int Cpt = 0;
+			int cpt = 0;
 			for (int i = texteTweet.length - 1; i > 0; --i) {
 				if (texteTweet[i].contains("@")) {
-					++Cpt;
-					if (Cpt == 2) {
+					++cpt;
+					if (cpt == 2) {
 						nomPokemonAdvsaire = texteTweet[i];
 						break;
 					}
@@ -41,18 +41,18 @@ public class PokemonAttackCell implements SmartCell {
 				}
 			}
 
-			Resultat = nomPokemonAdvsaire + " #attack " + nomAttaque + " //cc "
+			resultat = nomPokemonAdvsaire + " #attack " + nomAttaque + " //cc "
 					+ "@" + Question.getScreenName();
 
 			if (Question.getText().contains("@JugeViviane"))
-				Resultat += " @JugeViviane";
+				resultat += " @JugeViviane";
 
-			return Resultat;
+			return resultat;
 		}
 		if (Question.getText().contains("viviane")) {
-			Resultat += "@JugeViviane";
+			resultat += "@JugeViviane";
 		}
-		return Resultat;
+		return resultat;
 	}
 
 }

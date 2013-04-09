@@ -18,12 +18,12 @@ public class PokeWinnerCell implements SmartCell {
 		String nom = null;
 
 		if (question.getText().contains("#KO")) {
-			int Cpt = 0;
+			int cpt = 0;
 			
 			for (int i = 0; i < texteTweet.length; ++i) {
 				if (texteTweet[i].contains("@")) {
-					++Cpt;
-					if (Cpt == 2)
+					++cpt;
+					if (cpt == 2)
 						nomWinnerOwner = texteTweet[i];
 				}
 			}			

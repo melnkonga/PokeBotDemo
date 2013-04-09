@@ -23,15 +23,17 @@ public class Pokemon {
 		PP = pP;
 	}
 
-	String nomPoke;
-	String criPoke;
-	String ownerPoke;
-	int PV = 100; // pv max
-	int PP = 35; // pp max
-	int level = 1;
-	int exp = 0;
-	int PVCourant = 0;
-	int PPCourant = 10;
+	private String nomPoke;
+	private String criPoke;
+	private String ownerPoke;
+	// pv max
+	private int PV = 100;
+	// pp max
+	private int PP = 35; 
+	private int level = 1;
+	private int exp = 0;
+	private int PVCourant = 0;
+	private int PPCourant = 10;
 
 	public Pokemon() {
 		// TODO Auto-generated constructor stub

@@ -10,16 +10,16 @@ public class PokemonCaracAttackCell {
 		Pokemon carapuce = new Pokemon("carapuce_bot", "skwalop", "youvannn");
 
 		public String ask(Tweet Question) {
-			int PPCourant = 0;
+			int ppCourant = 0;
 			if (Question.getText().contains("#statAttack")) {
 				if (Question.getText().contains("#charge")) {
-					PPCourant = carapuce.getPPCourant();
-					return "@" + carapuce.getOwnerPoke() + " #charge #PP=" + PPCourant + "/"
+					ppCourant = carapuce.getPPCourant();
+					return "@" + carapuce.getOwnerPoke() + " #charge #PP=" + ppCourant + "/"
 						+ carapuce.getPP() + " " + new GregorianCalendar().getTime().toString();
 				}
 				else if (Question.getText().contains("#ecume")) {
-					PPCourant = carapuce.getPPCourant();
-					return "@" + carapuce.getOwnerPoke() + " #ecume #PP=" + PPCourant + "/"
+					ppCourant = carapuce.getPPCourant();
+					return "@" + carapuce.getOwnerPoke() + " #ecume #PP=" + ppCourant + "/"
 							+ carapuce.getPP() + " " + new GregorianCalendar().getTime().toString();
 				}
 				else {

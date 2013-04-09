@@ -6,13 +6,9 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-import fr.univaix.iut.pokebattle.Pokemon;
 import fr.univaix.iut.pokebattle.smartcell.SmartCell;
 import fr.univaix.iut.pokebattle.twitter.Tweet;
-import fr.univaix.iut.progbd.DAODresseur;
 import fr.univaix.iut.progbd.DAOPokeBotJPA;
-import fr.univaix.iut.progbd.DAOPokemonJPA;
-import fr.univaix.iut.progbd.Dresseur;
 
 public class PokemonOwnerCell implements SmartCell {
 

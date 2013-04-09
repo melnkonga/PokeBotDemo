@@ -17,7 +17,7 @@ public class PokemonFusionAttackCell implements SmartCell {
 
 	@Override
 	public String ask(Tweet question) {
-		String Resultat = null;
+		String resultat = null;
 		String nomAttaque = null;
 		String nomPokemonAdvsaire = null;
 		String nomDressAdv = null;
@@ -33,7 +33,7 @@ public class PokemonFusionAttackCell implements SmartCell {
 				String delimiter = " ";
 				String[] texteTweet = question.getText().split(delimiter);
 
-				int Cpt = 0;
+				int cpt = 0;
 
 				for (int i = 0; i < texteTweet.length; ++i) {
 
@@ -56,10 +56,10 @@ public class PokemonFusionAttackCell implements SmartCell {
 							String[] nomtab1 =nomAttaque.split(delim1);
 							 
 							
-							String  Attaque  = nomtab1[1];
+							String  attaque  = nomtab1[1];
 							
 							
-							if(tab[j].equals(Attaque)) {
+							if(tab[j].equals(attaque)) {
 								
 								bonneattaque=true;
 								break;
@@ -72,10 +72,10 @@ public class PokemonFusionAttackCell implements SmartCell {
 					}
 
 					if (texteTweet[i].contains("@")) {
-						++Cpt;
-						if (Cpt == 2)
+						++cpt;
+						if (cpt == 2)
 							nomPokemonAdvsaire = texteTweet[i];
-						if (Cpt == 3)
+						if (cpt == 3)
 							nomDressAdv = texteTweet[i];
 					}
 
@@ -83,20 +83,20 @@ public class PokemonFusionAttackCell implements SmartCell {
 				
 				if(bonneattaque)
 				{
-				Resultat = nomPokemonAdvsaire + " #attack " + nomAttaque
+					resultat = nomPokemonAdvsaire + " #attack " + nomAttaque
 						+ " /cc " + nomDressAdv + " @"
 						+ question.getScreenName() + " @JugeViviane"+" "+new GregorianCalendar().getTime().toString();
 				
 				}
 				else
 				{
-					Resultat ="@"+ question.getScreenName() + " o_O ?" 
+					resultat ="@"+ question.getScreenName() + " o_O ?" 
 							+ " /cc " + nomDressAdv 
 							+ " @JugeViviane "+nomPokemonAdvsaire +" "+new GregorianCalendar().getTime().toString();
 				}
 				
 
-				return Resultat;
+				return resultat;
 
 			} else {
 				return ("@" + question.getScreenName() + " @"
