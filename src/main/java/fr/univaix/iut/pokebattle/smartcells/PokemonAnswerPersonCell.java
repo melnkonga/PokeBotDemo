@@ -10,20 +10,20 @@ public class PokemonAnswerPersonCell implements SmartCell {
 	Pokemon carapuce = new Pokemon("carapuce_bot", "Skwalop skwalop");
 
 	public String ask(Tweet Question) {
-		String Resultat = null;
+		String resultat = null;
 		if (Question.getText().contains("Salut")
 				| Question.getText().contains("salut")) {
 			
 			
 			
 			String date= new GregorianCalendar().getTime().toString();
-			Resultat = "@" + Question.getScreenName() + " "
+			resultat = "@" + Question.getScreenName() + " "
 					+ carapuce.getCriPoke()+" "+date;
 			
 		
-			return Resultat;
+			return resultat;
 		}
-		return Resultat;
+		return resultat;
 
 	}
 

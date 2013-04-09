@@ -11,7 +11,7 @@ public class VivianeAttackCells implements SmartCell {
 	@Override
 	public String ask(Tweet question) {
 
-		String Resultat = null;
+		String resultat = null;
 		String nomProprio = null;
 		String nomPokemonAdvsaire = null;
 
@@ -40,9 +40,9 @@ public class VivianeAttackCells implements SmartCell {
 
 			}
 
-			Resultat = nomPokemonAdvsaire + " -10 pv /cc " + nomProprio + " "
+			resultat = nomPokemonAdvsaire + " -10 pv /cc " + nomProprio + " "
 					+ new GregorianCalendar().getTime().toString();
-			return Resultat;
+			return resultat;
 
 		}
 		return null;

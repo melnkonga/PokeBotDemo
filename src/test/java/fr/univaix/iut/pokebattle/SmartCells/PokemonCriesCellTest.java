@@ -13,12 +13,12 @@ public class PokemonCriesCellTest {
 
     @Test
     public void testSalut() {
-        assertEquals("Skwalop Skwalop", cell.ask(new Tweet("Salut!")));
+        assertEquals("@neyo33 skwalop skwalop", cell.ask(new Tweet("neyo33","@carapuce_bot Salut!")));
     }
     
     @Test
     public void testNotSalut() {
-        assertEquals("Skwalop Skwalop", cell.ask(new Tweet("au revoir")));
+        assertEquals(null, cell.ask(new Tweet("neyo33","@carapuce_bot blabla")));
     }
 
 }

@@ -44,7 +44,7 @@ public class Pokemon {
 	private String couleur;
 	private int forme;
 	private String owner;
-	private static String cri;
+	private String cri;
 	
 	@Override
 	public int hashCode() {
@@ -296,6 +296,18 @@ public class Pokemon {
 	
 	public static Pokemon createPokemon(String name, String owner) 
 	{
+		final int couleur = 3;
+		final int Effortval = 4;
+		final int Espece = 5;
+		final int Expmax = 6;
+		final int Expval = 7;
+		final int Fmratio = 8;
+		final int Forme = 9;
+		final int Poids = 10;
+		final int Taille = 11;
+		final int Type1 = 12;
+		final int Type2 = 13;
+		
 		Gson gson = new Gson();
 
         BufferedReader br = new BufferedReader(new InputStreamReader(BDGSONLoading.class.getClassLoader().getResourceAsStream("pokedex.json")));
@@ -306,20 +318,20 @@ public class Pokemon {
 		pokemon.setCapspe1((String) pokemonC[0]);
 		pokemon.setCapspe2((String) pokemonC[1]);
 		pokemon.setCaptureval((Integer) pokemonC[2]);
-		pokemon.setCouleur((String) pokemonC[3]);
-		pokemon.setEffortval((String) pokemonC[4]);
-		pokemon.setEspece((String) pokemonC[5]);
-		pokemon.setExpmax((Integer) pokemonC[6]);
-		pokemon.setExpval((Integer) pokemonC[7]);
-		pokemon.setFmratio((Float) pokemonC[8]);
-		pokemon.setForme((Integer) pokemonC[9]);
-		pokemon.setPoids((Float) pokemonC[10]);
-		pokemon.setTaille((Float) pokemonC[11]);
-		pokemon.setType1((String) pokemonC[12]);
-		pokemon.setType2((String) pokemonC[13]);
+		pokemon.setCouleur((String) pokemonC[couleur]);
+		pokemon.setEffortval((String) pokemonC[Effortval]);
+		pokemon.setEspece((String) pokemonC[Espece]);
+		pokemon.setExpmax((Integer) pokemonC[Expmax]);
+		pokemon.setExpval((Integer) pokemonC[Expval]);
+		pokemon.setFmratio((Float) pokemonC[Fmratio]);
+		pokemon.setForme((Integer) pokemonC[Forme]);
+		pokemon.setPoids((Float) pokemonC[Poids]);
+		pokemon.setTaille((Float) pokemonC[Taille]);
+		pokemon.setType1((String) pokemonC[Type1]);
+		pokemon.setType2((String) pokemonC[Type2]);
 		pokemon.setOwner(owner);
 		Pokemon.setPv(pv);
-		pokemon.setCri(cri);
+		
 		return pokemon;
 	}
 	
