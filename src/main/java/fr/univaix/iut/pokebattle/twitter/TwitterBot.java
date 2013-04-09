@@ -7,6 +7,7 @@ import twitter4j.Twitter;
 import com.twitter.hbc.httpclient.ControlStreamException;
 
 import fr.univaix.iut.pokebattle.bot.Bot;
+import fr.univaix.iut.pokebattle.tuse.Credentials;
 import fr.univaix.iut.pokebattle.tuse.TwitterUserStreamEasy;
 
 public class TwitterBot {
