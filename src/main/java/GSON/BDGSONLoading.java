@@ -18,7 +18,9 @@ public class BDGSONLoading
 		{
 
 			if (pokemon.equals(tableau[i].getNom()))
+			{
 				System.out.println(tableau[i]);
+			}
 		}
 	}
 	

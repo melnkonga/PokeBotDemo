@@ -75,75 +75,135 @@ public class Pokemon {
 		if (this == obj)
 			return true;
 		if (obj == null)
+		{
 			return false;
+		}
 		if (getClass() != obj.getClass())
+		{
 			return false;
+		}
 		Pokemon other = (Pokemon) obj;
-		if (capspe1 == null) {
+		if (capspe1 == null) 
+		{
 			if (other.capspe1 != null)
+			{
 				return false;
-		} else if (!capspe1.equals(other.capspe1))
+			}
+		} 
+		else if (!capspe1.equals(other.capspe1))
+		{
 			return false;
+		}
 		if (capspe2 == null) {
 			if (other.capspe2 != null)
+			{
 				return false;
+			}
 		} else if (!capspe2.equals(other.capspe2))
+		{
 			return false;
+		}
 		if (captureval != other.captureval)
+		{
 			return false;
+		}
 		if (couleur == null) {
 			if (other.couleur != null)
+			{
 				return false;
+			}
 		} else if (!couleur.equals(other.couleur))
+		{
 			return false;
+		}
 		if (cri == null) {
 			if (other.cri != null)
+			{
 				return false;
+			}
 		} else if (!cri.equals(other.cri))
+		{
 			return false;
+		}
 		if (effortval == null) {
 			if (other.effortval != null)
+			{
 				return false;
+			}
 		} else if (!effortval.equals(other.effortval))
+		{
 			return false;
+		}
 		if (espece == null) {
 			if (other.espece != null)
+			{
 				return false;
+			}
 		} else if (!espece.equals(other.espece))
+		{
 			return false;
+		}
 		if (expmax != other.expmax)
+		{
 			return false;
+		}
 		if (expval != other.expval)
+		{
 			return false;
+		}
 		if (Float.floatToIntBits(fmratio) != Float
 				.floatToIntBits(other.fmratio))
+		{
 			return false;
+		}
 		if (forme != other.forme)
+		{
 			return false;
+		}
 		if (nom == null) {
 			if (other.nom != null)
+			{
 				return false;
+			}
 		} else if (!nom.equals(other.nom))
+		{
 			return false;
+		}
 		if (owner == null) {
 			if (other.owner != null)
+			{
 				return false;
+			}
 		} else if (!owner.equals(other.owner))
+		{
 			return false;
+		}
 		if (Float.floatToIntBits(poids) != Float.floatToIntBits(other.poids))
+		{
 			return false;
+		}
 		if (Float.floatToIntBits(taille) != Float.floatToIntBits(other.taille))
+		{
 			return false;
+		}
 		if (type1 == null) {
 			if (other.type1 != null)
+			{
 				return false;
+			}
 		} else if (!type1.equals(other.type1))
+		{
 			return false;
+		}
 		if (type2 == null) {
 			if (other.type2 != null)
+			{
 				return false;
+			}
 		} else if (!type2.equals(other.type2))
+		{
 			return false;
+		}
 		return true;
 	}
 	@Override

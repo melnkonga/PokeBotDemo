@@ -36,8 +36,9 @@ public class PokemonCriesCell implements SmartCell {
 		Pattern p = Pattern.compile("@(.*) ");
 		Matcher m = p.matcher(question.getText());
 		if (m.find())
+		{
 		  nompokebot = m.group(1);
-		
+		}
 		if (question.getText().contains("Salut")) {
 			pokebot = dao.getById(nompokebot);
 			pokemon = pokebot.getTypePokemon();

@@ -20,8 +20,9 @@ public class VivianeAttackCells implements SmartCell {
 
 		if (question.getText().contains("#attack")) {
 			if (!question.getScreenName().equals("carapuce_bot"))
-				// test avec carapuce
+			{
 				return null;
+			}
 
 			String delimiter = " ";
 			String[] texteTweet = question.getText().split(delimiter);
@@ -31,10 +32,13 @@ public class VivianeAttackCells implements SmartCell {
 				if (texteTweet[i].contains("@")) {
 					++cpt;
 					if (cpt == 1)
+					{
 						nomPokemonAdvsaire = texteTweet[i];
-
+					}
 					if (cpt == 3)
+					{
 						nomProprio = texteTweet[i];
+					}
 
 				}
 

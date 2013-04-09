@@ -74,9 +74,13 @@ public class PokemonFusionAttackCell implements SmartCell {
 					if (texteTweet[i].contains("@")) {
 						++cpt;
 						if (cpt == 2)
+						{
 							nomPokemonAdvsaire = texteTweet[i];
+						}
 						if (cpt == 3)
+						{
 							nomDressAdv = texteTweet[i];
+						}
 					}
 
 				}

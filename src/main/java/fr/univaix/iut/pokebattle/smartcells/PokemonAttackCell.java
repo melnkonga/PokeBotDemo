@@ -18,7 +18,9 @@ public class PokemonAttackCell implements SmartCell {
 
 			for (int i = 0; i < texteTweet.length; ++i) {
 				if (texteTweet[i].contains("#attack"))
+				{
 					nomAttaque = texteTweet[i + 1];
+				}
 			}
 
 			for (int i = texteTweet.length - 1; i > 0; --i) {
@@ -45,7 +47,9 @@ public class PokemonAttackCell implements SmartCell {
 					+ "@" + Question.getScreenName();
 
 			if (Question.getText().contains("@JugeViviane"))
+			{
 				resultat += " @JugeViviane";
+			}
 
 			return resultat;
 		}

@@ -24,15 +24,23 @@ public class Juge_Combat
 		if (this == obj)
 			return true;
 		if (obj == null)
+		{
 			return false;
+		}
 		if (getClass() != obj.getClass())
+		{
 			return false;
+		}
 		Juge_Combat other = (Juge_Combat) obj;
 		if (nom == null) {
 			if (other.nom != null)
+			{
 				return false;
+			}
 		} else if (!nom.equals(other.nom))
+		{
 			return false;
+		}
 		return true;
 	}
 

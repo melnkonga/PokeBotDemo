@@ -24,16 +24,22 @@ public class PokeWinnerCell implements SmartCell {
 				if (texteTweet[i].contains("@")) {
 					++cpt;
 					if (cpt == 2)
+					{
 						nomWinnerOwner = texteTweet[i];
+					}
 				}
 			}			
 			nom = "@" + carapuce.getOwnerPoke();
 			if(nom.equals(nomWinnerOwner))
+			{
 				nomWinnerPoke = carapuce.getNomPoke();
+			}
 			
 			nom = "@" + salameche.getOwnerPoke();
 			if(nom.equals(nomWinnerOwner))
+			{
 				nomWinnerPoke = salameche.getNomPoke();
+			}
 			return "@" + nomWinnerPoke + " #win" +" "+new GregorianCalendar().getTime().toString();
 		}		
 		return null;

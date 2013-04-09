@@ -58,27 +58,43 @@ public class PokeBot
 		if (this == obj)
 			return true;
 		if (obj == null)
+		{
 			return false;
+		}
 		if (getClass() != obj.getClass())
+		{
 			return false;
+		}
 		PokeBot other = (PokeBot) obj;
 		if (nom == null) {
 			if (other.nom != null)
+			{
 				return false;
+			}
 		} else if (!nom.equals(other.nom))
 			return false;
 		if (owner == null) {
 			if (other.owner != null)
+			{
 				return false;
+			}
 		} else if (!owner.equals(other.owner))
+		{
 			return false;
+		}
 		if (pv != other.pv)
+		{
 			return false;
+		}
 		if (typepokemon == null) {
 			if (other.typepokemon != null)
+			{
 				return false;
+			}
 		} else if (!typepokemon.equals(other.typepokemon))
+		{
 			return false;
+		}
 		
 		return true;
 	}

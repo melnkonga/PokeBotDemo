@@ -58,39 +58,65 @@ public class Combat {
 		if (this == obj)
 			return true;
 		if (obj == null)
+		{
 			return false;
+		}
 		if (getClass() != obj.getClass())
+		{
 			return false;
+		}
 		Combat other = (Combat) obj;
 		if (arene == null) {
 			if (other.arene != null)
+			{
 				return false;
+			}
 		} else if (!arene.equals(other.arene))
+		{
 			return false;
+		}
 		if (encour != other.encour)
 			return false;
 		if (id_combat != other.id_combat)
+		{
 			return false;
+		}
 		if (juge == null) {
 			if (other.juge != null)
+			{
 				return false;
+			};
 		} else if (!juge.equals(other.juge))
+		{
 			return false;
+		}
 		if (pokemon1 == null) {
 			if (other.pokemon1 != null)
+			{
 				return false;
+			}
 		} else if (!pokemon1.equals(other.pokemon1))
+		{
 			return false;
+		}
 		if (pokemon2 == null) {
 			if (other.pokemon2 != null)
+			{
 				return false;
+			}
 		} else if (!pokemon2.equals(other.pokemon2))
+		{
 			return false;
+		}
 		if (winner == null) {
 			if (other.winner != null)
+			{
 				return false;
+			}
 		} else if (!winner.equals(other.winner))
+		{
 			return false;
+		}
 		return true;
 	}
 	@Override
