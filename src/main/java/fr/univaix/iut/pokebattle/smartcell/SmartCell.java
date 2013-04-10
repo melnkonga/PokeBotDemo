@@ -4,5 +4,5 @@ import fr.univaix.iut.pokebattle.twitter.Tweet;
 
 public interface SmartCell {
 
-    public abstract String ask(Tweet question);
+	public abstract String ask(Tweet question);
 }

@@ -17,32 +17,32 @@ import fr.univaix.iut.progbd.PokeBot;
  * Reply to all.
  */
 public class PokemonCriesCell implements SmartCell {
-	
+
 	private static EntityManager entityManager;
 	private static EntityManagerFactory entityManagerFactory;
 	private static DAOPokeBotJPA dao;
-	
-	public String ask(Tweet question) {		
+
+	public String ask(Tweet question) {
 		entityManagerFactory = Persistence
 				.createEntityManagerFactory("pokebattlePU");
 		entityManager = entityManagerFactory.createEntityManager();
 		dao = new DAOPokeBotJPA(entityManager);
-		
-		String interloc = question.getScreenName(); //@.....
+
+		String interloc = question.getScreenName(); // @.....
 		PokeBot pokebot = new PokeBot();
 		Pokemon pokemon = new Pokemon();
 		String nompokebot = "";
 		Pattern p = Pattern.compile("@(.*) ");
 		Matcher m = p.matcher(question.getText());
-		if (m.find())   
-		{
-		  nompokebot = m.group(1);
+		if (m.find()) {
+			nompokebot = m.group(1);
 		}
 		if (question.getText().contains("Salut")) {
 			pokebot = dao.getById(nompokebot);
 			pokemon = pokebot.getTypePokemon();
-			return "@" +interloc + " " +pokemon.getCri();
+			return "@" + interloc + " " + pokemon.getCri();
+		} else {
+			return null;
 		}
-		else return null; 		
 	}
 }

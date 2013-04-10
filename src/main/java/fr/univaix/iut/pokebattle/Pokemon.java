@@ -14,11 +14,11 @@ public class Pokemon {
 	public void setPV(int pV) {
 		pv = pV;
 	}
-	
+
 	public int getPP() {
 		return pp;
 	}
-	
+
 	public void setPP(int pP) {
 		pp = pP;
 	}
@@ -29,7 +29,7 @@ public class Pokemon {
 	// pv max
 	private int pv = 100;
 	// pp max
-	private int pp = 35; 
+	private int pp = 35;
 	private int level = 1;
 	private int exp = 0;
 	private int pVCourant = 0;
@@ -51,7 +51,7 @@ public class Pokemon {
 	public int getPVCourant() {
 		return pVCourant;
 	}
-	
+
 	public int getPPCourant() {
 		return pPCourant;
 	}
@@ -67,7 +67,7 @@ public class Pokemon {
 	public void setPVCourant(int pVCourant) {
 		this.pVCourant = pVCourant;
 	}
-	
+
 	public void setPPCourant(int pPCourant) {
 		this.pPCourant = pPCourant;
 	}

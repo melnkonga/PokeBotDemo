@@ -3,26 +3,21 @@ package fr.univaix.iut.progbd;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 
-public class DAODresseur 
-{
+public class DAODresseur {
 	private EntityManager entityManager;
 
-	public DAODresseur(EntityManager entityManager) 
-	{
+	public DAODresseur(EntityManager entityManager) {
 		this.entityManager = entityManager;
 	}
 
-	public boolean delete(Dresseur dresseur) 
-	{
-		try 
-		{
+	public boolean delete(Dresseur dresseur) {
+		try {
 			EntityTransaction tx = entityManager.getTransaction();
 			tx.begin();
 			entityManager.remove(dresseur);
 			tx.commit();
 			return true;
-		} catch (Exception e) 
-		{
+		} catch (Exception e) {
 			return false;
 		}
 	}
@@ -51,4 +46,3 @@ public class DAODresseur
 		}
 	}
 }
-

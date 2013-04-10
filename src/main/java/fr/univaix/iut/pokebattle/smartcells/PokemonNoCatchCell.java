@@ -21,38 +21,39 @@ public class PokemonNoCatchCell implements SmartCell {
 	private static EntityManagerFactory entityManagerFactory;
 	private static DAOPokeBotJPA dao;
 	private static DAODresseur dao2;
-	
+
 	public String ask(Tweet question) {
 		/* bonne class */
-		
-		entityManagerFactory = Persistence.createEntityManagerFactory("pokebattlePU");
+
+		entityManagerFactory = Persistence
+				.createEntityManagerFactory("pokebattlePU");
 		entityManager = entityManagerFactory.createEntityManager();
 		dao = new DAOPokeBotJPA(entityManager);
 		dao2 = new DAODresseur(entityManager);
-		
+
 		String interloc = question.getScreenName();
-		
+
 		PokeBot pokebot = new PokeBot();
 		String nompokebot = "";
 		Pattern p = Pattern.compile("@(.*) ");
 		Matcher m = p.matcher(question.getText());
-		
-		if(m.find())
-			{
-				nompokebot = m.group(1);
-			}
+
+		if (m.find()) {
+			nompokebot = m.group(1);
+		}
 		if (question.getText().contains("Pokeball")
 				| question.getText().contains("pokeball")) {
 			pokebot = dao.getById(nompokebot);
-			if (pokebot.getOwner()== null) {  
+			if (pokebot.getOwner() == null) {
 				Dresseur dresseur = new Dresseur();
 				String nomdresseur = interloc;
 				dresseur = dao2.getById(nomdresseur);
 				pokebot.setOwner(dresseur);
 			}
 
-			String s = "@" + question.getScreenName() + " @" + pokebot.getOwner().getNom()
-					+ " is my owner"+" "+new GregorianCalendar().getTime().toString();
+			String s = "@" + question.getScreenName() + " @"
+					+ pokebot.getOwner().getNom() + " is my owner" + " "
+					+ new GregorianCalendar().getTime().toString();
 			return s;
 		}
 

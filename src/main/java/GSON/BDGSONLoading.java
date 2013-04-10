@@ -6,33 +6,25 @@ import java.util.ArrayList;
 
 import com.google.gson.Gson;
 
+public class BDGSONLoading {
 
+	private static int pv = 100;
 
-public class BDGSONLoading 
-{
-	
-	private static int pv =100; 
-	public static void findPokemon (String pokemon,DataObjectPokemon[] tableau)
-	{
-		for (int i = 0; i < tableau.length; ++i)
-		{
+	public static void findPokemon(String pokemon, DataObjectPokemon[] tableau) {
+		for (int i = 0; i < tableau.length; ++i) {
 
-			if (pokemon.equals(tableau[i].getNom()))
-			{
+			if (pokemon.equals(tableau[i].getNom())) {
 				System.out.println(tableau[i]);
 			}
 		}
 	}
-	
 
-	public static Object[] findCaracPokemon (String pokemon,DataObjectPokemon[] tableau)
-	{
+	public static Object[] findCaracPokemon(String pokemon,
+			DataObjectPokemon[] tableau) {
 		ArrayList<Object> pokemonStat = new ArrayList<Object>();
-		for (int i = 0; i < tableau.length; ++i)
-		{
-	
-			if (pokemon.equals(tableau[i].getNom()))
-			{
+		for (int i = 0; i < tableau.length; ++i) {
+
+			if (pokemon.equals(tableau[i].getNom())) {
 				pokemonStat.add(tableau[i].getCapspe1());
 				pokemonStat.add(tableau[i].getCapspe2());
 				pokemonStat.add(tableau[i].getCaptureval());
@@ -48,25 +40,23 @@ public class BDGSONLoading
 				pokemonStat.add(tableau[i].getType1());
 				pokemonStat.add(tableau[i].getType2());
 			}
-			
+
 		}
 		System.out.println(pokemonStat);
 		return pokemonStat.toArray();
 	}
-	
-	public static String[] findAttPokemon (String pokemon,DataObjectPokemon[] tableau)
-	{
-		for (int i = 0; i < tableau.length; ++i)
-		{
 
-			if (pokemon.equals(tableau[i].getNom()))
-			{
-				DataObjectAttack[] tabAtt= tableau[i].getAttaques();
+	public static String[] findAttPokemon(String pokemon,
+			DataObjectPokemon[] tableau) {
+		for (int i = 0; i < tableau.length; ++i) {
+
+			if (pokemon.equals(tableau[i].getNom())) {
+				DataObjectAttack[] tabAtt = tableau[i].getAttaques();
 				String[] tab = new String[tabAtt.length];
-				
+
 				for (int j = 0; j < tabAtt.length; j++) {
-					tab[j]=tabAtt[j].getNom();
-					
+					tab[j] = tabAtt[j].getNom();
+
 				}
 				return tab;
 			}
@@ -74,21 +64,18 @@ public class BDGSONLoading
 		return null;
 	}
 
-    public static void main( String[] args )
-    {
-        Gson gson = new Gson();
+	public static void main(String[] args) {
+		Gson gson = new Gson();
 
-        BufferedReader br = new BufferedReader(new InputStreamReader(BDGSONLoading.class.getClassLoader().getResourceAsStream("pokedex.json")));
-        DataObjectPokemon[] obj = gson.fromJson(br, DataObjectPokemon[].class);
+		BufferedReader br = new BufferedReader(new InputStreamReader(
+				BDGSONLoading.class.getClassLoader().getResourceAsStream(
+						"pokedex.json")));
+		DataObjectPokemon[] obj = gson.fromJson(br, DataObjectPokemon[].class);
 
-        
-        String[] tab=findAttPokemon("Carapuce",obj);
-        for (int i = 0; i < tab.length; i++) {
+		String[] tab = findAttPokemon("Carapuce", obj);
+		for (int i = 0; i < tab.length; i++) {
 			System.out.println(tab[i]);
 		}
-        
 
-       
-
-    }
+	}
 }
