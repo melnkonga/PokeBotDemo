@@ -15,7 +15,7 @@ public class Main {
 		DAODresseur daoDresseur = new DAODresseur(em);
 		DAOPokeBotJPA daoBotJPA = new DAOPokeBotJPA(em);
 
-		/*fr.univaix.iut.progbd.Pokemon pok = new fr.univaix.iut.progbd.Pokemon(
+		fr.univaix.iut.progbd.Pokemon pok = new fr.univaix.iut.progbd.Pokemon(
 				"Carapuce");
 		pok.setCri("skwalop skwalop");
 		PokeBot p = new PokeBot("carapuce_bot");
@@ -28,7 +28,7 @@ public class Main {
 
 		PokeBot bot = daoBotJPA.getById("carapuce_bot");
 		bot.setPv(1);
-		daoBotJPA.update(bot);*/
+		daoBotJPA.update(bot);
 		
 		fr.univaix.iut.progbd.Pokemon pok2 = new fr.univaix.iut.progbd.Pokemon(
 				"Salameche");
@@ -42,5 +42,7 @@ public class Main {
 		PokeBot bot2 = daoBotJPA.getById("salameche_bot");
 		bot2.setPv(1);
 		daoBotJPA.update(bot2);
+	
+		
 	}
 }

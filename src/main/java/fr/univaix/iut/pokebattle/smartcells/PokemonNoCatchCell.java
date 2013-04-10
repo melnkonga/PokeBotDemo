@@ -35,7 +35,7 @@ public class PokemonNoCatchCell implements SmartCell {
 
 		PokeBot pokebot = new PokeBot();
 		String nompokebot = "";
-		Pattern p = Pattern.compile("@(.*) ");
+		Pattern p = Pattern.compile("@([^ ]*) ");
 		Matcher m = p.matcher(question.getText());
 
 		if (m.find()) {
@@ -52,7 +52,7 @@ public class PokemonNoCatchCell implements SmartCell {
 			}
 
 			String s = "@" + question.getScreenName() + " @"
-					+ pokebot.getOwner().getNom() + " is my owner" + " "
+					+ pokebot.getOwner().getNom() + " is my owner" + " #pokebattle "
 					+ new GregorianCalendar().getTime().toString();
 			return s;
 		}
