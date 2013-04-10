@@ -16,16 +16,19 @@ public class PokemonCaracCell implements SmartCell {
 		if (Question.getText().contains("#stat")) {
 			if (Question.getText().contains("#level")) {
 				level = carapuce.getLevel();
-				return "@" + carapuce.getOwnerPoke() + " #level=" + level  + " " + new GregorianCalendar().getTime().toString();
+				return "@" + carapuce.getOwnerPoke() + " #level=" + level + " "
+						+ new GregorianCalendar().getTime().toString();
 			}
 			if (Question.getText().contains("#xp")) {
 				xp = carapuce.getExp();
-				return "@" + carapuce.getOwnerPoke() + " #xp=" + xp + " " + new GregorianCalendar().getTime().toString();
+				return "@" + carapuce.getOwnerPoke() + " #xp=" + xp + " "
+						+ new GregorianCalendar().getTime().toString();
 			}
 			if (Question.getText().contains("#PV")) {
 				pvCourant = carapuce.getPVCourant();
-				return "@" + carapuce.getOwnerPoke() + " #PV=" + pvCourant + "/"
-						+ carapuce.getPV() + " " + new GregorianCalendar().getTime().toString();
+				return "@" + carapuce.getOwnerPoke() + " #PV=" + pvCourant
+						+ "/" + carapuce.getPV() + " "
+						+ new GregorianCalendar().getTime().toString();
 			}
 		}
 		return null;
