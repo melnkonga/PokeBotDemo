@@ -394,7 +394,4 @@ public class Pokemon {
 		
 		return pokemon;
 	}
-	
-	
-
 }

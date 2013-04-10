@@ -38,11 +38,13 @@ public class PokemonCriesCell implements SmartCell {
 		{
 		  nompokebot = m.group(1);
 		}
-		if (question.getText().contains("Salut")) {
+		if (question.getText().contains("salut")) {
 			pokebot = dao.getById(nompokebot);
 			pokemon = pokebot.getTypePokemon();
+			System.out.println("@" +interloc + " " +pokemon.getCri());
 			return "@" +interloc + " " +pokemon.getCri();
 		}
-		else return null; 		
+		else 
+			return null; 		
 	}
 }
