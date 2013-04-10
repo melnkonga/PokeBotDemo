@@ -24,7 +24,7 @@ public class PokemonPertePVCell implements SmartCell {
 			if (str[i].contains("@")) {
 				nomPoke = str[i];
 				// nomPoke.replace("@", "");
-			}
+			}  
 		}
 		PokeBot carapuce = daoBotJPA.getById("carapuce_bot");
 		String owner = daoBotJPA.getById("carapuce_bot").getOwner().getNom();

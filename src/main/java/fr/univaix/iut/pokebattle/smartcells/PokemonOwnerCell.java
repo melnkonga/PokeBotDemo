@@ -31,7 +31,7 @@ public class PokemonOwnerCell implements SmartCell {
            
 		PokeBot owner = daoPokeBotJPA.getById(nompokebot);
 		String nom_dress = owner.getOwner().getNom();
-		
+		  
 		if (question.getText().contains("owner")
 				| question.getText().contains("Owner")) {
 			if (nom_dress != null) {

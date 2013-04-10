@@ -34,7 +34,7 @@ public class PokemonCriesCell implements SmartCell {
 		String nompokebot = "";
 		Pattern p = Pattern.compile("@(.*) ");
 		Matcher m = p.matcher(question.getText());
-		if (m.find())
+		if (m.find())   
 		{
 		  nompokebot = m.group(1);
 		}
