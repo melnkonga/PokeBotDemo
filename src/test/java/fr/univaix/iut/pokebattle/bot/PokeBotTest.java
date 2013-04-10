@@ -16,12 +16,10 @@ import fr.univaix.iut.pokebattle.twitter.Tweet;
 public class PokeBotTest {
     PokeBot pokeBot = new PokeBot();
     
-
     @Test
     public void testSalut() {
-
         assertEquals("@J_apple_junior Skwalop skwalop"+" "+new GregorianCalendar().getTime().toString(), pokeBot.ask(new Tweet("J_apple_junior", "Salut")));
-     //   assertEquals(null, pokeBot.ask(new Tweet("J_apple_junior","This is not a question.")));
+        assertEquals(null, pokeBot.ask(new Tweet("J_apple_junior","This is not a question.")));
 
 
     }

@@ -2,6 +2,8 @@ package fr.univaix.iut.pokebattle.SmartCells;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.GregorianCalendar;
+
 import org.junit.Test;
 
 import fr.univaix.iut.pokebattle.smartcells.PokemonCriesCell;
@@ -13,9 +15,9 @@ public class PokemonCriesCellTest {
  
     @Test
     public void testSalut() {
-        assertEquals("@neyo33 skwalop skwalop", cell.ask(new Tweet("neyo33","@carapuce_bot Salut!")));
-    }
-    
+        assertEquals("@neyo33 skwalop skwalop" + " "+ new GregorianCalendar().getTime().toString(), cell.ask(new Tweet("neyo33","@carapuce_bot salut!")));
+    }    
+ 
     @Test
     public void testNotSalut() {
         assertEquals(null, cell.ask(new Tweet("neyo33","@carapuce_bot blabla")));
