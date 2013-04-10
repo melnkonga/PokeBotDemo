@@ -14,7 +14,7 @@
     <POKEBOT nom="carapuce_bot2" owner_nom="youvannn" pv="100" typepokemon_nom="Carapuce"/>
     <POKEBOT nom="carapuce_bot" owner_nom="youvannn" pv="100" typepokemon_nom="Carapuce"/>
     <POKEBOT nom="pikachu_bot2" owner_nom="J_Apple_Junior" pv="100" typepokemon_nom="Pikachu"/>
-    <COMBAT id_combat="1"  arene="arenedesbois" juge_nom="JugeViviane" pokemon1_nom="carapuce_bot" 
+    <COMBAT idcombat="1"  arene="arenedesbois" juge_nom="JugeViviane" pokemon1_nom="carapuce_bot" 
     pokemon2_nom="pikachu_bot2"/>
     
     

@@ -43,7 +43,7 @@ public class PokemonNoCatchCell implements SmartCell {
 		if (question.getText().contains("Pokeball")
 				| question.getText().contains("pokeball")) {
 			pokebot = dao.getById(nompokebot);
-			if (pokebot.getOwner()== null) {
+			if (pokebot.getOwner()== null) {  
 				Dresseur dresseur = new Dresseur();
 				String nomdresseur = interloc;
 				dresseur = dao2.getById(nomdresseur);

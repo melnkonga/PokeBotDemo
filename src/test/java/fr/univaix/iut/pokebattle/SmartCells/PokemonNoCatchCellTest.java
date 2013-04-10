@@ -15,8 +15,8 @@ public class PokemonNoCatchCellTest {
 	public void test()
 	{
 		PokemonNoCatchCell pokeBot = new PokemonNoCatchCell();
-		assertEquals("@raph @1sansuperstar is my owner"+" "+new GregorianCalendar().getTime().toString(), pokeBot.ask(new Tweet("raph","@carapuce_bot Pokeball")));
-	}
+		assertEquals("@raph @J_Apple_Junior is my owner"+" "+new GregorianCalendar().getTime().toString(), pokeBot.ask(new Tweet("raph","@carapuce_bot Pokeball")));
+	} 
 	
 
 	

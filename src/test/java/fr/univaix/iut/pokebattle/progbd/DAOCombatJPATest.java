@@ -71,13 +71,13 @@ public class DAOCombatJPATest {
 	@Test
 	public void testFindAll() throws Exception {
 		List<Combat> combat = dao.findAll();
-		assertThat(combat.get(0).getId_combat()).isEqualTo(1);
+		assertThat(combat.get(0).getIdcombat()).isEqualTo(1);
 	}
 	
 
 	@Test
 	public void testGetById() throws Exception {
-		assertThat(dao.getById(1).getId_combat()).isEqualTo(1);
+		assertThat(dao.getById(1).getIdcombat()).isEqualTo(1);
 	}
 
 	@Test
@@ -105,7 +105,7 @@ public class DAOCombatJPATest {
 		Combat combat=new Combat(2,"arenedesiles",juge , pokbot, bot);
 		
 		dao.insert(combat);		
-		assertThat(dao.getById(2).getId_combat()).isEqualTo(2);
+		assertThat(dao.getById(2).getIdcombat()).isEqualTo(2);
 	}
 	
 }
