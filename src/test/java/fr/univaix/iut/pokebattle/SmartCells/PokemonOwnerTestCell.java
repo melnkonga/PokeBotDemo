@@ -22,4 +22,10 @@ public class PokemonOwnerTestCell {
     {
     	assertEquals("@nedseb no owner", owner.ask(new Tweet("nedseb", "@salameche_bot owner")));
     }
+    
+    @Test
+    public void testNull()
+    {
+    	assertEquals(null, owner.ask(new Tweet("nedseb", "@salameche_bot hey")));
+    }
 }

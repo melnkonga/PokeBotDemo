@@ -10,6 +10,7 @@ import javax.persistence.Persistence;
 import fr.univaix.iut.pokebattle.smartcell.SmartCell;
 import fr.univaix.iut.pokebattle.twitter.Tweet;
 import fr.univaix.iut.progbd.DAOPokeBotJPA;
+import fr.univaix.iut.progbd.Dresseur;
 import fr.univaix.iut.progbd.PokeBot;
 
 public class PokemonOwnerCell implements SmartCell {
@@ -28,20 +29,21 @@ public class PokemonOwnerCell implements SmartCell {
 		}
 		  
 		PokeBot owner = daoPokeBotJPA.getById(nompokebot);
-		String nom_dress = owner.getOwner().getNom();
-		  
+
+		   
 		if (question.getText().contains("owner")
 				| question.getText().contains("Owner")) {
-			if (nom_dress != null) {
-				return ('@' + question.getScreenName() + " @"
-						+ nom_dress + " is my owner");
-			} else {
-				return "no owner";
+			
+			if (owner.getOwner() == null)
+			{
+				return ('@' + question.getScreenName() + " no owner");
 			}
+			
+			String nom_dress = owner.getOwner().getNom();
+			return ('@' + question.getScreenName() + " @"
+						+ nom_dress + " is my owner");
 		}
-		else {
-			return null;
-		}
+		return null;
 	}
 
 }

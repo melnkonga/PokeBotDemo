@@ -11,14 +11,18 @@ import fr.univaix.iut.pokebattle.twitter.Tweet;
 
 public class PokemonNoCatchCellTest {
 
-	@Test
-	public void test()
-	{
-		PokemonNoCatchCell pokeBot = new PokemonNoCatchCell();
-		assertEquals("@raph @J_Apple_Junior is my owner"+" "+new GregorianCalendar().getTime().toString(), pokeBot.ask(new Tweet("raph","@carapuce_bot Pokeball")));
-	} 
-	 
-
+	PokemonNoCatchCell pokeBot = new PokemonNoCatchCell();
 	
+	@Test
+	public void testCatch()
+	{
+		assertEquals("@raph @J_Apple_Junior is my owner"+" "+new GregorianCalendar().getTime().toString(), pokeBot.ask(new Tweet("raph","@carapuce_bot Pokeball")));
+	}
+	
+	@Test
+	public void testNull()
+	{
+		assertEquals(null, pokeBot.ask(new Tweet("raph", "@carapuce_bot Pokepouet")));
+	}
 
 }
