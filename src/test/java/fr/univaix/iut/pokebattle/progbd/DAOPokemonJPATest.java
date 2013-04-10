@@ -71,17 +71,17 @@ public class DAOPokemonJPATest {
 
 	@Test
 	public void testDelete() throws Exception {
-		dao.delete(dao.getById("Pikachu"));
-		assertThat(dao.getById("Pikachu")).isNull();
+		dao.delete(dao.getById("Salameche"));
+		assertThat(dao.getById("Salameche")).isNull();
 	}
 
 	@Test
 	public void testInsert() throws Exception {
-		Pokemon carapuce = new Pokemon("Salameche");
-		carapuce.setType1("Feu");
+		Pokemon carapuce = new Pokemon("bulbizar");
+		carapuce.setType1("Herbe");
 		dao.insert(carapuce);
-		assertThat(dao.getById("Salameche").getNom()).isEqualTo("Salameche");
-		assertThat(dao.getById("Salameche").getType1()).isEqualTo("Feu");
+		assertThat(dao.getById("bulbizar").getNom()).isEqualTo("bulbizar");
+		assertThat(dao.getById("bulbizar").getType1()).isEqualTo("Herbe");
 	}
 	
 	  @Test public void testUpdate() throws Exception { 

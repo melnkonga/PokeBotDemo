@@ -57,8 +57,8 @@ public class DAODresseurTest {
 
 	@Test
 	public void delete() throws Exception {
-		dao.delete(dao.getById("J_Apple_Junior"));
-		assertThat(dao.getById("J_Apple_Junior")).isNull();
+		dao.delete(dao.getById("1sanesuperstar"));
+		assertThat(dao.getById("1sanesuperstar")).isNull();
 	}
 	
 	@Test
