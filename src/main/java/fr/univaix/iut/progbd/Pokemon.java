@@ -404,8 +404,4 @@ public class Pokemon {
 
 		return pokemon;
 	}
-<<<<<<< HEAD
-=======
-
->>>>>>> master
 }
