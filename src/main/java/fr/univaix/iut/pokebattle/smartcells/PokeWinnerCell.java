@@ -7,8 +7,24 @@ import fr.univaix.iut.pokebattle.smartcell.SmartCell;
 import fr.univaix.iut.pokebattle.twitter.Tweet;
 
 public class PokeWinnerCell implements SmartCell {
-	Pokemon carapuce = new Pokemon("carapuce_bot", "skwalop", "youvannn");
-	Pokemon salameche = new Pokemon("salameche_bot", "salasala", "1nsanesuperstar");
+	private Pokemon carapuce = new Pokemon("carapuce_bot", "skwalop", "youvannn");
+	private Pokemon salameche = new Pokemon("salameche_bot", "salasala", "1nsanesuperstar");
+
+	public Pokemon getCarapuce() {
+		return carapuce;
+	}
+
+	public void setCarapuce(Pokemon carapuce) {
+		this.carapuce = carapuce;
+	}
+
+	public Pokemon getSalameche() {
+		return salameche;
+	}
+
+	public void setSalameche(Pokemon salameche) {
+		this.salameche = salameche;
+	}
 
 	public String ask(Tweet question) {
 		String nomWinnerOwner = null;

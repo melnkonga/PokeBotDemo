@@ -6,7 +6,15 @@ import fr.univaix.iut.pokebattle.twitter.Tweet;
 
 public class PokemonNameAdverseAttackCell implements SmartCell {
 
-	Pokemon carapuce = new Pokemon("Carapuce_bot", "Skwalop skwalop", "youvann");
+	private Pokemon carapuce = new Pokemon("Carapuce_bot", "Skwalop skwalop", "youvann");
+
+	public Pokemon getCarapuce() {
+		return carapuce;
+	}
+
+	public void setCarapuce(Pokemon carapuce) {
+		this.carapuce = carapuce;
+	}
 
 	public String ask(Tweet Question) {
 		String resultat = null;

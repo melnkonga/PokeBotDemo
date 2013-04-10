@@ -11,8 +11,8 @@ import fr.univaix.iut.pokebattle.tuse.Credentials;
 import fr.univaix.iut.pokebattle.tuse.TwitterUserStreamEasy;
 
 public class TwitterBot {
-    TwitterUserStreamEasy twitterUserStreamEasy;
-    Twitter twitter;
+    private TwitterUserStreamEasy twitterUserStreamEasy;
+    private Twitter twitter;
 
     public TwitterBot(final Bot bot, Credentials credentials) {
         this.twitter = new TwitterBuilder(credentials).build();

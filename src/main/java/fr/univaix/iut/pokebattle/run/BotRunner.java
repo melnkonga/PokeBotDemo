@@ -8,6 +8,7 @@ import java.io.InputStream;
 import com.twitter.hbc.httpclient.ControlStreamException;
 
 import fr.univaix.iut.pokebattle.bot.Bot;
+import fr.univaix.iut.pokebattle.tuse.Credentials;
 import fr.univaix.iut.pokebattle.twitter.TwitterBot;
 
 public class BotRunner {

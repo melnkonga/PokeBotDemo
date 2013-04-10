@@ -7,7 +7,15 @@ import fr.univaix.iut.pokebattle.twitter.Tweet;
 
 public class PokemonCaracAttackCell {
 
-		Pokemon carapuce = new Pokemon("carapuce_bot", "skwalop", "youvannn");
+		private Pokemon carapuce = new Pokemon("carapuce_bot", "skwalop", "youvannn");
+
+		public Pokemon getCarapuce() {
+			return carapuce;
+		}
+
+		public void setCarapuce(Pokemon carapuce) {
+			this.carapuce = carapuce;
+		}
 
 		public String ask(Tweet Question) {
 			int ppCourant = 0;

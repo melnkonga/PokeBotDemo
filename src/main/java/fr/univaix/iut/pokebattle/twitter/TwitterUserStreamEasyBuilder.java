@@ -15,7 +15,11 @@ import fr.univaix.iut.pokebattle.tuse.UserStreamAdapter;
 public class TwitterUserStreamEasyBuilder {
     private static final  Logger logger = LoggerFactory.getLogger(TwitterBot.class);
     private Twitter twitter;
-    final Bot bot;
+    public Bot getBot() {
+		return bot;
+	}
+
+	private final Bot bot;
 
     public TwitterUserStreamEasyBuilder(Twitter twitter, final Bot bot) {
         this.twitter = twitter;

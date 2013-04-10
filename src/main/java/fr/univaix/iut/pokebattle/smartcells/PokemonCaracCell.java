@@ -7,7 +7,7 @@ import fr.univaix.iut.pokebattle.smartcell.SmartCell;
 import fr.univaix.iut.pokebattle.twitter.Tweet;
 
 public class PokemonCaracCell implements SmartCell {
-	Pokemon carapuce = new Pokemon("carapuce_bot", "skwalop", "youvannn");
+	private Pokemon carapuce = new Pokemon("carapuce_bot", "skwalop", "youvannn");
 
 	public String ask(Tweet Question) {
 		int level = 0;
@@ -30,4 +30,12 @@ public class PokemonCaracCell implements SmartCell {
 		}
 		return null;
 	} // ask
+
+	public Pokemon getCarapuce() {
+		return carapuce;
+	}
+
+	public void setCarapuce(Pokemon carapuce) {
+		this.carapuce = carapuce;
+	}
 }

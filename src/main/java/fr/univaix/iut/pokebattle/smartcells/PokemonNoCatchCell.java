@@ -12,7 +12,6 @@ import fr.univaix.iut.pokebattle.smartcell.SmartCell;
 import fr.univaix.iut.pokebattle.twitter.Tweet;
 import fr.univaix.iut.progbd.DAODresseur;
 import fr.univaix.iut.progbd.DAOPokeBotJPA;
-import fr.univaix.iut.progbd.DAOPokemonJPA;
 import fr.univaix.iut.progbd.Dresseur;
 import fr.univaix.iut.progbd.PokeBot;
 
