@@ -22,7 +22,7 @@ public class PokemonOwnerCell implements SmartCell {
 		DAOPokeBotJPA daoPokeBotJPA = new DAOPokeBotJPA(em);
 
 		String nompokebot = null;
-		Pattern p = Pattern.compile("@(.*) ");
+		Pattern p = Pattern.compile("@([^ ]*) ");
 		Matcher m = p.matcher(question.getText());
 
 		if (m.find())
