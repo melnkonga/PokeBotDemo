@@ -4,6 +4,8 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
+import scala.actors.threadpool.Arrays;
+
 import com.google.gson.Gson;
 
 public class bdgsonLoading {
@@ -62,7 +64,8 @@ public class bdgsonLoading {
 						"pokedex.json")));
 		DataObjectPokemon[] obj = gson.fromJson(br, DataObjectPokemon[].class);
 
-		findAttPokemon("Carapuce", obj);
+		String str [] = findAttPokemon("Carapuce", obj);
+		System.out.println(Arrays.toString(str));
 		
 
 	}
