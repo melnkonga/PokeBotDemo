@@ -49,7 +49,6 @@ public class PokemonNoCatchCell implements SmartCell {
 				pokebot.setOwner(dresseur);
 			}
 
-
 			String s = "@" + question.getScreenName() + " @" + pokebot.getOwner().getNom()
 					+ " is my owner"+" "+new GregorianCalendar().getTime().toString();
 			return s;

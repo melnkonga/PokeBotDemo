@@ -2,8 +2,6 @@ package fr.univaix.iut.pokebattle.SmartCells;
 
 import static org.junit.Assert.assertEquals;
 
-import java.util.GregorianCalendar;
-
 import org.junit.Test;
 
 import fr.univaix.iut.pokebattle.smartcells.PokemonOwnerCell;
@@ -14,6 +12,6 @@ public class PokemonOwnerTestCell {
     @Test
     public void testOwner()
     {
-    	assertEquals("@nedseb @J_Apple_Junior is my owner"+" "+new GregorianCalendar().getTime().toString(), owner.ask(new Tweet("nedseb", "@carapuce_bot owner")));
+    	assertEquals("@nedseb @J_Apple_Junior is my owner", owner.ask(new Tweet("nedseb", "@carapuce_bot owner")));
 	}
 }
