@@ -2,6 +2,7 @@ package fr.univaix.iut.pokebattle.bot;
 
 import fr.univaix.iut.pokebattle.smartcell.SmartCell;
 import fr.univaix.iut.pokebattle.smartcells.PokemonCriesCell;
+import fr.univaix.iut.pokebattle.smartcells.PokemonOwnerCell;
 import fr.univaix.iut.pokebattle.twitter.Tweet;
 
 public class PokeBot implements Bot {
@@ -10,7 +11,7 @@ public class PokeBot implements Bot {
 	 */
 
     private final SmartCell[] smartCells = new SmartCell[]{
-    		new PokemonCriesCell(),
+    		new PokemonCriesCell(), new PokemonOwnerCell()
     };
 
 	public SmartCell[] getSmartCells() {

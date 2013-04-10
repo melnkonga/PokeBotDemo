@@ -15,9 +15,9 @@ public class PokemonCriesCellTest {
  
     @Test
     public void testSalut() {
-        assertEquals("@neyo33 skwalop skwalop" + " "+ new GregorianCalendar().getTime().toString(), cell.ask(new Tweet("neyo33","@carapuce_bot salut!")));
+        assertEquals("@neyo33 sala sala" + " #pokebattle "+ new GregorianCalendar().getTime().toString(), cell.ask(new Tweet("neyo33","@salameche_bot salut!")));
     }    
- 
+    
     @Test
     public void testNotSalut() {
         assertEquals(null, cell.ask(new Tweet("neyo33","@carapuce_bot blabla")));

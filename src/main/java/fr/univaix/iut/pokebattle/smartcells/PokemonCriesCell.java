@@ -40,10 +40,10 @@ public class PokemonCriesCell implements SmartCell {
 		}
 		if (question.getText().contains("salut")) {
 			pokebot = dao.getById(nompokebot);
-			//System.out.println(nompokebot);
-			//System.out.println(pokebot);
+			System.out.println(nompokebot);
+			System.out.println(pokebot);
 			pokemon = pokebot.getTypePokemon();
-			return "@" + interloc + " " + pokemon.getCri() + " " +new GregorianCalendar().getTime().toString();
+			return "@" + interloc + " " + pokemon.getCri() + " #pokebattle " + new GregorianCalendar().getTime().toString();
 		} 
 		else {
 			return null;
