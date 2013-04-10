@@ -17,7 +17,7 @@ public class Main {
             DAOPokemonJPA daopok = new DAOPokemonJPA(em);
             DAODresseur daoDresseur=new DAODresseur(em);
             DAOPokeBotJPA daoBotJPA= new DAOPokeBotJPA(em);
-            /*
+            
             fr.univaix.iut.progbd.Pokemon pok = new fr.univaix.iut.progbd.Pokemon("Carapuce");
             pok.setCri("skwalop skwalop");
             PokeBot p = new PokeBot("carapuce_bot");
@@ -33,9 +33,8 @@ public class Main {
             bot.setPv(1);
            
             daoBotJPA.update(bot);
-             */
-            
-         
-            
+
+             
+
     }
 }

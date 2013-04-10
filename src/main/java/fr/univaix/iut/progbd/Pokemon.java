@@ -44,7 +44,7 @@ public class Pokemon {
 	private String couleur;
 	private int forme;
 	private String owner;
-	private static String cri;
+	private String cri;
 	
 	@Override
 	public int hashCode() {
@@ -75,75 +75,135 @@ public class Pokemon {
 		if (this == obj)
 			return true;
 		if (obj == null)
+		{
 			return false;
+		}
 		if (getClass() != obj.getClass())
+		{
 			return false;
+		}
 		Pokemon other = (Pokemon) obj;
-		if (capspe1 == null) {
+		if (capspe1 == null) 
+		{
 			if (other.capspe1 != null)
+			{
 				return false;
-		} else if (!capspe1.equals(other.capspe1))
+			}
+		} 
+		else if (!capspe1.equals(other.capspe1))
+		{
 			return false;
+		}
 		if (capspe2 == null) {
 			if (other.capspe2 != null)
+			{
 				return false;
+			}
 		} else if (!capspe2.equals(other.capspe2))
+		{
 			return false;
+		}
 		if (captureval != other.captureval)
+		{
 			return false;
+		}
 		if (couleur == null) {
 			if (other.couleur != null)
+			{
 				return false;
+			}
 		} else if (!couleur.equals(other.couleur))
+		{
 			return false;
+		}
 		if (cri == null) {
 			if (other.cri != null)
+			{
 				return false;
+			}
 		} else if (!cri.equals(other.cri))
+		{
 			return false;
+		}
 		if (effortval == null) {
 			if (other.effortval != null)
+			{
 				return false;
+			}
 		} else if (!effortval.equals(other.effortval))
+		{
 			return false;
+		}
 		if (espece == null) {
 			if (other.espece != null)
+			{
 				return false;
+			}
 		} else if (!espece.equals(other.espece))
+		{
 			return false;
+		}
 		if (expmax != other.expmax)
+		{
 			return false;
+		}
 		if (expval != other.expval)
+		{
 			return false;
+		}
 		if (Float.floatToIntBits(fmratio) != Float
 				.floatToIntBits(other.fmratio))
+		{
 			return false;
+		}
 		if (forme != other.forme)
+		{
 			return false;
+		}
 		if (nom == null) {
 			if (other.nom != null)
+			{
 				return false;
+			}
 		} else if (!nom.equals(other.nom))
+		{
 			return false;
+		}
 		if (owner == null) {
 			if (other.owner != null)
+			{
 				return false;
+			}
 		} else if (!owner.equals(other.owner))
+		{
 			return false;
+		}
 		if (Float.floatToIntBits(poids) != Float.floatToIntBits(other.poids))
+		{
 			return false;
+		}
 		if (Float.floatToIntBits(taille) != Float.floatToIntBits(other.taille))
+		{
 			return false;
+		}
 		if (type1 == null) {
 			if (other.type1 != null)
+			{
 				return false;
+			}
 		} else if (!type1.equals(other.type1))
+		{
 			return false;
+		}
 		if (type2 == null) {
 			if (other.type2 != null)
+			{
 				return false;
+			}
 		} else if (!type2.equals(other.type2))
+		{
 			return false;
+		}
 		return true;
 	}
 	@Override
@@ -296,30 +356,42 @@ public class Pokemon {
 	
 	public static Pokemon createPokemon(String name, String owner) 
 	{
+		final int couleur = 3;
+		final int effortval = 4;
+		final int espece = 5;
+		final int expmax = 6;
+		final int expval = 7;
+		final int fmratio = 8;
+		final int forme = 9;
+		final int poids = 10;
+		final int taille = 11;
+		final int type1 = 12;
+		final int type2 = 13;
+		
 		Gson gson = new Gson();
 
         BufferedReader br = new BufferedReader(new InputStreamReader(BDGSONLoading.class.getClassLoader().getResourceAsStream("pokedex.json")));
 		DataObjectPokemon[] obj = gson.fromJson(br, DataObjectPokemon[].class);
-		Object[] pokemonC = GSON.BDGSONLoading.FindCaracPokemon(name,obj);
+		Object[] pokemonC = GSON.BDGSONLoading.findCaracPokemon(name,obj);
 		Pokemon pokemon = new Pokemon(name);
 		pokemon.setNom(name);
 		pokemon.setCapspe1((String) pokemonC[0]);
 		pokemon.setCapspe2((String) pokemonC[1]);
 		pokemon.setCaptureval((Integer) pokemonC[2]);
-		pokemon.setCouleur((String) pokemonC[3]);
-		pokemon.setEffortval((String) pokemonC[4]);
-		pokemon.setEspece((String) pokemonC[5]);
-		pokemon.setExpmax((Integer) pokemonC[6]);
-		pokemon.setExpval((Integer) pokemonC[7]);
-		pokemon.setFmratio((Float) pokemonC[8]);
-		pokemon.setForme((Integer) pokemonC[9]);
-		pokemon.setPoids((Float) pokemonC[10]);
-		pokemon.setTaille((Float) pokemonC[11]);
-		pokemon.setType1((String) pokemonC[12]);
-		pokemon.setType2((String) pokemonC[13]);
+		pokemon.setCouleur((String) pokemonC[couleur]);
+		pokemon.setEffortval((String) pokemonC[effortval]);
+		pokemon.setEspece((String) pokemonC[espece]);
+		pokemon.setExpmax((Integer) pokemonC[expmax]);
+		pokemon.setExpval((Integer) pokemonC[expval]);
+		pokemon.setFmratio((Float) pokemonC[fmratio]);
+		pokemon.setForme((Integer) pokemonC[forme]);
+		pokemon.setPoids((Float) pokemonC[poids]);
+		pokemon.setTaille((Float) pokemonC[taille]);
+		pokemon.setType1((String) pokemonC[type1]);
+		pokemon.setType2((String) pokemonC[type2]);
 		pokemon.setOwner(owner);
 		Pokemon.setPv(pv);
-		pokemon.setCri(cri);
+		
 		return pokemon;
 	}
 	

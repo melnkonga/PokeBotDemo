@@ -43,7 +43,7 @@ public class DAOCombatJPA {
 		tx.begin();
 		entityManager.persist(combat);
 		tx.commit();
-		return entityManager.find(Combat.class, combat.getId_combat());
+		return entityManager.find(Combat.class, combat.getIdcombat());
 	}
 
 

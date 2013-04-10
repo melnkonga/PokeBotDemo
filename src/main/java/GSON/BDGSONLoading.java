@@ -12,39 +12,41 @@ public class BDGSONLoading
 {
 	
 	private static int pv =100; 
-	public static void FindPokemon (String pokemon,DataObjectPokemon[] tableau)
+	public static void findPokemon (String pokemon,DataObjectPokemon[] tableau)
 	{
 		for (int i = 0; i < tableau.length; ++i)
 		{
 
-			if (pokemon.equals(tableau[i].nom))
+			if (pokemon.equals(tableau[i].getNom()))
+			{
 				System.out.println(tableau[i]);
+			}
 		}
 	}
 	
 
-	public static Object[] FindCaracPokemon (String pokemon,DataObjectPokemon[] tableau)
+	public static Object[] findCaracPokemon (String pokemon,DataObjectPokemon[] tableau)
 	{
 		ArrayList<Object> pokemonStat = new ArrayList<Object>();
 		for (int i = 0; i < tableau.length; ++i)
 		{
 	
-			if (pokemon.equals(tableau[i].nom))
+			if (pokemon.equals(tableau[i].getNom()))
 			{
-				pokemonStat.add(tableau[i].capspe1);
-				pokemonStat.add(tableau[i].capspe2);
-				pokemonStat.add(tableau[i].captureval);
-				pokemonStat.add(tableau[i].couleur);
-				pokemonStat.add(tableau[i].effortval);
-				pokemonStat.add(tableau[i].espece);
-				pokemonStat.add(tableau[i].expmax);
-				pokemonStat.add(tableau[i].expval);
-				pokemonStat.add(tableau[i].fmratio);
-				pokemonStat.add(tableau[i].forme);
-				pokemonStat.add(tableau[i].poids);
-				pokemonStat.add(tableau[i].taille);
-				pokemonStat.add(tableau[i].type1);
-				pokemonStat.add(tableau[i].type2);
+				pokemonStat.add(tableau[i].getCapspe1());
+				pokemonStat.add(tableau[i].getCapspe2());
+				pokemonStat.add(tableau[i].getCaptureval());
+				pokemonStat.add(tableau[i].getCouleur());
+				pokemonStat.add(tableau[i].getEffortval());
+				pokemonStat.add(tableau[i].getEspece());
+				pokemonStat.add(tableau[i].getExpmax());
+				pokemonStat.add(tableau[i].getEffortval());
+				pokemonStat.add(tableau[i].getFmratio());
+				pokemonStat.add(tableau[i].getForme());
+				pokemonStat.add(tableau[i].getPoids());
+				pokemonStat.add(tableau[i].getTaille());
+				pokemonStat.add(tableau[i].getType1());
+				pokemonStat.add(tableau[i].getType2());
 			}
 			
 		}
@@ -52,21 +54,21 @@ public class BDGSONLoading
 		return pokemonStat.toArray();
 	}
 	
-	public static String[] FindAttPokemon (String pokemon,DataObjectPokemon[] tableau)
+	public static String[] findAttPokemon (String pokemon,DataObjectPokemon[] tableau)
 	{
 		for (int i = 0; i < tableau.length; ++i)
 		{
 
-			if (pokemon.equals(tableau[i].nom))
+			if (pokemon.equals(tableau[i].getNom()))
 			{
 				DataObjectAttack[] tabAtt= tableau[i].getAttaques();
-				String[] Tab = new String[tabAtt.length];
+				String[] tab = new String[tabAtt.length];
 				
 				for (int j = 0; j < tabAtt.length; j++) {
-					Tab[j]=tabAtt[j].nom;
+					tab[j]=tabAtt[j].getNom();
 					
 				}
-				return Tab;
+				return tab;
 			}
 		}
 		return null;
@@ -80,7 +82,7 @@ public class BDGSONLoading
         DataObjectPokemon[] obj = gson.fromJson(br, DataObjectPokemon[].class);
 
         
-        String[] tab=FindAttPokemon("Carapuce",obj);
+        String[] tab=findAttPokemon("Carapuce",obj);
         for (int i = 0; i < tab.length; i++) {
 			System.out.println(tab[i]);
 		}

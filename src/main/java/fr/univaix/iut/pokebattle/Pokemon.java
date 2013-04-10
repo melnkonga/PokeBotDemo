@@ -8,30 +8,32 @@ public class Pokemon {
 	}
 
 	public int getPV() {
-		return PV;
+		return pv;
 	}
 
 	public void setPV(int pV) {
-		PV = pV;
+		pv = pV;
 	}
 	
 	public int getPP() {
-		return PP;
+		return pp;
 	}
 	
 	public void setPP(int pP) {
-		PP = pP;
+		pp = pP;
 	}
 
-	String nomPoke;
-	String criPoke;
-	String ownerPoke;
-	int PV = 100; // pv max
-	int PP = 35; // pp max
-	int level = 1;
-	int exp = 0;
-	int PVCourant = 0;
-	int PPCourant = 10;
+	private String nomPoke;
+	private String criPoke;
+	private String ownerPoke;
+	// pv max
+	private int pv = 100;
+	// pp max
+	private int pp = 35; 
+	private int level = 1;
+	private int exp = 0;
+	private int pVCourant = 0;
+	private int pPCourant = 10;
 
 	public Pokemon() {
 		// TODO Auto-generated constructor stub
@@ -47,11 +49,11 @@ public class Pokemon {
 	}
 
 	public int getPVCourant() {
-		return PVCourant;
+		return pVCourant;
 	}
 	
 	public int getPPCourant() {
-		return PPCourant;
+		return pPCourant;
 	}
 
 	public void setLevel(int level) {
@@ -63,11 +65,11 @@ public class Pokemon {
 	}
 
 	public void setPVCourant(int pVCourant) {
-		PVCourant = pVCourant;
+		pVCourant = pVCourant;
 	}
 	
 	public void setPPCourant(int pPCourant) {
-		PPCourant = pPCourant;
+		pPCourant = pPCourant;
 	}
 
 	public Pokemon(String nomPoke, String criPoke, String ownerPoke) {

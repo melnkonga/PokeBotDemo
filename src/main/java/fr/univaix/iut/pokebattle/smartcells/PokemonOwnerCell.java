@@ -1,18 +1,19 @@
 package fr.univaix.iut.pokebattle.smartcells;
 
 import java.util.GregorianCalendar;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-import fr.univaix.iut.pokebattle.Pokemon;
 import fr.univaix.iut.pokebattle.smartcell.SmartCell;
 import fr.univaix.iut.pokebattle.twitter.Tweet;
-import fr.univaix.iut.progbd.DAODresseur;
 import fr.univaix.iut.progbd.DAOPokeBotJPA;
-import fr.univaix.iut.progbd.DAOPokemonJPA;
-import fr.univaix.iut.progbd.Dresseur;
+
+import fr.univaix.iut.progbd.PokeBot;
+
 
 public class PokemonOwnerCell implements SmartCell {
 
@@ -20,14 +21,22 @@ public class PokemonOwnerCell implements SmartCell {
 
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("pokebattlePU");
         EntityManager em = emf.createEntityManager();
-        DAOPokeBotJPA daoBotJPA= new DAOPokeBotJPA(em);
-		String owner = daoBotJPA.getById("carapuce_bot").getOwner().getNom();
-
+        DAOPokeBotJPA daoPokeBotJPA= new DAOPokeBotJPA(em);
+        
+        String nompokebot = null;
+        Pattern p = Pattern.compile("@(.*) ");
+		Matcher m = p.matcher(question.getText());
+		if (m.find())
+		  nompokebot = m.group(1);
+           
+		PokeBot owner = daoPokeBotJPA.getById(nompokebot);
+		String nom_dress = owner.getOwner().getNom();
+		
 		if (question.getText().contains("owner")
 				| question.getText().contains("Owner")) {
-			if (owner != null) {
+			if (nom_dress != null) {
 				return ('@' + question.getScreenName() + " @"
-						+ owner + " is my owner"+" "+new GregorianCalendar().getTime().toString());
+						+ nom_dress + " is my owner"+" "+new GregorianCalendar().getTime().toString());
 			} else {
 				return "no owner";
 			}

@@ -9,7 +9,7 @@ public class PokemonNameAdverseAttackCell implements SmartCell {
 	Pokemon carapuce = new Pokemon("Carapuce_bot", "Skwalop skwalop", "youvann");
 
 	public String ask(Tweet Question) {
-		String Resultat = null;
+		String resultat = null;
 		if (Question.getText().contains("attack")) {
 			String delemiter = " ";
 			String[] texteTweet = Question.getText().split(delemiter);
@@ -19,7 +19,9 @@ public class PokemonNameAdverseAttackCell implements SmartCell {
 
 			for (int i = 0; i < texteTweet.length; ++i) {
 				if (texteTweet[i].contains("#attack"))
+				{
 					nomAttaque = texteTweet[i + 1];
+				}
 			}
 
 			for (int i = texteTweet.length - 1; i > 0; --i) {
@@ -34,14 +36,16 @@ public class PokemonNameAdverseAttackCell implements SmartCell {
 				if (texteTweet[i].contains("@")) {
 					cpt += 1;
 					if (cpt == 2)
+					{
 						nomPokemonAdvsaire = texteTweet[i];
+					}
 				}
 			}
 
-			Resultat = nomPokemonAdvsaire + " #attack " + nomAttaque + " /cc "
+			resultat = nomPokemonAdvsaire + " #attack " + nomAttaque + " /cc "
 					+ nomOwnerAdvsaire + ' ' + Question.getScreenName();
-			return Resultat;
+			return resultat;
 		}
-		return Resultat;
+		return resultat;
 	}
 }

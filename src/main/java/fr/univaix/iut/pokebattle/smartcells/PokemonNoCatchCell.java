@@ -49,9 +49,11 @@ public class PokemonNoCatchCell implements SmartCell {
 				dresseur = dao2.getById(nomdresseur);
 				pokebot.setOwner(dresseur);
 			}
-			String S = "@" + question.getScreenName() + " @" + pokebot.getOwner().getNom()
+
+
+			String s = "@" + question.getScreenName() + " @" + pokebot.getOwner().getNom()
 					+ " is my owner"+" "+new GregorianCalendar().getTime().toString();
-			return S;
+			return s;
 		}
 
 		return null;

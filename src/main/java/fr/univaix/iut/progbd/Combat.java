@@ -18,21 +18,21 @@ public class Combat {
 	@Id
 	@GeneratedValue
 
-	private int id_combat;
+	private int idcombat;
 	
 	
 	public static final String FIND_ALL = "findAllCombat";
-	public int getId_combat() {
-		return id_combat;
+	public int getIdcombat() {
+		return idcombat;
 	}
-	public void setId_combat(int id_combat) {
-		this.id_combat = id_combat;
+	public void setIdcombat(int idcombat) {
+		this.idcombat = idcombat;
 	}
 	private String arene;
-	public Combat(int id_combat, String arene, Juge_Combat juge,
+	public Combat(int idcombat, String arene, Juge_Combat juge,
 			PokeBot pokemon1, PokeBot pokemon2) {
 		super();
-		this.id_combat = id_combat;
+		this.idcombat = idcombat;
 		this.arene = arene;
 		this.juge = juge;
 		this.pokemon1 = pokemon1;
@@ -44,7 +44,7 @@ public class Combat {
 		int result = 1;
 		result = prime * result + ((arene == null) ? 0 : arene.hashCode());
 		result = prime * result + (encour ? 1231 : 1237);
-		result = prime * result + id_combat;
+		result = prime * result + idcombat;
 		result = prime * result + ((juge == null) ? 0 : juge.hashCode());
 		result = prime * result
 				+ ((pokemon1 == null) ? 0 : pokemon1.hashCode());
@@ -56,46 +56,76 @@ public class Combat {
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
+		{
 			return true;
+		}
 		if (obj == null)
+		{
 			return false;
+		}
 		if (getClass() != obj.getClass())
+		{
 			return false;
+		}
 		Combat other = (Combat) obj;
 		if (arene == null) {
 			if (other.arene != null)
+			{
 				return false;
+			}
 		} else if (!arene.equals(other.arene))
+		{
 			return false;
+		}
 		if (encour != other.encour)
+		{
 			return false;
-		if (id_combat != other.id_combat)
+		}
+		if (idcombat != other.idcombat)
+		{
 			return false;
+		}
 		if (juge == null) {
 			if (other.juge != null)
+			{
 				return false;
+			};
 		} else if (!juge.equals(other.juge))
+		{
 			return false;
+		}
 		if (pokemon1 == null) {
 			if (other.pokemon1 != null)
+			{
 				return false;
+			}
 		} else if (!pokemon1.equals(other.pokemon1))
+		{
 			return false;
+		}
 		if (pokemon2 == null) {
 			if (other.pokemon2 != null)
+			{
 				return false;
+			}
 		} else if (!pokemon2.equals(other.pokemon2))
+		{
 			return false;
+		}
 		if (winner == null) {
 			if (other.winner != null)
+			{
 				return false;
+			}
 		} else if (!winner.equals(other.winner))
+		{
 			return false;
+		}
 		return true;
 	}
 	@Override
 	public String toString() {
-		return "Combat [id_combat=" + id_combat + ", "
+		return "Combat [idcombat=" + idcombat + ", "
 				+ (arene != null ? "arene=" + arene + ", " : "")
 				+ (juge != null ? "juge=" + juge + ", " : "")
 				+ (pokemon1 != null ? "pokemon1=" + pokemon1 + ", " : "")
