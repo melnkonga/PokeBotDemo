@@ -1,5 +1,6 @@
 package fr.univaix.iut.pokebattle.smartcells;
 
+import java.util.GregorianCalendar;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -32,17 +33,20 @@ public class PokemonCriesCell implements SmartCell {
 		PokeBot pokebot = new PokeBot();
 		Pokemon pokemon = new Pokemon();
 		String nompokebot = "";
-		Pattern p = Pattern.compile("@(.*) ");
+		Pattern p = Pattern.compile("@([^ ]*) ");
 		Matcher m = p.matcher(question.getText());
 		if (m.find()) {
 			nompokebot = m.group(1);
 		}
-		if (question.getText().contains("Salut")) {
+		if (question.getText().contains("salut")) {
 			pokebot = dao.getById(nompokebot);
+			//System.out.println(nompokebot);
+			//System.out.println(pokebot);
 			pokemon = pokebot.getTypePokemon();
-			return "@" + interloc + " " + pokemon.getCri();
-		} else {
+			return "@" + interloc + " " + pokemon.getCri() + " " +new GregorianCalendar().getTime().toString();
+		} 
+		else {
 			return null;
 		}
-	}
+	} //ask ()
 }
