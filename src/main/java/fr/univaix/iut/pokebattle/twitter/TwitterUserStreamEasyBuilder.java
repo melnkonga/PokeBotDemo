@@ -13,56 +13,61 @@ import fr.univaix.iut.pokebattle.tuse.TwitterUserStreamEasy;
 import fr.univaix.iut.pokebattle.tuse.UserStreamAdapter;
 
 public class TwitterUserStreamEasyBuilder {
-    private static final  Logger logger = LoggerFactory.getLogger(TwitterBot.class);
-    private Twitter twitter;
-    public Bot getBot() {
+	private static final Logger logger = LoggerFactory
+			.getLogger(TwitterBot.class);
+	private Twitter twitter;
+
+	public Bot getBot() {
 		return bot;
 	}
 
 	private final Bot bot;
 
-    public TwitterUserStreamEasyBuilder(Twitter twitter, final Bot bot) {
-        this.twitter = twitter;
-        this.bot = bot;
-    }
+	public TwitterUserStreamEasyBuilder(Twitter twitter, final Bot bot) {
+		this.twitter = twitter;
+		this.bot = bot;
+	}
 
 	public TwitterUserStreamEasy build(Credentials credentials) {
-        UserStreamListener listener = new UserStreamAdapter() {
-            @Override
-            public void onStatus(Status status) {
-                logger.info("TwitterUserStreamEasyExample.onStatus()");
-                try {
-                    processNewQuestion(status, bot);
-                } catch (TwitterException e) {
-                    e.printStackTrace();
-                }
-            }
-        };
-        return new TwitterUserStreamEasy(listener, credentials);
-    }
+		UserStreamListener listener = new UserStreamAdapter() {
+			@Override
+			public void onStatus(Status status) {
+				logger.info("TwitterUserStreamEasyExample.onStatus()");
+				try {
+					processNewQuestion(status, bot);
+				} catch (TwitterException e) {
+					e.printStackTrace();
+				}
+			}
+		};
+		return new TwitterUserStreamEasy(listener, credentials);
+	}
 
-    private void processNewQuestion(Status status, Bot bot) throws TwitterException {
-        if (isNotANewQuestion(status)) {
-            logger.info("Ignored status change");
-            return;
-        }
+	private void processNewQuestion(Status status, Bot bot)
+			throws TwitterException {
+		if (isNotANewQuestion(status)) {
+			logger.info("Ignored status change");
+			return;
+		}
 
-        String response = bot.ask(new Tweet(status.getUser().getScreenName(), status.getText()));
+		String response = bot.ask(new Tweet(status.getUser().getScreenName(),
+				status.getText()));
 
-        if (response != null) {
-            twitter.updateStatus(response);
-        }
-    }
+		if (response != null) {
+			twitter.updateStatus(response);
+		}
+	}
 
-    private boolean isNotANewQuestion(Status status) throws TwitterException {
-        return isTweetOfMe(status) || !isTweetForMe(status);
-    }
+	private boolean isNotANewQuestion(Status status) throws TwitterException {
+		return isTweetOfMe(status) || !isTweetForMe(status);
+	}
 
-    private boolean isTweetForMe(Status status) throws TwitterException {
-        return status.getText().toLowerCase().contains(twitter.getScreenName().toLowerCase());
-    }
+	private boolean isTweetForMe(Status status) throws TwitterException {
+		return status.getText().toLowerCase()
+				.contains(twitter.getScreenName().toLowerCase());
+	}
 
-    private boolean isTweetOfMe(Status status) throws TwitterException {
-        return status.getUser().getId() == twitter.getId();
-    }
+	private boolean isTweetOfMe(Status status) throws TwitterException {
+		return status.getUser().getId() == twitter.getId();
+	}
 }

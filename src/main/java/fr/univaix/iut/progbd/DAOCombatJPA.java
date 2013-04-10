@@ -25,19 +25,16 @@ public class DAOCombatJPA {
 		}
 	}
 
-
 	public List<Combat> findAll() {
 		TypedQuery<Combat> query = entityManager.createNamedQuery(
 				Combat.FIND_ALL, Combat.class);
 		return query.getResultList();
 	}
 
-
 	public Combat getById(int id) {
 		return entityManager.find(Combat.class, id);
 	}
 
-	
 	public Combat insert(Combat combat) {
 		EntityTransaction tx = entityManager.getTransaction();
 		tx.begin();
@@ -45,7 +42,6 @@ public class DAOCombatJPA {
 		tx.commit();
 		return entityManager.find(Combat.class, combat.getIdcombat());
 	}
-
 
 	public boolean update(Combat combat) {
 		try {
@@ -58,5 +54,5 @@ public class DAOCombatJPA {
 			return false;
 		}
 	}
-	
+
 }

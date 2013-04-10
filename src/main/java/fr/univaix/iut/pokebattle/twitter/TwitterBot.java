@@ -11,16 +11,35 @@ import fr.univaix.iut.pokebattle.tuse.Credentials;
 import fr.univaix.iut.pokebattle.tuse.TwitterUserStreamEasy;
 
 public class TwitterBot {
-    private TwitterUserStreamEasy twitterUserStreamEasy;
-    private Twitter twitter;
+	private TwitterUserStreamEasy twitterUserStreamEasy;
+	private Twitter twitter;
 
-    public TwitterBot(final Bot bot, Credentials credentials) {
-        this.twitter = new TwitterBuilder(credentials).build();
-        this.twitterUserStreamEasy = new TwitterUserStreamEasyBuilder(twitter, bot).build(credentials);
-    }
+	public TwitterUserStreamEasy getTwitterUserStreamEasy() {
+		return twitterUserStreamEasy;
+	}
 
-    public void startBot() throws InterruptedException, ControlStreamException, IOException {
-        twitterUserStreamEasy.oauth();
-    }
+	public void setTwitterUserStreamEasy(
+			TwitterUserStreamEasy twitterUserStreamEasy) {
+		this.twitterUserStreamEasy = twitterUserStreamEasy;
+	}
+
+	public Twitter getTwitter() {
+		return twitter;
+	}
+
+	public void setTwitter(Twitter twitter) {
+		this.twitter = twitter;
+	}
+
+	public TwitterBot(final Bot bot, Credentials credentials) {
+		this.twitter = new TwitterBuilder(credentials).build();
+		this.twitterUserStreamEasy = new TwitterUserStreamEasyBuilder(twitter,
+				bot).build(credentials);
+	}
+
+	public void startBot() throws InterruptedException, ControlStreamException,
+			IOException {
+		twitterUserStreamEasy.oauth();
+	}
 
 }

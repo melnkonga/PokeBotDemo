@@ -1,53 +1,43 @@
 package GSON;
 
 public class DataObjectAttack {
-	public String getNiveau()
-	{
+	public String getNiveau() {
 		return niveau;
 	}
 
-	public void setNiveau(String niveau)
-	{
+	public void setNiveau(String niveau) {
 		this.niveau = niveau;
 	}
 
-	public String getNom()
-	{
+	public String getNom() {
 		return nom;
 	}
 
-	public void setNom(String nom)
-	{
+	public void setNom(String nom) {
 		this.nom = nom;
 	}
 
-	public String getPuissance()
-	{
+	public String getPuissance() {
 		return puissance;
 	}
 
-	public void setPuissance(String puissance)
-	{
+	public void setPuissance(String puissance) {
 		this.puissance = puissance;
 	}
 
-	public String getPrecision()
-	{
+	public String getPrecision() {
 		return precision;
 	}
 
-	public void setPrecision(String precision)
-	{
+	public void setPrecision(String precision) {
 		this.precision = precision;
 	}
 
-	public String getPp()
-	{
+	public String getPp() {
 		return pp;
 	}
 
-	public void setPp(String pp)
-	{
+	public void setPp(String pp) {
 		this.pp = pp;
 	}
 
@@ -57,23 +47,19 @@ public class DataObjectAttack {
 	private String precision;
 	private String pp;
 
-    public DataObjectAttack(String niveau, String nom, String puissance, String precision, 
-                            String pp) {
-        this.niveau = niveau;
-        this.nom = nom;
-        this.puissance = puissance;
-        this.precision = precision;
-        this.pp = pp;
-    }
+	public DataObjectAttack(String niveau, String nom, String puissance,
+			String precision, String pp) {
+		this.niveau = niveau;
+		this.nom = nom;
+		this.puissance = puissance;
+		this.precision = precision;
+		this.pp = pp;
+	}
 
-    @Override
-    public String toString() {
-        return "DataObjectAttack{" +
-                "niveau='" + niveau + '\'' +
-                ", nom='" + nom + '\'' +
-                ", puissance=" + puissance +
-                ", precision=" + precision +
-                ", pp=" + pp +
-                '}';
-    }
+	@Override
+	public String toString() {
+		return "DataObjectAttack{" + "niveau='" + niveau + '\'' + ", nom='"
+				+ nom + '\'' + ", puissance=" + puissance + ", precision="
+				+ precision + ", pp=" + pp + '}';
+	}
 }

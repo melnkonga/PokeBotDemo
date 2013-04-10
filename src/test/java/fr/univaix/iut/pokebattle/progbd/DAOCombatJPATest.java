@@ -21,7 +21,6 @@ import org.junit.Test;
 
 import fr.univaix.iut.progbd.Combat;
 import fr.univaix.iut.progbd.DAOCombatJPA;
-import fr.univaix.iut.progbd.DAOPokeBotJPA;
 import fr.univaix.iut.progbd.Dresseur;
 import fr.univaix.iut.progbd.Juge_Combat;
 import fr.univaix.iut.progbd.PokeBot;

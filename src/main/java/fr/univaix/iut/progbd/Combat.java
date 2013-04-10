@@ -7,28 +7,26 @@ import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 
-@Entity	
-@NamedQueries({
-        @NamedQuery(name = Combat.FIND_ALL, query = "SELECT c FROM Combat c")
-})
+@Entity
+@NamedQueries({ @NamedQuery(name = Combat.FIND_ALL, query = "SELECT c FROM Combat c") })
 public class Combat {
-	
-	
-	
+
 	@Id
 	@GeneratedValue
-
 	private int idcombat;
-	
-	
+
 	public static final String FIND_ALL = "findAllCombat";
+
 	public int getIdcombat() {
 		return idcombat;
 	}
+
 	public void setIdcombat(int idcombat) {
 		this.idcombat = idcombat;
 	}
+
 	private String arene;
+
 	public Combat(int idcombat, String arene, Juge_Combat juge,
 			PokeBot pokemon1, PokeBot pokemon2) {
 		super();
@@ -38,6 +36,7 @@ public class Combat {
 		this.pokemon1 = pokemon1;
 		this.pokemon2 = pokemon2;
 	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -53,76 +52,64 @@ public class Combat {
 		result = prime * result + ((winner == null) ? 0 : winner.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj)
-		{
+		if (this == obj) {
 			return true;
 		}
-		if (obj == null)
-		{
+		if (obj == null) {
 			return false;
 		}
-		if (getClass() != obj.getClass())
-		{
+		if (getClass() != obj.getClass()) {
 			return false;
 		}
 		Combat other = (Combat) obj;
 		if (arene == null) {
-			if (other.arene != null)
-			{
+			if (other.arene != null) {
 				return false;
 			}
-		} else if (!arene.equals(other.arene))
-		{
+		} else if (!arene.equals(other.arene)) {
 			return false;
 		}
-		if (encour != other.encour)
-		{
+		if (encour != other.encour) {
 			return false;
 		}
-		if (idcombat != other.idcombat)
-		{
+		if (idcombat != other.idcombat) {
 			return false;
 		}
 		if (juge == null) {
-			if (other.juge != null)
-			{
+			if (other.juge != null) {
 				return false;
-			};
-		} else if (!juge.equals(other.juge))
-		{
+			}
+			;
+		} else if (!juge.equals(other.juge)) {
 			return false;
 		}
 		if (pokemon1 == null) {
-			if (other.pokemon1 != null)
-			{
+			if (other.pokemon1 != null) {
 				return false;
 			}
-		} else if (!pokemon1.equals(other.pokemon1))
-		{
+		} else if (!pokemon1.equals(other.pokemon1)) {
 			return false;
 		}
 		if (pokemon2 == null) {
-			if (other.pokemon2 != null)
-			{
+			if (other.pokemon2 != null) {
 				return false;
 			}
-		} else if (!pokemon2.equals(other.pokemon2))
-		{
+		} else if (!pokemon2.equals(other.pokemon2)) {
 			return false;
 		}
 		if (winner == null) {
-			if (other.winner != null)
-			{
+			if (other.winner != null) {
 				return false;
 			}
-		} else if (!winner.equals(other.winner))
-		{
+		} else if (!winner.equals(other.winner)) {
 			return false;
 		}
 		return true;
 	}
+
 	@Override
 	public String toString() {
 		return "Combat [idcombat=" + idcombat + ", "
@@ -133,42 +120,55 @@ public class Combat {
 				+ (winner != null ? "winner=" + winner + ", " : "") + "encour="
 				+ encour + "]";
 	}
+
 	public String getArene() {
 		return arene;
 	}
+
 	public void setArene(String arene) {
 		this.arene = arene;
 	}
+
 	public Juge_Combat getJuge() {
 		return juge;
 	}
+
 	public void setJuge(Juge_Combat juge) {
 		this.juge = juge;
 	}
+
 	public PokeBot getPokemon1() {
 		return pokemon1;
 	}
+
 	public void setPokemon1(PokeBot pokemon1) {
 		this.pokemon1 = pokemon1;
 	}
+
 	public PokeBot getPokemon2() {
 		return pokemon2;
 	}
+
 	public void setPokemon2(PokeBot pokemon2) {
 		this.pokemon2 = pokemon2;
 	}
+
 	public PokeBot getWinner() {
 		return winner;
 	}
+
 	public void setWinner(PokeBot winner) {
 		this.winner = winner;
 	}
+
 	public boolean isEncour() {
 		return encour;
 	}
+
 	public void setEncour(boolean encour) {
 		this.encour = encour;
 	}
+
 	@ManyToOne
 	private Juge_Combat juge;
 	@ManyToOne
@@ -177,11 +177,11 @@ public class Combat {
 	private PokeBot pokemon2;
 	@ManyToOne
 	private PokeBot winner;
-	
-	boolean encour=true;
+
+	boolean encour = true;
+
 	public Combat() {
 		super();
 	}
-	
-	
+
 }

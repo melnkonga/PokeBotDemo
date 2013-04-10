@@ -5,9 +5,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 @Entity
-
-public class Juge_Combat 
-{
+public class Juge_Combat {
 	@Id
 	@OneToMany(targetEntity = Combat.class)
 	private String nom;
@@ -17,28 +15,26 @@ public class Juge_Combat
 		this.nom = nom;
 	}
 
-	public Juge_Combat() {}
+	public Juge_Combat() {
+	}
 
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj)
+		if (this == obj) {
 			return true;
-		if (obj == null)
-		{
+		}
+		if (obj == null) {
 			return false;
 		}
-		if (getClass() != obj.getClass())
-		{
+		if (getClass() != obj.getClass()) {
 			return false;
 		}
 		Juge_Combat other = (Juge_Combat) obj;
 		if (nom == null) {
-			if (other.nom != null)
-			{
+			if (other.nom != null) {
 				return false;
 			}
-		} else if (!nom.equals(other.nom))
-		{
+		} else if (!nom.equals(other.nom)) {
 			return false;
 		}
 		return true;
@@ -64,6 +60,5 @@ public class Juge_Combat
 	public String toString() {
 		return "Juge_Combat [nom=" + nom + "]";
 	}
-	
 
 }

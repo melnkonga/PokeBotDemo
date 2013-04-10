@@ -19,8 +19,7 @@ public class VivianeAttackCells implements SmartCell {
 				"1nsanesuperstar");
 
 		if (question.getText().contains("#attack")) {
-			if (!question.getScreenName().equals("carapuce_bot"))
-			{
+			if (!question.getScreenName().equals("carapuce_bot")) {
 				return null;
 			}
 
@@ -31,12 +30,10 @@ public class VivianeAttackCells implements SmartCell {
 			for (int i = 0; i < texteTweet.length; ++i) {
 				if (texteTweet[i].contains("@")) {
 					++cpt;
-					if (cpt == 1)
-					{
+					if (cpt == 1) {
 						nomPokemonAdvsaire = texteTweet[i];
 					}
-					if (cpt == 3)
-					{
+					if (cpt == 3) {
 						nomProprio = texteTweet[i];
 					}
 

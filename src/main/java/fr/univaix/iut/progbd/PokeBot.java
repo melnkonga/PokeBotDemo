@@ -8,27 +8,24 @@ import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 
 @Entity
-@NamedQueries({
-    @NamedQuery(name = PokeBot.FIND_ALL, query = "SELECT p FROM PokeBot p")   
-})
-public class PokeBot 
-{
+@NamedQueries({ @NamedQuery(name = PokeBot.FIND_ALL, query = "SELECT p FROM PokeBot p") })
+public class PokeBot {
 	@Id
 	@OneToMany(targetEntity = Combat.class)
 	private String nom;
 	@ManyToOne
 	private Dresseur owner;
 	private int pv = 100;
-	
+
 	@ManyToOne
-	private Pokemon typepokemon;	
-	
-    public static final String FIND_ALL = "findAllPokeBot";
-    
-    public PokeBot (String nom) {
-    	this.nom = nom;
-    }
-    
+	private Pokemon typepokemon;
+
+	public static final String FIND_ALL = "findAllPokeBot";
+
+	public PokeBot(String nom) {
+		this.nom = nom;
+	}
+
 	public int getPv() {
 		return pv;
 	}
@@ -36,7 +33,7 @@ public class PokeBot
 	public void setPv(int pv) {
 		this.pv = pv;
 	}
-	
+
 	public PokeBot() {
 		super();
 	}
@@ -55,60 +52,46 @@ public class PokeBot
 
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj)
-		{
+		if (this == obj) {
 			return true;
 		}
-		if (obj == null)
-		{
+		if (obj == null) {
 			return false;
 		}
-		if (getClass() != obj.getClass())
-		{
+		if (getClass() != obj.getClass()) {
 			return false;
 		}
 		PokeBot other = (PokeBot) obj;
 		if (nom == null) {
-			if (other.nom != null)
-			{
+			if (other.nom != null) {
 				return false;
 			}
-		} 
-		else if (!nom.equals(other.nom))
-		{
+		} else if (!nom.equals(other.nom)) {
 			return false;
 		}
 		if (owner == null) {
-			if (other.owner != null)
-			{
+			if (other.owner != null) {
 				return false;
 			}
-		} else if (!owner.equals(other.owner))
-		{
+		} else if (!owner.equals(other.owner)) {
 			return false;
 		}
-		if (pv != other.pv)
-		{
+		if (pv != other.pv) {
 			return false;
 		}
 		if (typepokemon == null) {
-			if (other.typepokemon != null)
-			{
+			if (other.typepokemon != null) {
 				return false;
 			}
-		} else if (!typepokemon.equals(other.typepokemon))
-		{
+		} else if (!typepokemon.equals(other.typepokemon)) {
 			return false;
 		}
-		
+
 		return true;
 	}
 
-	
-
 	@Override
-	public String toString()
-	{
+	public String toString() {
 		return "[" + nom + ", " + owner + ", " + pv + ", " + typepokemon + "]";
 	}
 
