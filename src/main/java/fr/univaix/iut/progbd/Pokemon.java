@@ -1,5 +1,8 @@
 package fr.univaix.iut.progbd;
 
+import gson.bdgsonLoading;
+import gson.DataObjectPokemon;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
@@ -8,9 +11,6 @@ import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
-
-import GSON.BDGSONLoading;
-import GSON.DataObjectPokemon;
 
 import com.google.gson.Gson;
 
@@ -379,10 +379,10 @@ public class Pokemon {
 		Gson gson = new Gson();
 
 		BufferedReader br = new BufferedReader(new InputStreamReader(
-				BDGSONLoading.class.getClassLoader().getResourceAsStream(
+				bdgsonLoading.class.getClassLoader().getResourceAsStream(
 						"pokedex.json")));
 		DataObjectPokemon[] obj = gson.fromJson(br, DataObjectPokemon[].class);
-		Object[] pokemonC = GSON.BDGSONLoading.findCaracPokemon(name, obj);
+		Object[] pokemonC = bdgsonLoading.findCaracPokemon(name, obj);
 		Pokemon pokemon = new Pokemon(name);
 		pokemon.setNom(name);
 		pokemon.setCapspe1((String) pokemonC[0]);

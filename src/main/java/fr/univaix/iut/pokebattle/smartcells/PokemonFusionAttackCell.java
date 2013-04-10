@@ -4,14 +4,13 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.GregorianCalendar;
 
-import GSON.BDGSONLoading;
-import GSON.DataObjectPokemon;
-
 import com.google.gson.Gson;
 
 import fr.univaix.iut.pokebattle.Pokemon;
 import fr.univaix.iut.pokebattle.smartcell.SmartCell;
 import fr.univaix.iut.pokebattle.twitter.Tweet;
+import gson.DataObjectPokemon;
+import gson.bdgsonLoading;
 
 public class PokemonFusionAttackCell implements SmartCell {
 
@@ -41,7 +40,7 @@ public class PokemonFusionAttackCell implements SmartCell {
 						Gson gson = new Gson();
 
 						BufferedReader br = new BufferedReader(
-								new InputStreamReader(BDGSONLoading.class
+								new InputStreamReader(bdgsonLoading.class
 										.getClassLoader().getResourceAsStream(
 												"pokedex.json")));
 						nomAttaque = texteTweet[i + 1];
@@ -50,7 +49,7 @@ public class PokemonFusionAttackCell implements SmartCell {
 
 						nomPoke = carapuce.getNomPoke();
 
-						String[] tab = GSON.BDGSONLoading.findAttPokemon(
+						String[] tab = bdgsonLoading.findAttPokemon(
 								nomPoke, tabatak);
 						for (int j = 0; j < tab.length; j++) {
 
