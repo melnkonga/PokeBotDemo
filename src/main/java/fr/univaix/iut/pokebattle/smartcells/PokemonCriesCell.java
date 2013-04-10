@@ -22,8 +22,7 @@ public class PokemonCriesCell implements SmartCell {
 	private static EntityManagerFactory entityManagerFactory;
 	private static DAOPokeBotJPA dao;
 	
-	public String ask(Tweet question) {
-		
+	public String ask(Tweet question) {		
 		entityManagerFactory = Persistence
 				.createEntityManagerFactory("pokebattlePU");
 		entityManager = entityManagerFactory.createEntityManager();
@@ -44,8 +43,6 @@ public class PokemonCriesCell implements SmartCell {
 			pokemon = pokebot.getTypePokemon();
 			return "@" +interloc + " " +pokemon.getCri();
 		}
-		else return null; 
-		
+		else return null; 		
 	}
-
 }

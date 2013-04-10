@@ -12,7 +12,6 @@ import fr.univaix.iut.pokebattle.smartcell.SmartCell;
 import fr.univaix.iut.pokebattle.twitter.Tweet;
 import fr.univaix.iut.progbd.DAODresseur;
 import fr.univaix.iut.progbd.DAOPokeBotJPA;
-import fr.univaix.iut.progbd.DAOPokemonJPA;
 import fr.univaix.iut.progbd.Dresseur;
 import fr.univaix.iut.progbd.PokeBot;
 
@@ -49,7 +48,6 @@ public class PokemonNoCatchCell implements SmartCell {
 				dresseur = dao2.getById(nomdresseur);
 				pokebot.setOwner(dresseur);
 			}
-
 
 			String s = "@" + question.getScreenName() + " @" + pokebot.getOwner().getNom()
 					+ " is my owner"+" "+new GregorianCalendar().getTime().toString();
