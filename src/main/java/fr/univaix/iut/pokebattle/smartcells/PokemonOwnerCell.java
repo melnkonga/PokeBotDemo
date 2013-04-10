@@ -23,7 +23,9 @@ public class PokemonOwnerCell implements SmartCell {
         Pattern p = Pattern.compile("@(.*) ");
 		Matcher m = p.matcher(question.getText());
 		if (m.find())
-		  nompokebot = m.group(1);
+		{
+			nompokebot = m.group(1);
+		}
 		
 		PokeBot owner = daoPokeBotJPA.getById(nompokebot);
 		String nom_dress = owner.getOwner().getNom();

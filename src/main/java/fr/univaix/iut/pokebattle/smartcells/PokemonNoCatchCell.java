@@ -38,7 +38,9 @@ public class PokemonNoCatchCell implements SmartCell {
 		Matcher m = p.matcher(question.getText());
 		
 		if(m.find())
-			nompokebot = m.group(1);
+			{
+				nompokebot = m.group(1);
+			}
 		if (question.getText().contains("Pokeball")
 				| question.getText().contains("pokeball")) {
 			pokebot = dao.getById(nompokebot);

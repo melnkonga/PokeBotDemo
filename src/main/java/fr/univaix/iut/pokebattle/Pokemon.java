@@ -65,11 +65,11 @@ public class Pokemon {
 	}
 
 	public void setPVCourant(int pVCourant) {
-		pVCourant = pVCourant;
+		this.pVCourant = pVCourant;
 	}
 	
 	public void setPPCourant(int pPCourant) {
-		pPCourant = pPCourant;
+		this.pPCourant = pPCourant;
 	}
 
 	public Pokemon(String nomPoke, String criPoke, String ownerPoke) {
