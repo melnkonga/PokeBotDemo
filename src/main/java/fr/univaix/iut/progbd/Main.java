@@ -19,7 +19,7 @@ public class Main {
 				"Carapuce");
 		pok.setCri("skwalop skwalop");
 		PokeBot p = new PokeBot("carapuce_bot");
-		Dresseur d = new Dresseur("J_Apple_Junior");
+		Dresseur d = new Dresseur("youvannn");
 		p.setOwner(d);
 		p.setTypePokemon(pok);
 		daopok.insert(pok);
@@ -27,7 +27,7 @@ public class Main {
 		daoBotJPA.insert(p);
 
 		PokeBot bot = daoBotJPA.getById("carapuce_bot");
-		bot.setPv(1);
+		bot.setPv(10);
 		daoBotJPA.update(bot);
 		
 		fr.univaix.iut.progbd.Pokemon pok2 = new fr.univaix.iut.progbd.Pokemon(
@@ -40,7 +40,6 @@ public class Main {
 		daoBotJPA.insert(p2);
 
 		PokeBot bot2 = daoBotJPA.getById("salameche_bot");
-		bot2.setPv(1);
 		daoBotJPA.update(bot2);
 	
 		

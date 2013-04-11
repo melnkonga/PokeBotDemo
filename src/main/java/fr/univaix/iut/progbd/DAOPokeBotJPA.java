@@ -12,7 +12,7 @@ public class DAOPokeBotJPA {
 	public DAOPokeBotJPA(EntityManager entityManager) {
 		this.entityManager = entityManager;
 	}
-
+  
 	public boolean delete(PokeBot pokebot) {
 		try {
 			EntityTransaction tx = entityManager.getTransaction();
@@ -28,12 +28,12 @@ public class DAOPokeBotJPA {
 	public List<PokeBot> findAll() {
 		TypedQuery<PokeBot> query = entityManager.createNamedQuery(
 				PokeBot.FIND_ALL, PokeBot.class);
-		return query.getResultList();
+		return query.getResultList();  
 	}
 
 	public PokeBot getById(String id) {
-		return entityManager.find(PokeBot.class, id);
-	}
+		return entityManager.find(PokeBot.class, id);  
+	}  
 
 	public PokeBot insert(PokeBot pokebot) {
 		EntityTransaction tx = entityManager.getTransaction();
@@ -47,7 +47,7 @@ public class DAOPokeBotJPA {
 		try {
 			EntityTransaction tx = entityManager.getTransaction();
 			tx.begin();
-			entityManager.refresh(pokebot);
+			entityManager.merge(pokebot);
 			tx.commit();
 			return true;
 		} catch (Exception e) {

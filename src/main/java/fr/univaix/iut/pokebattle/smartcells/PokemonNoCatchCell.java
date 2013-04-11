@@ -26,7 +26,7 @@ public class PokemonNoCatchCell implements SmartCell {
 		/* bonne class */
 
 		entityManagerFactory = Persistence
-				.createEntityManagerFactory("pokebattlePU");
+				.createEntityManagerFactory("pokebattlePU");  
 		entityManager = entityManagerFactory.createEntityManager();
 		dao = new DAOPokeBotJPA(entityManager);
 		dao2 = new DAODresseur(entityManager);
@@ -49,11 +49,12 @@ public class PokemonNoCatchCell implements SmartCell {
 				String nomdresseur = interloc;
 				dresseur = dao2.getById(nomdresseur);
 				pokebot.setOwner(dresseur);
+				dao.update(pokebot);
 			}
 
 			String s = "@" + question.getScreenName() + " @"
 					+ pokebot.getOwner().getNom() + " is my owner" + " #pokebattle "
-					+ new GregorianCalendar().getTime().toString();
+					/*+ new GregorianCalendar().getTime().toString()*/;
 			return s;
 		}
 

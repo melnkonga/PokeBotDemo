@@ -29,21 +29,22 @@ public class PokemonCriesCell implements SmartCell {
 		entityManager = entityManagerFactory.createEntityManager();
 		dao = new DAOPokeBotJPA(entityManager);
 
-		String interloc = question.getScreenName(); // @.....
-		PokeBot pokebot = new PokeBot();
-		Pokemon pokemon = new Pokemon();
-		String nompokebot = "";
-		Pattern p = Pattern.compile("@([^ ]*) ");
-		Matcher m = p.matcher(question.getText());
-		if (m.find()) {
-			nompokebot = m.group(1);
-		}
+		
 		if (question.getText().contains("salut")) {
+			String interloc = question.getScreenName(); // @.....
+			PokeBot pokebot = new PokeBot();
+			Pokemon pokemon = new Pokemon();
+			String nompokebot = "";
+			Pattern p = Pattern.compile("@([^ ]*) ");
+			Matcher m = p.matcher(question.getText());
+			if (m.find()) {
+				nompokebot = m.group(1);
+			}
 			pokebot = dao.getById(nompokebot);
-			System.out.println(nompokebot);
+			System.out.println(nompokebot);  
 			System.out.println(pokebot);
 			pokemon = pokebot.getTypePokemon();
-			return "@" + interloc + " " + pokemon.getCri() + " #pokebattle " + new GregorianCalendar().getTime().toString();
+			return "@" + interloc + " " + pokemon.getCri() + " #pokebattle" /*+ new GregorianCalendar().getTime().toString()*/;
 		} 
 		else {
 			return null;

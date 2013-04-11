@@ -16,17 +16,17 @@ import com.google.gson.Gson;
 
 public class gsontest 
 {
-	String name = "Carapuce";
+	String name = "Cocomfort";
 	Gson gson = new Gson();
 	BufferedReader br = new BufferedReader(new InputStreamReader(
 	bdgsonLoading.class.getClassLoader().getResourceAsStream("pokedex.json")));
 	DataObjectPokemon[] obj = gson.fromJson(br, DataObjectPokemon[].class);
 	Object[] pokemonC = bdgsonLoading.findCaracPokemon(name, obj);
-	String str [] = bdgsonLoading.findAttPokemon("Carapuce", obj);
+	String str [] = bdgsonLoading.findAttPokemon("Coconfort", obj);
 	@Test
 	    public void testAsk() throws Exception 
 	    {
-	        assertEquals("[Charge, Mimi-Queue, Écume, Pistolet à O, Morsure, Repli, Coud'Krâne, Hydrocanon]", Arrays.toString(str));
+	        assertEquals("[Armure]", Arrays.toString(str));
 	    }
 	
 	

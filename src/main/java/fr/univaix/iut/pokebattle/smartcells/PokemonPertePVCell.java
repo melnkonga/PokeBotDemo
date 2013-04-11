@@ -20,7 +20,7 @@ public class PokemonPertePVCell implements SmartCell {
 	public String ask(Tweet question) {
 		
 		EntityManagerFactory emf = Persistence
-				.createEntityManagerFactory("pokebattlePU");
+				.createEntityManagerFactory("pokebattlePU");  
 		EntityManager em = emf.createEntityManager();
 		DAOPokeBotJPA daoBotJPA = new DAOPokeBotJPA(em);
 		DAODresseur daoDressJPA = new DAODresseur(em);
@@ -41,9 +41,10 @@ public class PokemonPertePVCell implements SmartCell {
 		if ((question.getScreenName()).equals("JugeViviane")) {
 			if (question.getText().contains("-10pv")) {
 				pokebot.setPv(pokebot.getPv() - 10);
+				daoBotJPA.update(pokebot);
 				if (pokebot.getPv() == 0) {
 					return "#KO /cc @JugeViviane @" + dresseur.getNom() + " #pokebattle "
-							+ new GregorianCalendar().getTime().toString();
+							/* new GregorianCalendar().getTime().toString()*/;
 				}
 			}
 		}

@@ -16,10 +16,10 @@ public class PokemonCaracCellTest {
 	public void askLevel() {
 		assertEquals("@youvannn #level=1 " + new GregorianCalendar().getTime().toString(), poke.ask(new Tweet("youvannn", "@carapuce_bot #stat #level ?")));
 	}
-	@Test
+	/*@Test
 	public void askXp() {
 		assertEquals("@youvannn #XP=0 " + new GregorianCalendar().getTime().toString(), poke.ask(new Tweet("youvannn", "@carapuce_bot #stat #XP ?")));
-	}
+	}*/
 	
 	@Test
 	public void askPv() {

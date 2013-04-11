@@ -20,49 +20,24 @@ public class PokemonOwnerCell implements SmartCell {
 	private static EntityManagerFactory entityManagerFactory;
 	private static DAOPokeBotJPA dao;
 
-	public String ask(Tweet question) {
-		entityManagerFactory = Persistence
-				.createEntityManagerFactory("pokebattlePU");
-		entityManager = entityManagerFactory.createEntityManager();
-		dao = new DAOPokeBotJPA(entityManager);
+	
 
-		String interloc = question.getScreenName(); // @.....
-		PokeBot pokebot = new PokeBot();
-		String nompokebot = "";
-		Pattern p = Pattern.compile("@([^ ]*) ");
-		Matcher m = p.matcher(question.getText());
-		if (m.find()) {
-			nompokebot = m.group(1);
-		}
-		if (question.getText().contains("owner")) {
-			pokebot = dao.getById(nompokebot);
-			System.out.println(pokebot);
-			String nom_dress = pokebot.getOwner().getNom();
-			System.out.println(nom_dress);
-			return "@" + interloc + " @" + nom_dress + " is my owner" + " #pokebattle " + new GregorianCalendar().getTime().toString();
-		} 
-		else {
-			return null;
-		}
-	} //ask ()
-}
-
-/*
 public String ask(Tweet question) {
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("pokebattlePU");
 		EntityManager em = emf.createEntityManager();
 		DAOPokeBotJPA daoPokeBotJPA = new DAOPokeBotJPA(em);
 
 		String nompokebot = null;
-		Pattern p = Pattern.compile("@([^ ]*) ");
-		Matcher m = p.matcher(question.getText());
-
-		if (m.find()) {
-			nompokebot = m.group(1);
-		}
-		PokeBot owner = daoPokeBotJPA.getById(nompokebot);
+		
 
 		if (question.getText().contains("owner") | question.getText().contains("Owner")) {
+			Pattern p = Pattern.compile("@([^ ]*) ");
+			Matcher m = p.matcher(question.getText());
+
+			if (m.find()) {
+				nompokebot = m.group(1);
+			}
+			PokeBot owner = daoPokeBotJPA.getById(nompokebot);
 			if (owner.getOwner() == null) {
 				return ('@' + question.getScreenName() + " no owner");
 			}
@@ -71,4 +46,5 @@ public String ask(Tweet question) {
 		}
 		return null;
 	}
-*/
+}
+
